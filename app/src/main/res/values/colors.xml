@@ -7,4 +7,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--  Custom Color  -->
+    <!--  Alert Success -->
+    <string name="mantis">#73CA5C</string>
+    <string name="salem">#188E55</string>
+
+    <!--  Alert Warning  -->
+    <string name="red">#FF0000</string>
+
+    <!--  Default Color App  -->
+    <string name="grape">#7126B5</string>
+    <string name="pale_lavender">#DEC9FF</string>
+    <string name="thistle">#D0B7E6</string>
+    <string name="almond">#FFE9CA00</string>
+    <string name="philippine_gray">#8A8A8A</string>
+
 </resources>

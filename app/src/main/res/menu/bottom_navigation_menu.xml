@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/beranda"
+        android:enabled="true"
+        android:icon="@drawable/baseline_home_24"
+        android:title="@string/beranda"/>
+    <item
+        android:id="@+id/riwayat"
+        android:enabled="true"
+        android:icon="@drawable/baseline_event_note_24"
+        android:title="@string/riwayat"/>
+    <item
+        android:id="@+id/notifikasi"
+        android:enabled="true"
+        android:icon="@drawable/baseline_notifications_24"
+        android:title="@string/notifikasi"/>
+    <item
+        android:id="@+id/akun"
+        android:enabled="true"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="@string/akun"/>
+
+</menu>

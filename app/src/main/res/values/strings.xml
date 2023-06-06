@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">TiketkuIOFlight</string>
 
+    <!--  Custom Name  -->
+    <string name="john_doe">John Doe</string>
+    <string name="john_doe_example_email">Contoh: johndoe@gmail.com</string>
+    <string name="john_doe_email">johndoe@gmail.com</string>
+
     <!--  Bottom Navigation  -->
     <string name="home">Home</string>
     <string name="riwayat">Riwayat</string>
@@ -36,12 +41,8 @@
     <string name="masukkan_password_baru">Masukkan Password Baru</string>
     <string name="ulangi_password_baru">Ulangi Password Baru</string>
     <string name="simpan">Simpan</string>
-    
-    <!--  Custom Name  -->
-    <string name="john_doe">John Doe</string>
-    <string name="john_doe_example_email">Contoh: johndoe@gmail.com</string>
-    <string name="john_doe_email">johndoe@gmail.com</string>
-    
 
+    <!--  Home  -->
+    <string name="beranda">Beranda</string>
 
 </resources>
