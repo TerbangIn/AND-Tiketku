@@ -28,10 +28,6 @@
         android:layout_marginTop="545dp"
         android:text="Test" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <ImageView
         android:id="@+id/imageViewGambar"
         android:layout_width="match_parent"
