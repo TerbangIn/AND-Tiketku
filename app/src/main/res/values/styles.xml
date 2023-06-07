@@ -10,4 +10,23 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textAllCaps">false</item>
     </style>
+
+    <style name="TitleBeranda" >
+        <item name="android:layout_width">328dp</item>
+        <item name="android:layout_height">29dp</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#151515</item>
+    </style>
+
+    <style name="TitleRiwayat">
+        <item name="android:layout_width">215dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#151515</item>
+    </style>
 </resources>
