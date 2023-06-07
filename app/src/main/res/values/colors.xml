@@ -7,20 +7,44 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    
+    <color name="darkblue05">#4B1979</color>
+    <color name="darkblue04">#7126B5</color>
+    <color name="darkblue03">#A06ECE</color>
+    <color name="darkblue02">#D0B7E6</color>
+    <color name="darkblue01">#E2D4F0</color>
+    
+    <color name="limegreen05">#AA9B87</color>
+    <color name="limegreen04">#D4C2A8</color>
+    <color name="limegreen03">#FFE9CA</color>
+    <color name="limegreen02">#FFF0DC</color>
+    <color name="limegreen01">#FFF8ED</color>
 
-    <!--  Custom Color  -->
-    <!--  Alert Success -->
-    <string name="mantis">#73CA5C</string>
-    <string name="salem">#188E55</string>
+    <color name="danger">#FF0000</color>
+    <color name="warning">#F9CC00</color>
+    <color name="success">#73CA5C</color>
+    
+    <color name="neutral05">#151515</color>
+    <color name="neutral04">#3C3C3C</color>
+    <color name="neutral03">#8A8A8A</color>
+    <color name="neutral02">#D0D0D0</color>
+    <color name="neutral01">#FFFFFF</color>
 
-    <!--  Alert Warning  -->
-    <string name="red">#FF0000</string>
 
-    <!--  Default Color App  -->
-    <string name="grape">#7126B5</string>
-    <string name="pale_lavender">#DEC9FF</string>
-    <string name="thistle">#D0B7E6</string>
-    <string name="almond">#FFE9CA00</string>
-    <string name="philippine_gray">#8A8A8A</string>
+<!--    &lt;!&ndash;  Custom Color  &ndash;&gt;-->
+<!--    &lt;!&ndash;  Alert Success &ndash;&gt;-->
+<!--    <string name="mantis">#73CA5C</string>-->
+<!--    <string name="salem">#188E55</string>-->
+
+<!--    &lt;!&ndash;  Alert Warning  &ndash;&gt;-->
+<!--    <string name="red">#FF0000</string>-->
+
+<!--    &lt;!&ndash;  Default Color App  &ndash;&gt;-->
+<!--    <string name="grape">#7126B5</string>-->
+<!--    <string name="pale_lavender">#DEC9FF</string>-->
+<!--    <string name="thistle">#D0B7E6</string>-->
+<!--    <string name="almond">#FFE9CA00</string>-->
+<!--    <string name="philippine_gray">#8A8A8A</string>-->
 
 </resources>
