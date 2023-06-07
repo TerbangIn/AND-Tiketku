@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp">
+
+    <!-- TextView Riwayat Pesanan -->
+    <TextView
+        android:id="@+id/textViewRiwayatPesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Riwayat Pesanan"
+        android:textSize="20sp"
+        android:gravity="center" />
+
+    <!-- Tombol Searching -->
+
+    <!-- Gambar -->
+
+    <Button
+        android:id="@+id/buttonSearching"
+        style="@style/StyleMyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewRiwayatPesanan"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="545dp"
+        android:text="Test" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/imageViewGambar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonSearching"
+        android:scaleType="centerCrop" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation_menu" />
+
+</RelativeLayout>
