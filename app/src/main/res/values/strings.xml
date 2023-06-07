@@ -146,6 +146,10 @@
     <string name="riwayat_pesanan">Riwayat Pesanan</string>
     <string name="promosi">Promosi</string>
     <string name="syarat_dan_ketentuan_berlaku">Syarat dan Ketentuan Berlaku</string>
+    
+    <string name="ubah_profil">Ubah Profile</string>
+    <string name="pengaturan_akun">Pengaturan Akun</string>
+    <string name="keluar">Keluar</string>
     <string-array name="nama_bulan">
         <item>Januari</item>
         <item>Februari</item>
