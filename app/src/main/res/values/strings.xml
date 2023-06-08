@@ -46,7 +46,7 @@
     <string name="beranda">Beranda</string>
     <string name="salam">Hei, Mau kemana?</string>
     <string name="from">From</string>
-    <string name="To">To</string>
+    <string name="to">To</string>
     <string name="pulang_pergi">Pulang-Pergi?</string>
     <string name="departure">Departure</string>
     <string name="return_place">Return</string>
