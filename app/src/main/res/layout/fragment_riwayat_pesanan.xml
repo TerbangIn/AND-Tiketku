@@ -1,46 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.RiwayatPesananFragment">
 
-    <!-- TextView Riwayat Pesanan -->
-    <TextView
-        android:id="@+id/textViewRiwayatPesanan"
-        android:layout_width="match_parent"
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Riwayat Pesanan"
-        style="@style/TitleRiwayat"
-        android:gravity="center" />
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="64dp"
+        android:text="@string/riwayat_pesanan"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-    <!-- Tombol Searching -->
-
-    <!-- Gambar -->
-
-    <Button
-        android:id="@+id/buttonSearching"
-        style="@style/StyleMyButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewRiwayatPesanan"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="545dp"
-        android:text="Test" />
-
-    <ImageView
-        android:id="@+id/imageViewGambar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonSearching"
-        android:scaleType="centerCrop" />
-
-    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_navigation_menu" />
-
-</RelativeLayout>
+        app:menu="@menu/bottom_navigation_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
