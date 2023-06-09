@@ -57,6 +57,13 @@
 
     <!--  Card Place  -->
     <string name="jakarta">Jakarta</string>
+    <string name="jakarta_jkta">Jakarta (JKTA)</string>
+    <string name="melbourne_mlb">Melbourne (MLB)</string>
+    <string name="return_text">Return</string>
+    <string name="_1_maret_2023">1 Maret 2023</string>
+    <string name="pilih_tanggal">Pilih Tanggal</string>
+    <string name="_2_penumpang">2 Penumpang</string>
+
     <string name="bangkok">Bangkok</string>
     <string name="bandung">Bandung</string>
     <string name="airasia">AirAsia</string>
