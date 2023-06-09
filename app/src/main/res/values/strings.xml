@@ -32,8 +32,10 @@
     <string name="masuk_disini">Masuk di sini</string>
 
     <string name="masukkan_otp">Masukkan OTP</string>
-    <string name="ketik_6_digit_kode_yang_dikirimkan_ke">Ketik 6 digit kode yang dikirimkan ke </string>
+    <string name="ketik_6_digit_kode_yang_dikirimkan">Ketik 6 digit kode yang dikirimkan</string>
+    <string name="ke">ke</string>
     <string name="kirim_ulang_otp_dalam_60_detik">Kirim Ulang OTP dalam 60 detik</string>
+    <string name="potongan_tiket">Dapatkan Potongan 50% Tiket!</string>
     <string name="kirim_ulang">Kirim Ulang</string>
     <string name="minta_kode_baru_via_email">Minta kode baru via Email</string>
 
@@ -182,4 +184,9 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_01_01_2023">01/01/2023</string>
+    <string name="_01_03_2023">01/03/2023</string>
+    <string name="selasa">Selasa</string>
+    <string name="_6281212121212">+6281212121212</string>
+    <string name="_20_maret_14_04">20 Maret, 14:04</string>
 </resources>
