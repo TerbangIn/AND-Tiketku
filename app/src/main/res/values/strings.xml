@@ -1,192 +1,442 @@
 <resources>
+<!--    <string name="app_name">TiketkuIOFlight</string>-->
+
+<!--    &lt;!&ndash;  Custom Name  &ndash;&gt;-->
+<!--    <string name="john_doe">John Doe</string>-->
+<!--    <string name="john_doe_example_email">Contoh: johndoe@gmail.com</string>-->
+<!--    <string name="john_doe_email">johndoe@gmail.com</string>-->
+
+<!--    &lt;!&ndash;  Bottom Navigation  &ndash;&gt;-->
+<!--    <string name="home">Home</string>-->
+<!--    <string name="riwayat">Riwayat</string>-->
+<!--    <string name="notifikasi">Notifikasi</string>-->
+<!--    <string name="akun">Akun</string>-->
+
+<!--    &lt;!&ndash;  Login/Register/OTP/Reset  &ndash;&gt;-->
+<!--    <string name="masuk">Masuk</string>-->
+<!--    <string name="email_nomor_telepon">Email / Nomor Telepon</string>-->
+<!--    <string name="password">Password</string>-->
+<!--    <string name="masukkan_password">Masukkan Password</string>-->
+<!--    <string name="lupa_kata_sandi">Lupa Kata Sandi</string>-->
+<!--    <string name="belum_punya_akun">Belum punya akun?</string>-->
+<!--    <string name="daftar_disini">Daftar Disini</string>-->
+
+<!--    <string name="daftar">Daftar</string>-->
+<!--    <string name="nama">Nama</string>-->
+<!--    <string name="nama_lengkap">Nama Lengkap</string>-->
+<!--    <string name="email">Email</string>-->
+<!--    <string name="nomor_telepon">Nomor Telepon</string>-->
+<!--    <string name="number_62">+62</string>-->
+<!--    <string name="buat_password">Buat Password</string>-->
+<!--    <string name="sudah_punya_akun">Sudah punya akun?</string>-->
+<!--    <string name="masuk_disini">Masuk di sini</string>-->
+
+<!--    <string name="masukkan_otp">Masukkan OTP</string>-->
+<!--    <string name="ketik_6_digit_kode_yang_dikirimkan">Ketik 6 digit kode yang dikirimkan</string>-->
+<!--    <string name="ke">ke</string>-->
+<!--    <string name="kirim_ulang_otp_dalam_60_detik">Kirim Ulang OTP dalam 60 detik</string>-->
+<!--    <string name="potongan_tiket">Dapatkan Potongan 50% Tiket!</string>-->
+<!--    <string name="kirim_ulang">Kirim Ulang</string>-->
+<!--    <string name="minta_kode_baru_via_email">Minta kode baru via Email</string>-->
+
+<!--    <string name="reset_password">Reset Password</string>-->
+<!--    <string name="masukkan_password_baru">Masukkan Password Baru</string>-->
+<!--    <string name="ulangi_password_baru">Ulangi Password Baru</string>-->
+<!--    <string name="simpan">Simpan</string>-->
+
+<!--    &lt;!&ndash;  Home  &ndash;&gt;-->
+<!--    <string name="beranda">Beranda</string>-->
+<!--    <string name="salam">Hei, Mau kemana?</string>-->
+<!--    <string name="from">From</string>-->
+<!--    <string name="to">To</string>-->
+<!--    <string name="pulang_pergi">Pulang-Pergi?</string>-->
+<!--    <string name="departure">Departure</string>-->
+<!--    <string name="return_place">Return</string>-->
+<!--    <string name="passengers">Passengers</string>-->
+<!--    <string name="seat_class">Seat Class</string>-->
+<!--    <string name="cari_penerbangan">Cari Penerbangan</string>-->
+<!--    <string name="destinasi_favorit">Destinasi Favorit</string>-->
+
+<!--    &lt;!&ndash;  Card Place  &ndash;&gt;-->
+<!--    <string name="jakarta">Jakarta</string>-->
+<!--    <string name="jakarta_jkta">Jakarta (JKTA)</string>-->
+<!--    <string name="melbourne_mlb">Melbourne (MLB)</string>-->
+<!--    <string name="return_text">Return</string>-->
+<!--    <string name="_1_maret_2023">1 Maret 2023</string>-->
+<!--    <string name="pilih_tanggal">Pilih Tanggal</string>-->
+<!--    <string name="_2_penumpang">2 Penumpang</string>-->
+
+<!--    <string name="bangkok">Bangkok</string>-->
+<!--    <string name="bandung">Bandung</string>-->
+<!--    <string name="airasia">AirAsia</string>-->
+<!--    <string name="tanggal">tanggal</string>-->
+<!--    <string name="mulai">Mulai</string>-->
+<!--    <string name="mulai_dari">Mulai dari</string>-->
+<!--    <string name="limited">Limited</string>-->
+<!--    <string name="discount">Discount</string>-->
+
+<!--    <string name="pencaharian_kota">Masukkan Kata atau Negara</string>-->
+<!--    <string name="pencaharian_terkini">Pencaharian terkini</string>-->
+<!--    <string name="tanggal_berangkat">Tanggal Berangkat</string>-->
+<!--    <string name="tanggal_pulang">Tanggal Pulang</string>-->
+
+<!--    <string name="pilih">Pilih</string>-->
+<!--    <string name="dewasa">Dewasa</string>-->
+<!--    <string name="anak">Anak</string>-->
+<!--    <string name="bayi">Bayi</string>-->
+<!--    <string name="umur_dewasa">(12 tahun keatas)</string>-->
+<!--    <string name="umur_anak">(2 - 11 tahun)</string>-->
+<!--    <string name="umur_bayi">(Dibawah 2 tahun)</string>-->
+
+<!--    <string name="economy">Economy</string>-->
+<!--    <string name="premium_economy">Premium Economy</string>-->
+<!--    <string name="business">Business</string>-->
+<!--    <string name="first_class">First Class</string>-->
+
+<!--    <string name="filter">Filter</string>-->
+<!--    <string name="termurah">Termurah</string>-->
+<!--    <string name="loading">Loading</string>-->
+<!--    <string name="mencari_penerbangan_terbaik">Mencari Penerbangan Terbaik...</string>-->
+
+<!--    <string name="penumpang">Penumpang</string>-->
+
+<!--    <string name="harga_termurah"><b>Harga</b> - Termurah</string>-->
+<!--    <string name="durasi_terpendek"><b>Durasi</b> - Terpendek</string>-->
+<!--    <string name="keberangkatan_awal"><b>Keberangkatan</b> - Paling Awal</string>-->
+<!--    <string name="keberangkatan_akhir"><b>Keberangkatan</b> - Paling Akhir</string>-->
+<!--    <string name="kedatangan_awal"><b>Kedatangan</b> - Paling Awal</string>-->
+<!--    <string name="kedatangan_akhir"><b>Kedatangan</b> - Paling Akhir</string>-->
+
+<!--    <string name="keberangkatan">Keberangkatan</string>-->
+<!--    <string name="kedatangan">Kedatangan</string>-->
+
+<!--    <string name="pilihan_keberangkatan">Pilihan Penerbangan</string>-->
+<!--    <string name="maaf_anda_harus_login_terlebih_dahulu">Maaf, Anda harus login terlebih dahulu!</string>-->
+
+<!--    <string name="biodata_pemesanan">Biodata Pemesanan</string>-->
+<!--    <string name="data_diri_penerbangan">Data Diri Pemesanan</string>-->
+<!--    <string name="punya_nama_keluarga">Punya Nama Keluarga?</string>-->
+<!--    <string name="nama_keluarga">Nama Keluarga</string>-->
+
+<!--    <string name="biodata_penumpang">Biodata Penumpang</string>-->
+<!--    <string name="passenger">Passenger</string>-->
+<!--    <string name="title">Title</string>-->
+<!--    <string name="tanggal_lahir">Tanggal Lahir</string>-->
+<!--    <string name="dd_mm_yyyy">DD/MM/YYYY</string>-->
+<!--    <string name="kewarganegaraan">Kewarganegaraan</string>-->
+<!--    <string name="ktp_passport">KTP/Password</string>-->
+<!--    <string name="negara_penerbit">Negara Penerbit</string>-->
+
+<!--    <string name="pilih_kursi">Pilih Kursi</string>-->
+
+<!--    <string name="rincian_penerbangan">Rincian Penerbangan</string>-->
+<!--    <string name="lanjut_pembayaran">Lanjut Pembayaran</string>-->
+<!--    <string name="proses_pembayaran">Proses Pembayaran</string>-->
+<!--    <string-array name="virtual_pembayaran">-->
+<!--        <item>Gopay</item>-->
+<!--        <item>Ovo</item>-->
+<!--        <item>Dana</item>-->
+<!--    </string-array>-->
+<!--    <string name="card_number">Card Number</string>-->
+<!--    <string name="card_holder_name">Card holder name</string>-->
+<!--    <string name="cvv">CVV</string>-->
+<!--    <string name="expiry_date">Expiry date</string>-->
+<!--    <string name="bayar">Bayar</string>-->
+
+<!--    <string name="selamat">Selamat!</string>-->
+<!--    <string name="transaksi_pembayaran_tiket_sukses">Transaksi Pembayaran Tiket Sukses!</string>-->
+
+<!--    <string name="issued">Issued</string>-->
+<!--    <string name="unpaid">Unpaid</string>-->
+<!--    <string name="oops_riwayat_pesanan_kosong">Oops, Riwayat Pesanan Kosong</string>-->
+<!--    <string name="booking_code">Booking Code:</string>-->
+<!--    <string name="informasi">Informasi</string>-->
+
+<!--    <string name="riwayat_pesanan">Riwayat Pesanan</string>-->
+<!--    <string name="promosi">Promosi</string>-->
+<!--    <string name="syarat_dan_ketentuan_berlaku">Syarat dan Ketentuan Berlaku</string>-->
+<!--    -->
+<!--    <string name="ubah_profil">Ubah Profile</string>-->
+<!--    <string name="pengaturan_akun">Pengaturan Akun</string>-->
+<!--    <string name="keluar">Keluar</string>-->
+<!--    <string-array name="nama_bulan">-->
+<!--        <item>Januari</item>-->
+<!--        <item>Februari</item>-->
+<!--        <item>Maret</item>-->
+<!--        <item>April</item>-->
+<!--        <item>Mei</item>-->
+<!--        <item>Juni</item>-->
+<!--        <item>Juli</item>-->
+<!--        <item>Agustus</item>-->
+<!--        <item>September</item>-->
+<!--        <item>Oktober</item>-->
+<!--        <item>November</item>-->
+<!--        <item>Desember</item>-->
+<!--    </string-array>-->
+<!--    <string-array name="nama_hari">-->
+<!--        <item>Senin</item>-->
+<!--        <item>Selasa</item>-->
+<!--        <item>Rabu</item>-->
+<!--        <item>Kamis</item>-->
+<!--        <item>Jumat</item>-->
+<!--        <item>Sabtu</item>-->
+<!--        <item>Minggu</item>-->
+<!--    </string-array>-->
+<!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
+<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+<!--    <string name="_01_01_2023">01/01/2023</string>-->
+<!--    <string name="_01_03_2023">01/03/2023</string>-->
+<!--    <string name="selasa">Selasa</string>-->
+<!--    <string name="_6281212121212">+6281212121212</string>-->
+<!--    <string name="_20_maret_14_04">20 Maret, 14:04</string>-->
+
+
     <string name="app_name">TiketkuIOFlight</string>
 
     <!--  Custom Name  -->
     <string name="john_doe">John Doe</string>
     <string name="john_doe_example_email">Contoh: johndoe@gmail.com</string>
     <string name="john_doe_email">johndoe@gmail.com</string>
-
-    <!--  Bottom Navigation  -->
-    <string name="home">Home</string>
-    <string name="riwayat">Riwayat</string>
-    <string name="notifikasi">Notifikasi</string>
-    <string name="akun">Akun</string>
-
-    <!--  Login/Register/OTP/Reset  -->
-    <string name="masuk">Masuk</string>
-    <string name="email_nomor_telepon">Email / Nomor Telepon</string>
-    <string name="password">Password</string>
-    <string name="masukkan_password">Masukkan Password</string>
-    <string name="lupa_kata_sandi">Lupa Kata Sandi</string>
-    <string name="belum_punya_akun">Belum punya akun?</string>
-    <string name="daftar_disini">Daftar Disini</string>
-
-    <string name="daftar">Daftar</string>
-    <string name="nama">Nama</string>
-    <string name="nama_lengkap">Nama Lengkap</string>
-    <string name="email">Email</string>
-    <string name="nomor_telepon">Nomor Telepon</string>
-    <string name="number_62">+62</string>
-    <string name="buat_password">Buat Password</string>
-    <string name="sudah_punya_akun">Sudah punya akun?</string>
-    <string name="masuk_disini">Masuk di sini</string>
-
-    <string name="masukkan_otp">Masukkan OTP</string>
-    <string name="ketik_6_digit_kode_yang_dikirimkan">Ketik 6 digit kode yang dikirimkan</string>
-    <string name="ke">ke</string>
-    <string name="kirim_ulang_otp_dalam_60_detik">Kirim Ulang OTP dalam 60 detik</string>
-    <string name="potongan_tiket">Dapatkan Potongan 50% Tiket!</string>
-    <string name="kirim_ulang">Kirim Ulang</string>
-    <string name="minta_kode_baru_via_email">Minta kode baru via Email</string>
-
-    <string name="reset_password">Reset Password</string>
-    <string name="masukkan_password_baru">Masukkan Password Baru</string>
-    <string name="ulangi_password_baru">Ulangi Password Baru</string>
-    <string name="simpan">Simpan</string>
-
-    <!--  Home  -->
-    <string name="beranda">Beranda</string>
-    <string name="salam">Hei, Mau kemana?</string>
-    <string name="from">From</string>
-    <string name="to">To</string>
-    <string name="pulang_pergi">Pulang-Pergi?</string>
-    <string name="departure">Departure</string>
-    <string name="return_place">Return</string>
-    <string name="passengers">Passengers</string>
-    <string name="seat_class">Seat Class</string>
-    <string name="cari_penerbangan">Cari Penerbangan</string>
-    <string name="destinasi_favorit">Destinasi Favorit</string>
-
-    <!--  Card Place  -->
-    <string name="jakarta">Jakarta</string>
-    <string name="jakarta_jkta">Jakarta (JKTA)</string>
-    <string name="melbourne_mlb">Melbourne (MLB)</string>
-    <string name="return_text">Return</string>
-    <string name="_1_maret_2023">1 Maret 2023</string>
-    <string name="pilih_tanggal">Pilih Tanggal</string>
-    <string name="_2_penumpang">2 Penumpang</string>
-
-    <string name="bangkok">Bangkok</string>
-    <string name="bandung">Bandung</string>
-    <string name="airasia">AirAsia</string>
-    <string name="tanggal">tanggal</string>
-    <string name="mulai">Mulai</string>
-    <string name="mulai_dari">Mulai dari</string>
-    <string name="limited">Limited</string>
-    <string name="discount">Discount</string>
-
-    <string name="pencaharian_kota">Masukkan Kata atau Negara</string>
-    <string name="pencaharian_terkini">Pencaharian terkini</string>
-    <string name="tanggal_berangkat">Tanggal Berangkat</string>
-    <string name="tanggal_pulang">Tanggal Pulang</string>
-
-    <string name="pilih">Pilih</string>
-    <string name="dewasa">Dewasa</string>
-    <string name="anak">Anak</string>
-    <string name="bayi">Bayi</string>
-    <string name="umur_dewasa">(12 tahun keatas)</string>
-    <string name="umur_anak">(2 - 11 tahun)</string>
-    <string name="umur_bayi">(Dibawah 2 tahun)</string>
-
-    <string name="economy">Economy</string>
-    <string name="premium_economy">Premium Economy</string>
-    <string name="business">Business</string>
-    <string name="first_class">First Class</string>
-
-    <string name="filter">Filter</string>
-    <string name="termurah">Termurah</string>
-    <string name="loading">Loading</string>
-    <string name="mencari_penerbangan_terbaik">Mencari Penerbangan Terbaik...</string>
-
-    <string name="penumpang">Penumpang</string>
-
-    <string name="harga_termurah"><b>Harga</b> - Termurah</string>
-    <string name="durasi_terpendek"><b>Durasi</b> - Terpendek</string>
-    <string name="keberangkatan_awal"><b>Keberangkatan</b> - Paling Awal</string>
-    <string name="keberangkatan_akhir"><b>Keberangkatan</b> - Paling Akhir</string>
-    <string name="kedatangan_awal"><b>Kedatangan</b> - Paling Awal</string>
-    <string name="kedatangan_akhir"><b>Kedatangan</b> - Paling Akhir</string>
-
-    <string name="keberangkatan">Keberangkatan</string>
-    <string name="kedatangan">Kedatangan</string>
-
-    <string name="pilihan_keberangkatan">Pilihan Penerbangan</string>
-    <string name="maaf_anda_harus_login_terlebih_dahulu">Maaf, Anda harus login terlebih dahulu!</string>
-
-    <string name="biodata_pemesanan">Biodata Pemesanan</string>
-    <string name="data_diri_penerbangan">Data Diri Pemesanan</string>
-    <string name="punya_nama_keluarga">Punya Nama Keluarga?</string>
-    <string name="nama_keluarga">Nama Keluarga</string>
-
-    <string name="biodata_penumpang">Biodata Penumpang</string>
-    <string name="passenger">Passenger</string>
-    <string name="title">Title</string>
-    <string name="tanggal_lahir">Tanggal Lahir</string>
-    <string name="dd_mm_yyyy">DD/MM/YYYY</string>
-    <string name="kewarganegaraan">Kewarganegaraan</string>
-    <string name="ktp_passport">KTP/Password</string>
-    <string name="negara_penerbit">Negara Penerbit</string>
-
-    <string name="pilih_kursi">Pilih Kursi</string>
-
-    <string name="rincian_penerbangan">Rincian Penerbangan</string>
-    <string name="lanjut_pembayaran">Lanjut Pembayaran</string>
-    <string name="proses_pembayaran">Proses Pembayaran</string>
-    <string-array name="virtual_pembayaran">
-        <item>Gopay</item>
-        <item>Ovo</item>
-        <item>Dana</item>
-    </string-array>
-    <string name="card_number">Card Number</string>
-    <string name="card_holder_name">Card holder name</string>
-    <string name="cvv">CVV</string>
-    <string name="expiry_date">Expiry date</string>
-    <string name="bayar">Bayar</string>
-
-    <string name="selamat">Selamat!</string>
-    <string name="transaksi_pembayaran_tiket_sukses">Transaksi Pembayaran Tiket Sukses!</string>
-
-    <string name="issued">Issued</string>
-    <string name="unpaid">Unpaid</string>
-    <string name="oops_riwayat_pesanan_kosong">Oops, Riwayat Pesanan Kosong</string>
-    <string name="booking_code">Booking Code:</string>
-    <string name="informasi">Informasi</string>
-
-    <string name="riwayat_pesanan">Riwayat Pesanan</string>
-    <string name="promosi">Promosi</string>
-    <string name="syarat_dan_ketentuan_berlaku">Syarat dan Ketentuan Berlaku</string>
     
-    <string name="ubah_profil">Ubah Profile</string>
-    <string name="pengaturan_akun">Pengaturan Akun</string>
-    <string name="keluar">Keluar</string>
-    <string-array name="nama_bulan">
-        <item>Januari</item>
-        <item>Februari</item>
-        <item>Maret</item>
+    <string name="toast_warning_email_not_registered">Email Address not Registered!</string>
+    <string name="toast_warning_incorrect_password">Sorry, Incorrect Password</string>
+    <string name="toast_success_reset_password_link">Reset Password Link Sent</string>
+    <string name="toast_warning_invalid_or_expired_link">Invalid or Expired Links</string>
+    <string name="toast_warning_minimum_character_password">Password Minimum 8 Characters</string>
+    <string name="toast_success_otp_code_sent">OTP Code has been sent!</string>
+    <string name="toast_success_registration_successful">Registration Successful</string>
+    <string name="toast_warning_otp_incorrect_otp_code">Sorry, Incorrect OTP Code!</string>
+    
+    <string name="tv_login">Login</string>
+    <string name="tv_email_telephone">Email / Phone Number</string>
+    <string name="tv_forgot_password">Forgot Password</string>
+    <string name="tv_password">Kata Sandi</string>
+    <string name="et_enter_password">Enter Password</string>
+    <string name="tv_dont_have_an_account_yet">Don\'t have an account yet?</string>
+    <string name="tv_register_here">Register Here</string>
+    <string name="btn_login">Login</string>
+
+
+    <string name="tv_reset_password">Reset Password</string>
+    <string name="tv_enter_new_password">Enter New Password</string>
+    <string name="tv_enter_new_password_again">Enter New Password Again</string>
+    <string name="btn_save">Save</string>
+
+    <string name="tv_register">Register</string>
+    <string name="tv_name">Name</string>
+    <string name="et_full_name">Full Name</string>
+    <string name="tv_email">Email</string>
+    <string name="tv_phone_number">Phone Number</string>
+    <string name="et_62">+62</string>
+    <string name="tv_create_password">Create Password</string>
+    <string name="et_create_password">Create Password</string>
+    <string name="btn_register">Register</string>
+    <string name="tv_already_have_an_account">Already have an Account?</string>
+    <string name="tv_login_here">Login Here</string>
+    
+    <string name="tv_the_otp">Enter the OTP</string>
+    <string name="tv_otp_sent">Type the 6-digit code sent</string>
+    <string name="tv_to">to</string>
+    <string name="tv_otp_resent">Resend</string>
+    <string name="tv_otp_resent_after">Resend OTP in 60 Seconds</string>
+    <string name="tv_otp_request">Request OTP Code via Email</string>
+    
+    <string name="tv_say_Hello">Hey, Where are you going?</string>
+    <string name="tv_from">From</string>
+    <string name="tv_jakarta_jkt">Jakarta (JKT)</string>
+    <string name="tv_melbourne_mlb">Melbourne (MLB)</string>
+    <string name="tv_round_trip">Round - Trip?</string>
+    <string name="tv_departure">Departure</string>
+    <string name="tv_return">Return</string>
+    <string name="tv_passengers">Passengers</string>
+    <string name="tv_seat_class">Seat Class</string>
+    <string name="btn_search_flights">Search Flights</string>
+    <string name="tv_favorite_destination">Favorite Destination</string>
+    <string name="tv_limited">Limited!</string>
+    <string name="tv_jakarta">Jakarta</string>
+    <string name="icon_right_sign">-></string>
+    <string name="tv_bangkok">Bangkok</string>
+    <string name="tv_air_asia">AirAsia</string>
+    <string name="tv_20_30_march_2023">20 -  30 March 2023</string>
+    <string name="tv_starting_from">Starting From</string>
+    <string name="tv_idr">IDR</string>
+    <string name="tv_usd">USD</string>
+    <string name="tv_idr_950">IDR 950.000</string>
+    <string name="tv_discount_50_off">50% OFF</string>
+    <string name="tv_sydney">Sydney</string>
+    <string name="tv_5_25_march_2023">5 - 25 March 2023</string>
+    <string name="tv_idr_3650">IDR 3.650.000</string>
+    
+    <string name="tv_city_or_country">Enter City or Country</string>
+    <string name="tv_recent_search">Recent Search</string>
+    <string name="tv_remove">Remove</string>
+    <string name="tv_bandung">Bandung</string>
+    
+    <string name="tv_departure_date">Departure Date</string>
+    <string name="tv_return_date">Return Date</string>
+    <string name="btn_choose">Choose</string>
+
+    <string name="tv_adult">Adult</string>
+    <string name="tv_age_adult">(12 Years and above)</string>
+    <string name="tv_child">Child</string>
+    <string name="tv_age_child">(2 - 11 Years)</string>
+    <string name="tv_baby">Baby</string>
+    <string name="tv_age_baby">(Under 2 Years)</string>
+
+    <string name="tv_economy">Economy</string>
+    <string name="tv_idr_economy">IDR 4.950.000</string>
+    <string name="tv_premium_economy">Premium Economy</string>
+    <string name="tv_idr_premium_economy">IDR 7.550.000</string>
+    <string name="tv_business">Business</string>
+    <string name="tv_idr_business">IDR 29.220.000</string>
+    <string name="tv_first_class">First Class</string>
+    <string name="tv_idr_first_class">IDR 87.620.000</string>
+
+    <string name="tv_jkt_mlb">JKT > MLB  - 2 Passengers - Economy</string>
+    <string name="tv_filter">Filter</string>
+    <string name="tv_cheapest">Cheapest</string>
+    <string name="tv_loading">Loading...</string>
+    <string name="tv_searching_best_flight">Searching for Best Flights</string>
+
+    <string name="tv_today_only">Today Only!</string>
+
+    <string name="tv_cheapest_price">Price - Cheapest</string>
+    <string name="tv_shortest_duration">Duration - Shortest</string>
+    <string name="tv_earliest_departure">Departure - Earliest</string>
+    <string name="tv_latest_latest">Departure - Latest</string>
+    <string name="tv_earliest_arrival">Arival - Earliest</string>
+    <string name="tv_latest_arrival">Arrival - Latest</string>
+
+    <string name="tv_flight_options">Flight Options</string>
+    <string name="tv_soekarno_hatta">Soekarno Hatta</string>
+    <string name="tv_terminal_1a_domestic">Terminal 1A Domestic</string>
+    <string name="tv_melbourne_international_airport">Melbourne International Airport</string>
+    <string name="tv_total">Total</string>
+
+    <string name="tv_search_not_found">Sorry, your search was not found</string>
+    <string name="tv_try_other_search">Try searching for other trips!</string>
+    <string name="btn_change_search">Change Search</string>
+    <string name="tv_ticket_sold_out">Sorry, tickets are sold out!</string>
+    
+    <string name="tv_booking_history">Booking History</string>
+    <string name="tv_login_first">Sorry, you must login first!</string>
+    
+    <string name="tv_promotion">Promotion</string>
+    <string name="tv_get_promotion_ticket">Get 50% OFF Tickets!</string>
+    <string name="tv_terms_condition">Terms and Conditions Apply!</string>
+
+    <string name="tv_home">Home</string>
+    <string name="tv_history">History</string>
+    <string name="tv_notification">Notification</string>
+    <string name="tv_account">Account</string>
+
+    <string name="tv_booking_biodata">Booking Biodata</string>
+    <string name="tv_booking_personal_data">Booking Persoal Data</string>
+    <string name="tv_got_family_name">Got a Family Name</string>
+    <string name="tv_family_name">Family Name</string>
+    
+    <string name="tv_passenger_biodata">Passenger Biodata</string>
+    <string name="tv_passenger_seat">Passenger 1 - Adult</string>
+    <string name="tv_passenger_title">Title</string>
+    <string name="tv_passenger_birthdate">Birth Date</string>
+    <string name="tv_passenger_citizenship">Citizenship</string>
+    <string name="tv_passenger_id_card_passport">ID Card/Passport</string>
+    <string name="tv_passenger_country_publication">Country Publication</string>
+
+    <string name="tv_flight_details">Flight Details</string>
+    <string name="tv_price_details">Price Details</string>
+    <string name="tv_tax">Tax</string>
+    <string name="tv_promo">Promo</string>
+    <string name="btn_continue_payment">Continue Payment</string>
+
+    <string name="tv_processing_payment">Processing Payment</string>
+    <string name="tv_booking_code">Booking Code</string>
+    <string name="tv_class">Class</string>
+
+    <string name="tv_card_number">Card Number</string>
+    <string name="et_card_number">4480 0000 0000 0000</string>
+    <string name="tv_card_holder_name">Card Holder Name</string>
+    <string name="tv_cvv">CVV</string>
+    <string name="et_cvv">000</string>
+    <string name="tv_expiry_date">Expiry Date</string>
+    <string name="et_expiry_date">07/24</string>
+    <string name="tv_pay">Pay</string>
+    
+    <string name="tv_congratulations">Congratulations!</string>
+    <string name="tv_successful_payments">Your ticket payment transaction was successful!</string>
+    <string name="btn_issue_ticket">Issue Ticket</string>
+
+    <string name="btn_home">Home</string>
+
+    <string-array name="tv_online_payment">
+        <item>Gopay</item>
+        <item>Dana</item>
+        <item>Ovo</item>
+    </string-array>
+    <string-array name="tv_bank_payment">
+        <item>Mastercard</item>
+        <item>Visa</item>
+        <item>American Express</item>
+        <item>Paypal</item>
+    </string-array>
+    
+    <string-array name="tv_best_flight">
+        <item>Jet Air - Economy</item>
+        <item>Jet Airline - Economy</item>
+        <item>Jet Air - Economy Premium</item>
+    </string-array>
+
+    <string-array name="tv_currency">
+        <item>USD</item>
+        <item>IDR</item>
+    </string-array>
+
+    <string-array name="tv_date">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
+    <string-array name="tv_month_name">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
         <item>April</item>
         <item>Mei</item>
-        <item>Juni</item>
-        <item>Juli</item>
-        <item>Agustus</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
         <item>September</item>
-        <item>Oktober</item>
+        <item>October</item>
         <item>November</item>
-        <item>Desember</item>
+        <item>December</item>
     </string-array>
-    <string-array name="nama_hari">
-        <item>Senin</item>
-        <item>Selasa</item>
-        <item>Rabu</item>
-        <item>Kamis</item>
-        <item>Jumat</item>
-        <item>Sabtu</item>
-        <item>Minggu</item>
-    </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="_01_01_2023">01/01/2023</string>
-    <string name="_01_03_2023">01/03/2023</string>
-    <string name="selasa">Selasa</string>
-    <string name="_6281212121212">+6281212121212</string>
-    <string name="_20_maret_14_04">20 Maret, 14:04</string>
 </resources>
