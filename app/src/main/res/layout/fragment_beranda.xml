@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,15 +10,15 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="32dp"
         android:layout_marginHorizontal="16dp">
-        <TextView
-            android:id="@+id/tvMauKemana"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_say_hello"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/neutral05"
             android:textStyle="bold"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:fontFamily="@font/poppins_bold"
-            android:text="@string/salam"
+            android:text="@string/tv_say_Hello"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -31,18 +30,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:elevation="8dp"
             app:cardCornerRadius="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvMauKemana">
+            app:layout_constraintTop_toBottomOf="@+id/tv_say_hello">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/containerDeparture"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
+                    app:strokeColor="@color/darkblue03"
+                    app:strokeWidth="1dp"
+                    android:layout_marginVertical="28dp"
                     android:layout_marginHorizontal="25dp"
                     app:layout_constraintTop_toTopOf="parent">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
                     <LinearLayout
                         android:id="@+id/containerFrom"
                         android:layout_width="match_parent"
@@ -54,27 +58,27 @@
                         android:layout_margin="20dp">
 
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/plane"
+                            android:id="@+id/iv_plane_1"
                             android:layout_width="20dp"
                             android:layout_height="22dp"
                             android:src="@drawable/baseline_icon_plane" />
 
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvFrom"
+                            android:id="@+id/tv_from"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/from"
+                            android:text="@string/tv_from"
                             android:textSize="16sp"
                             android:layout_marginStart="11dp"
                             android:fontFamily="@font/poppins_regular"/>
 
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvDestinationFrom"
+                            android:id="@+id/tv_destination"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/jakarta_jkta"
+                            android:text="@string/tv_jakarta_jkt"
                             android:textSize="18sp"
-                            android:textColor="@color/black"
+                            android:textColor="@color/neutral05"
                             android:layout_marginStart="20dp"
                             android:fontFamily="@font/poppins_medium"/>
                     </LinearLayout>
@@ -90,9 +94,10 @@
                         android:gravity="center"
                         app:layout_constraintTop_toBottomOf="@+id/containerFrom">
                         <com.google.android.material.divider.MaterialDivider
-                            android:id="@+id/divider"
+                            android:id="@+id/divider_1"
                             android:layout_width="220dp"
-                            android:layout_height="1dp"/>
+                            android:layout_height="1dp"
+                            android:background="@color/darkblue03"/>
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/btnSwitch"
                             android:layout_width="30dp"
@@ -121,7 +126,7 @@
                             android:id="@+id/tvTo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/to"
+                            android:text="@string/tv_to"
                             android:textSize="16sp"
                             android:layout_marginStart="11dp"
                             android:fontFamily="@font/poppins_regular"/>
@@ -130,15 +135,15 @@
                             android:id="@+id/tvDestinationTo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/melbourne_mlb"
+                            android:text="@string/tv_melbourne_mlb"
                             android:textSize="18sp"
-                            android:textColor="@color/black"
+                            android:textColor="@color/neutral05"
                             android:layout_marginStart="40dp"
                             android:fontFamily="@font/poppins_medium"
                             android:layout_marginBottom="20dp"/>
                     </LinearLayout>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
                 <LinearLayout
                     android:id="@+id/containerRoundTrip"
                     android:layout_width="match_parent"
@@ -147,24 +152,23 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/containerDeparture"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginVertical="15dp"
                     android:layout_marginHorizontal="25dp">
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/pulang_pergi"
+                        android:text="@string/tv_round_trip"
                         android:textSize="16sp"
                         android:layout_weight="1"
                         android:fontFamily="@font/poppins_regular"
                         android:textColor="@color/black"/>
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/sm_switch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:thumbTint="@color/white"
-                        android:gravity="center"
-                        android:scaleX="1.2"
-                        android:scaleY="1.2"/>
+                        android:gravity="center"/>
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -199,23 +203,26 @@
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/departure"
+                                android:text="@string/tv_departure"
                                 android:layout_marginBottom="4dp"
                                 android:fontFamily="@font/poppins_regular"
                                 android:textSize="16sp"/>
 
                             <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_departure_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/_1_maret_2023"
+                                android:text="@string/tv_1_march_2023"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/black"
                                 android:layout_marginBottom="6dp"
                                 android:textSize="17sp"/>
 
                             <com.google.android.material.divider.MaterialDivider
+                                android:id="@+id/divider_2"
                                 android:layout_width="110dp"
-                                android:layout_height="2dp"/>
+                                android:layout_height="2dp"
+                                android:background="@color/darkblue03"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -242,23 +249,26 @@
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/return_text"
+                                android:text="@string/tv_return"
                                 android:layout_marginBottom="4dp"
                                 android:fontFamily="@font/poppins_regular"
                                 android:textSize="16sp"/>
 
                             <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_return_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/pilih_tanggal"
+                                android:text="@string/tv_return_date"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/darkblue05"
                                 android:layout_marginBottom="6dp"
                                 android:textSize="17sp"/>
 
                             <com.google.android.material.divider.MaterialDivider
+                                android:id="@+id/divider_3"
                                 android:layout_width="120dp"
-                                android:layout_height="2dp"/>
+                                android:layout_height="2dp"
+                                android:background="@color/darkblue03"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -286,23 +296,26 @@
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/passengers"
+                                android:text="@string/tv_passengers"
                                 android:layout_marginBottom="4dp"
                                 android:fontFamily="@font/poppins_regular"
                                 android:textSize="16sp"/>
 
                             <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_passengers"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/_2_penumpang"
+                                android:text="@string/tv_2_passengers"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/black"
                                 android:layout_marginBottom="8dp"
                                 android:textSize="16sp"/>
 
                             <com.google.android.material.divider.MaterialDivider
+                                android:id="@+id/divider_4"
                                 android:layout_width="120dp"
-                                android:layout_height="1dp"/>
+                                android:layout_height="2dp"
+                                android:background="@color/darkblue03"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -317,7 +330,7 @@
                         app:layout_constraintTop_toBottomOf="@id/containerReturn"
                         app:layout_constraintStart_toEndOf="@+id/containerPassengers">
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/imgSeat"
+                            android:id="@+id/iv_seat_class"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/baseline_airline_seat_recline_normal_24"
@@ -330,36 +343,39 @@
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/seat_class"
+                                android:text="@string/tv_seat_class"
                                 android:layout_marginBottom="4dp"
                                 android:fontFamily="@font/poppins_regular"
                                 android:textSize="16sp"/>
 
                             <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_seat_class"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/business"
+                                android:text="@string/tv_business"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textColor="@color/black"
                                 android:layout_marginBottom="6dp"
                                 android:textSize="17sp"/>
 
                             <com.google.android.material.divider.MaterialDivider
+                                android:id="@+id/divider_5"
                                 android:layout_width="120dp"
-                                android:layout_height="1dp"/>
+                                android:layout_height="2dp"
+                                android:background="@color/darkblue03"/>
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnCari"
+                    android:id="@+id/btn_search"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_marginHorizontal="25dp"
                     app:cornerRadius="12dp"
                     android:textSize="14sp"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="@string/cari_penerbangan"
+                    android:text="@string/btn_search_flights"
                     android:layout_marginVertical="10dp"
                     app:layout_constraintTop_toBottomOf="@id/containerChooseCriteria"
                     app:layout_constraintBottom_toBottomOf="parent"/>
@@ -369,10 +385,10 @@
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/materialTextView"
+            android:id="@+id/tv_sign_destination"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/destinasi_favorit"
+            android:text="@string/tv_favorite_destination"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:layout_marginTop="24dp"

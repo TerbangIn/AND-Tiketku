@@ -4,135 +4,159 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.LoginFragment">
+    android:background="@drawable/background_cover"
+    tools:context=".view.AccountFragment">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_masuk"
+        android:id="@+id/tv_login_sign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/masuk"
-        android:textStyle="bold"
+        android:text="@string/tv_login"
+        android:textColor="@color/darkblue03"
         android:textSize="24sp"
-        android:textColor="@color/black"
-        android:layout_marginHorizontal="26dp"
-        android:layout_marginTop="106dp"
+        android:textStyle="bold"
+        android:layout_marginTop="225dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_email_nomot_telepon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email_nomor_telepon"
-        android:textColor="@color/black"
-        android:layout_marginHorizontal="26dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_masuk"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_email_nomor_telepon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="23dp"
-        android:layout_marginVertical="4dp"
-        app:boxCornerRadiusTopStart="16dp"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_email_nomot_telepon">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tie_email_nomor_telepon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/john_doe_example_email"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
-        android:textColor="@color/black"
-        android:layout_marginHorizontal="26dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ti_email_nomor_telepon"/>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_lupa_kata_sandi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lupa_kata_sandi"
-        android:textColor="@color/darkblue04"
-        android:layout_marginHorizontal="26dp"
-        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ti_email_nomor_telepon"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_password"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="23dp"
-        android:layout_marginVertical="4dp"
-        app:boxCornerRadiusTopStart="16dp"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:endIconMode="password_toggle"
-        app:passwordToggleEnabled="true"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:strokeColor="@color/darkblue03"
+        app:strokeWidth="3dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_login_sign"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_password">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tie_password"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="@string/masukkan_password"/>
+            android:layout_height="match_parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_email_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_email_telephone"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="26dp"
+                android:layout_marginVertical="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_masuk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cornerRadius="16dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
-        android:paddingVertical="12dp"
-        android:backgroundTint="@color/darkblue04"
-        android:text="@string/masuk"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ti_password"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_email_phone_number"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="324dp"
+                android:layout_height="63dp"
+                android:layout_marginHorizontal="23dp"
+                android:layout_marginVertical="4dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_email_phone_number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tie_email_nomor_telepon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/john_doe_example_email" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_password"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="26dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ti_email_phone_number"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_forgot_password"
+                android:textColor="@color/darkblue04"
+                android:layout_marginHorizontal="26dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ti_email_phone_number"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="23dp"
+                android:layout_marginVertical="4dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:endIconMode="password_toggle"
+                app:passwordToggleEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tie_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="@string/et_enter_password"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cornerRadius="16dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginVertical="24dp"
+                android:paddingVertical="12dp"
+                android:backgroundTint="@color/darkblue04"
+                android:text="@string/btn_login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ti_password"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_dont_have_an_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_dont_have_an_account_yet"
+                android:textColor="@color/neutral05"
+                android:layout_marginHorizontal="50dp"
+                android:paddingVertical="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_login"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_register_here"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_register_here"
+                android:textColor="@color/darkblue04"
+                android:paddingVertical="24dp"
+                android:layout_marginHorizontal="2dp"
+                app:layout_constraintStart_toEndOf="@id/tv_dont_have_an_account"
+                app:layout_constraintTop_toBottomOf="@id/btn_login"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_belum_punya_akun"
+        android:id="@+id/tv_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/belum_punya_akun"
-        android:textColor="@color/black"
-        android:layout_marginHorizontal="72dp"
-        android:layout_marginVertical="24dp"
-        android:layout_marginStart="100dp"
+        android:text="@string/tv_choose_language"
+        android:textColor="@color/darkblue05"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_daftar_disini"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/daftar_disini"
-        android:textColor="@color/darkblue04"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginVertical="24dp"
-        app:layout_constraintStart_toEndOf="@id/tv_belum_punya_akun"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="24dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

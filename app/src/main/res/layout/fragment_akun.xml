@@ -1,92 +1,151 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.AkunFragment">
+    android:background="@drawable/background_cover"
+    tools:context=".view.AccountFragment">
 
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_akun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginStart="14dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:text="@string/akun"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_edit_note_24"
-        android:layout_marginTop="36dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_akun"/>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_ubah_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginStart="36dp"
-        android:textSize="14sp"
-        android:text="@string/ubah_profil"
-        app:layout_constraintStart_toStartOf="@id/iv_edit_text"
-        app:layout_constraintTop_toBottomOf="@id/tv_akun"/>
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_pengaturan_akun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_settings_24"
-        android:layout_marginTop="36dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_ubah_profile"/>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_pengaturan_akun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginStart="36dp"
-        android:textSize="14sp"
-        android:text="@string/ubah_profil"
-        app:layout_constraintStart_toStartOf="@id/iv_pengaturan_akun"
-        app:layout_constraintTop_toBottomOf="@id/tv_ubah_profile"/>
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_keluar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_logout_24"
-        android:layout_marginTop="36dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_pengaturan_akun"/>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_keluar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginStart="36dp"
-        android:textSize="14sp"
-        android:text="@string/ubah_profil"
-        app:layout_constraintStart_toStartOf="@id/iv_keluar"
-        app:layout_constraintTop_toBottomOf="@id/tv_pengaturan_akun"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/bottom_navigation_menu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_sign_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:gravity="center_horizontal"
+            android:text="@string/tv_account"
+            android:textColor="@color/darkblue03"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="20dp"
+            android:padding="20dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_account"
+            app:strokeColor="@color/darkblue03"
+            app:strokeWidth="2dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_change_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/neutral05"
+                    android:src="@drawable/baseline_edit_note_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_change_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/tv_change_profile"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_change_profile"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/darkblue03"
+                    app:layout_constraintTop_toBottomOf="@id/tv_change_profile" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_settings_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/neutral05"
+                    android:src="@drawable/baseline_settings_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_settings_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/tv_account_setting"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_settings_account"
+                    app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/darkblue03"
+                    app:layout_constraintTop_toBottomOf="@id/tv_settings_account" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/neutral05"
+                    android:src="@drawable/baseline_logout_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:paddingVertical="20dp"
+                    android:text="@string/tv_logout"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_logout"
+                    app:layout_constraintTop_toBottomOf="@id/divider2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/tv_version"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_account"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

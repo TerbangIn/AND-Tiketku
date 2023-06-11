@@ -2,6 +2,6 @@ package com.ketarketir.tiketkuioflight.viewmodel
 
 import androidx.lifecycle.ViewModel
 
-class BerandaViewModel : ViewModel() {
+class BookingHistoryNonLoginViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

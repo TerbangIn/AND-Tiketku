@@ -2,6 +2,6 @@ package com.ketarketir.tiketkuioflight.viewmodel
 
 import androidx.lifecycle.ViewModel
 
-class AkunViewModel : ViewModel() {
+class SendOTPViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

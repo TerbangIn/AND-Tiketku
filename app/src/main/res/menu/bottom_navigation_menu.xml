@@ -5,21 +5,21 @@
         android:id="@+id/beranda"
         android:enabled="true"
         android:icon="@drawable/baseline_home_24"
-        android:title="@string/beranda"/>
+        android:title="@string/tv_home"/>
     <item
         android:id="@+id/riwayat"
         android:enabled="true"
         android:icon="@drawable/baseline_event_note_24"
-        android:title="@string/riwayat"/>
+        android:title="@string/tv_history"/>
     <item
         android:id="@+id/notifikasi"
         android:enabled="true"
         android:icon="@drawable/baseline_notifications_24"
-        android:title="@string/notifikasi"/>
+        android:title="@string/tv_notification"/>
     <item
         android:id="@+id/akun"
         android:enabled="true"
         android:icon="@drawable/baseline_account_circle_24"
-        android:title="@string/akun"/>
+        android:title="@string/tv_account"/>
 
 </menu>
