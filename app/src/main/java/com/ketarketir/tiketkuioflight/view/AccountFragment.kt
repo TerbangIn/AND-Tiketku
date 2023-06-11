@@ -7,26 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ketarketir.tiketkuioflight.R
-import com.ketarketir.tiketkuioflight.viewmodel.BerandaViewModel
+import com.ketarketir.tiketkuioflight.viewmodel.AccountViewModel
 
-class BerandaFragment : Fragment() {
+class AccountFragment : Fragment() {
 
     companion object {
-        fun newInstance() = BerandaFragment()
+        fun newInstance() = AccountFragment()
     }
 
-    private lateinit var viewModel: BerandaViewModel
+    private lateinit var viewModel: AccountViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_beranda, container, false)
+        return inflater.inflate(R.layout.fragment_akun, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(BerandaViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(AccountViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

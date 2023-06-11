@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="10dp">
@@ -22,10 +21,10 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvHari"
+                android:id="@+id/tv_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/selasa"
+                android:text="@string/tuesday"
                 android:textSize="14sp"
                 android:textColor="@color/neutral05"
                 android:fontFamily="@font/poppins_bold"
@@ -37,13 +36,13 @@
                 android:layout_marginEnd="4dp"/>
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvTanggal"
+                android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/_01_03_2023"
                 android:textSize="12sp"
                 android:fontFamily="@font/poppins_medium"
-                app:layout_constraintTop_toBottomOf="@id/tvHari"
+                app:layout_constraintTop_toBottomOf="@id/tv_day"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 

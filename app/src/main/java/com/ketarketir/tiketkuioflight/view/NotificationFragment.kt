@@ -7,15 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ketarketir.tiketkuioflight.R
-import com.ketarketir.tiketkuioflight.viewmodel.NotifikasiViewModel
+import com.ketarketir.tiketkuioflight.viewmodel.NotificationViewModel
 
-class NotifikasiFragment : Fragment() {
+class NotificationFragment : Fragment() {
 
     companion object {
-        fun newInstance() = NotifikasiFragment()
+        fun newInstance() = NotificationFragment()
     }
 
-    private lateinit var viewModel: NotifikasiViewModel
+    private lateinit var viewModel: NotificationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +26,7 @@ class NotifikasiFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(NotifikasiViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(NotificationViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

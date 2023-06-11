@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/baseline_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.RegisterFragment">
 
@@ -12,7 +13,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -21,7 +22,7 @@
 
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/topAppBar"
-                    android:background="@color/white"
+                    android:background="@color/darkblue01"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:navigationIcon="@drawable/baseline_arrow_back_24" />
@@ -29,10 +30,10 @@
             </com.google.android.material.appbar.AppBarLayout>
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_daftar"
+                android:id="@+id/tv_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/daftar"
+                android:text="@string/tv_register"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:textColor="@color/black"
@@ -42,18 +43,18 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_nama"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/nama"
+                android:text="@string/tv_name"
                 android:textColor="@color/black"
                 android:layout_marginHorizontal="26dp"
                 android:layout_marginTop="24dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_daftar"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_register"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ti_nama"
+                android:id="@+id/ti_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="23dp"
@@ -64,13 +65,13 @@
                 app:boxCornerRadiusTopEnd="16dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_nama">
+                app:layout_constraintTop_toBottomOf="@id/tv_name">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tie_nama"
+                    android:id="@+id/tie_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nama_lengkap"/>
+                    android:hint="@string/et_full_name"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,12 +79,12 @@
                 android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/email"
+                android:text="@string/tv_email"
                 android:textColor="@color/black"
                 android:layout_marginHorizontal="26dp"
                 android:layout_marginTop="24dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ti_nama"/>
+                app:layout_constraintTop_toBottomOf="@id/ti_name"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_email"
@@ -108,10 +109,10 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_nomor_telepon"
+                android:id="@+id/tv_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/nomor_telepon"
+                android:text="@string/tv_phone_number"
                 android:textColor="@color/black"
                 android:layout_marginHorizontal="26dp"
                 android:layout_marginTop="24dp"
@@ -119,7 +120,7 @@
                 app:layout_constraintTop_toBottomOf="@id/ti_email"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ti_nomor_telepon"
+                android:id="@+id/ti_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="23dp"
@@ -130,13 +131,13 @@
                 app:boxCornerRadiusTopEnd="16dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_nomor_telepon">
+                app:layout_constraintTop_toBottomOf="@id/tv_phone_number">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tie_nomor_telepon"
+                    android:id="@+id/tie_phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/number_62"/>
+                    android:hint="@string/et_62"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -144,12 +145,12 @@
                 android:id="@+id/tv_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/password"
+                android:text="@string/tv_password"
                 android:textColor="@color/black"
                 android:layout_marginHorizontal="26dp"
                 android:layout_marginTop="24dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ti_nomor_telepon"/>
+                app:layout_constraintTop_toBottomOf="@id/ti_phone_number"/>
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -173,11 +174,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:hint="@string/masukkan_password"/>
+                    android:hint="@string/et_enter_password"/>
 
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_masuk"
+                android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cornerRadius="16dp"
@@ -185,33 +186,33 @@
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="24dp"
                 android:paddingVertical="12dp"
-                android:text="@string/daftar"
+                android:text="@string/btn_register"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ti_password"/>
 
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_belum_punya_akun"
+                android:id="@+id/tv_already_have_an_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/belum_punya_akun"
+                android:text="@string/tv_already_have_an_account"
                 android:textColor="@color/black"
                 android:layout_marginTop="50dp"
                 android:layout_marginStart="100dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_masuk"
+                app:layout_constraintTop_toBottomOf="@+id/btn_register"
                 />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_daftar_disini"
+                android:id="@+id/tv_register_here"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/daftar_disini"
+                android:text="@string/tv_login"
                 android:layout_marginTop="50dp"
                 android:layout_marginStart="10dp"
                 android:textColor="@color/darkblue04"
-                app:layout_constraintStart_toEndOf="@id/tv_belum_punya_akun"
-                app:layout_constraintTop_toBottomOf="@+id/btn_masuk"
+                app:layout_constraintStart_toEndOf="@id/tv_already_have_an_account"
+                app:layout_constraintTop_toBottomOf="@+id/btn_register"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

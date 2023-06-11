@@ -7,14 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ketarketir.tiketkuioflight.R
+import com.ketarketir.tiketkuioflight.viewmodel.BookingHistoryNonLoginViewModel
 
-class RiwayatPesananNonLoginFragment : Fragment() {
+class BookingHistoryNonLoginFragment : Fragment() {
 
     companion object {
-        fun newInstance() = RiwayatPesananNonLoginFragment()
+        fun newInstance() = BookingHistoryNonLoginFragment()
     }
 
-    private lateinit var viewModel: RiwayatPesananNonLoginViewModel
+    private lateinit var viewModel: BookingHistoryNonLoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +26,7 @@ class RiwayatPesananNonLoginFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(RiwayatPesananNonLoginViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(BookingHistoryNonLoginViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

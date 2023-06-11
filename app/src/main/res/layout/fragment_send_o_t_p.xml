@@ -4,19 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_cover"
     tools:context=".view.SendOTPFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
+            android:background="@color/darkblue01"
             app:navigationIcon="@drawable/baseline_arrow_back_24" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -30,40 +29,40 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_masukkan_otp"
+                android:id="@+id/tv_enter_otp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="26dp"
-                android:layout_marginTop="106dp"
-                android:text="@string/masukkan_otp"
-                android:textColor="@color/black"
+                android:layout_marginTop="250dp"
+                android:text="@string/tv_the_otp"
+                android:textColor="@color/darkblue03"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_kirimkan"
+                android:id="@+id/tv_sent_otp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="26dp"
                 android:layout_marginVertical="23dp"
-                android:text="@string/ketik_6_digit_kode_yang_dikirimkan"
+                android:text="@string/tv_otp_sent"
                 android:textColor="@color/neutral05"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_masukkan_otp" />
+                app:layout_constraintTop_toBottomOf="@id/tv_enter_otp" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_ke"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="26dp"
-                android:text="@string/ke"
+                android:text="@string/tv_to"
                 android:textColor="@color/neutral05"
-                app:layout_constraintEnd_toEndOf="@id/tv_kirimkan"
+                app:layout_constraintEnd_toEndOf="@id/tv_sent_otp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_kirimkan" />
+                app:layout_constraintTop_toBottomOf="@id/tv_sent_otp" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_number"
@@ -74,21 +73,22 @@
                 android:textColor="@color/neutral05"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/tv_ke"
-                app:layout_constraintTop_toBottomOf="@id/tv_kirimkan" />
+                app:layout_constraintTop_toBottomOf="@id/tv_sent_otp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_kode1"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="50dp"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="23dp"
+                android:layout_width="42dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 app:boxCornerRadiusBottomEnd="18dp"
                 app:boxCornerRadiusBottomStart="18dp"
                 app:boxCornerRadiusTopEnd="18dp"
                 app:boxCornerRadiusTopStart="18dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_number">
+                app:layout_constraintTop_toBottomOf="@id/tv_number"
+                android:gravity="center">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_kode1"
@@ -104,16 +104,17 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_kode2"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="50dp"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="23dp"
+                android:layout_width="42dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 app:boxCornerRadiusBottomEnd="18dp"
                 app:boxCornerRadiusBottomStart="18dp"
                 app:boxCornerRadiusTopEnd="18dp"
                 app:boxCornerRadiusTopStart="18dp"
                 app:layout_constraintStart_toEndOf="@id/ti_kode1"
-                app:layout_constraintTop_toBottomOf="@id/tv_number">
+                app:layout_constraintTop_toBottomOf="@id/tv_number"
+                android:gravity="center">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_kode2"
@@ -129,16 +130,17 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_kode3"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="50dp"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="23dp"
+                android:layout_width="42dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 app:boxCornerRadiusBottomEnd="18dp"
                 app:boxCornerRadiusBottomStart="18dp"
                 app:boxCornerRadiusTopEnd="18dp"
                 app:boxCornerRadiusTopStart="18dp"
                 app:layout_constraintStart_toEndOf="@id/ti_kode2"
-                app:layout_constraintTop_toBottomOf="@id/tv_number">
+                app:layout_constraintTop_toBottomOf="@id/tv_number"
+                android:gravity="center">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_kode3"
@@ -154,16 +156,17 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_kode4"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="50dp"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="23dp"
+                android:layout_width="42dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 app:boxCornerRadiusBottomEnd="18dp"
                 app:boxCornerRadiusBottomStart="18dp"
                 app:boxCornerRadiusTopEnd="18dp"
                 app:boxCornerRadiusTopStart="18dp"
                 app:layout_constraintStart_toEndOf="@id/ti_kode3"
-                app:layout_constraintTop_toBottomOf="@id/tv_number">
+                app:layout_constraintTop_toBottomOf="@id/tv_number"
+                android:gravity="center">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_kode4"
@@ -179,16 +182,17 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/ti_kode5"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="50dp"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="23dp"
+                android:layout_width="42dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 app:boxCornerRadiusBottomEnd="18dp"
                 app:boxCornerRadiusBottomStart="18dp"
                 app:boxCornerRadiusTopEnd="18dp"
                 app:boxCornerRadiusTopStart="18dp"
                 app:layout_constraintStart_toEndOf="@id/ti_kode4"
-                app:layout_constraintTop_toBottomOf="@id/tv_number">
+                app:layout_constraintTop_toBottomOf="@id/tv_number"
+                android:gravity="center">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_kode5"
@@ -201,7 +205,56 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Repeat the above TextInputLayout and TextInputEditText for et_kode2 until et_kode6 -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_kode6"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="42dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp"
+                app:layout_constraintStart_toEndOf="@id/ti_kode5"
+                app:layout_constraintTop_toBottomOf="@id/tv_number"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_kode6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/neutral02"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_duration_resent_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="24dp"
+                android:text="@string/tv_otp_resent_after"
+                android:textColor="@color/neutral05"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ti_kode1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_resent_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="24dp"
+                android:text="@string/tv_otp_request"
+                android:textColor="@color/darkblue05"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_duration_resent_otp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
