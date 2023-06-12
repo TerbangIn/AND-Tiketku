@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_notification"
-        tools:itemCount="5"
+        tools:itemCount="10"
         tools:listitem="@layout/item_notification"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
