@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
@@ -17,6 +18,7 @@ class UserManager(private val context: Context) {
     private val EMAIL = stringPreferencesKey("email")
     private val IS_LOGIN_KEY = booleanPreferencesKey("is_login")
     private val TOKEN = stringPreferencesKey("token")
+    private val USER_ID = intPreferencesKey("user_id")
 
     companion object {
         @SuppressLint("StaticFieldLeak")
@@ -29,11 +31,12 @@ class UserManager(private val context: Context) {
         }
     }
 
-    suspend fun saveData (email:String, is_login_key:Boolean,token:String){
+    suspend fun saveData (email:String, is_login_key:Boolean,token:String, user_id:Int){
         context.datastore.edit {
             it [EMAIL] = email
             it [IS_LOGIN_KEY] = is_login_key
             it [TOKEN] = token
+            it [USER_ID] = user_id
         }
     }
 
