@@ -1,6 +1,7 @@
 package com.ketarketir.tiketkuioflight.viewmodel
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -39,13 +40,13 @@ class UserViewModel:ViewModel() {
                         val data = response.body()
                         _users.postValue(data!!)
                     } else{
-                        _users.postValue(null)
+                        Log.e("Error : ", "onFailure : ${response.message()}")
                     }
                 }
 
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onFailure(call: Call<List<Data>>, t: Throwable) {
-                    _users.postValue(null)
+                    Log.e("Error : ", "onFailure : ${t.message}")
                 }
 
             })
@@ -60,13 +61,13 @@ class UserViewModel:ViewModel() {
                         val data = response.body()
                         _token.postValue(data!!.token)
                     } else{
-                        _token.postValue(null)
+                        Log.e("Error : ", "onFailure : ${response.message()}")
                     }
                 }
 
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onFailure(call: Call<DataX>, t: Throwable) {
-                    _token.postValue(null)
+                    Log.e("Error : ", "onFailure : ${t.message}")
                 }
 
             })
@@ -81,13 +82,13 @@ class UserViewModel:ViewModel() {
                         val data = response.body()
                         _users.postValue(data!!)
                     }else{
-                        _users.postValue(null)
+                        Log.e("Error : ", "onFailure : ${response.message()}")
                     }
                 }
 
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onFailure(call: Call<List<Data>>, t: Throwable) {
-                    _users.postValue(null)
+                    Log.e("Error : ", "onFailure : ${t.message}")
                 }
 
             })
@@ -102,13 +103,13 @@ class UserViewModel:ViewModel() {
                         val data = response.body()
                         _detailUser.postValue(data!!)
                     }else{
-                        _detailUser.postValue(null)
+                        Log.e("Error : ", "onFailure : ${response.message()}")
                     }
                 }
 
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onFailure(call: Call<Data>, t: Throwable) {
-                    _users.postValue(null)
+                    Log.e("Error : ", "onFailure : ${t.message}")
                 }
 
             })
