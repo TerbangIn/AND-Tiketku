@@ -21,7 +21,7 @@ class BookingHistoryNonLoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_riwayat_pesanan_non_login, container, false)
+        return inflater.inflate(R.layout.fragment_booking_history_non_login, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

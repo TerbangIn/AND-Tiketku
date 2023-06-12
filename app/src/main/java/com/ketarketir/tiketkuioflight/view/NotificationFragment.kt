@@ -21,7 +21,7 @@ class NotificationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_notifikasi, container, false)
+        return inflater.inflate(R.layout.fragment_notification, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
