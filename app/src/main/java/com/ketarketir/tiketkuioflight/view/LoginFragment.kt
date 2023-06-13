@@ -49,14 +49,14 @@ class LoginFragment : Fragment() {
     }
 
     private fun login(){
-        val inputEmail = binding.tiEmailPhoneNumber.editText.toString()
-        val inputPassword = binding.tiPassword.editText.toString()
+        val inputEmail = binding.tieEmailNomorTelepon.text.toString()
+        val inputPassword = binding.tiePassword.text.toString()
 
         if (inputEmail.isEmpty() || inputPassword.isEmpty()){
-            Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
         } else{
             userViewModel.callApiPostUserLogin(inputEmail, inputPassword)
-            userViewModel.detailUser.observe(viewLifecycleOwner, Observer {
+            userViewModel.loginUsers.observe(viewLifecycleOwner, Observer {
                 if (inputEmail == it.email && inputPassword==it.password){
                     val userId = it.id
                     val email = it.email

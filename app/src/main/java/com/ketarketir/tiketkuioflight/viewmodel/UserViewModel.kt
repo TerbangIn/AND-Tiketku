@@ -7,10 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
-import com.ketarketir.tiketkuioflight.model.user.Data
-import com.ketarketir.tiketkuioflight.model.user.DataPostUser
-import com.ketarketir.tiketkuioflight.model.user.DataPostUserLogin
-import com.ketarketir.tiketkuioflight.model.user.DataX
+import com.ketarketir.tiketkuioflight.model.user.*
 import com.ketarketir.tiketkuioflight.networking.ApiClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,6 +16,9 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class UserViewModel:ViewModel() {
+
+    private val _loginUsers: MutableLiveData<Users> = MutableLiveData()
+    val loginUsers : LiveData<Users> get() = _loginUsers
 
     private val _users: MutableLiveData<List<Data>> = MutableLiveData()
     val users : LiveData<List<Data>> get() = _users
@@ -59,7 +59,8 @@ class UserViewModel:ViewModel() {
                 override fun onResponse(call: Call<DataX>, response: Response<DataX>) {
                     if (response.isSuccessful){
                         val data = response.body()
-                        _token.postValue(data!!.token)
+                        _loginUsers.postValue(data!!.users)
+                        _token.postValue(data.token)
                     } else{
                         Log.e("Error : ", "onFailure : ${response.message()}")
                     }
@@ -94,8 +95,8 @@ class UserViewModel:ViewModel() {
             })
     }
 
-    fun callApiGetDetailUser(bearerToken: String){
-        ApiClient.RetrofitClient.instance.getDetailUser(bearerToken)
+    fun callApiGetDetailUser(bearerToken: String, id:Int){
+        ApiClient.RetrofitClient.instance.getDetailUser(bearerToken, id)
             .enqueue(object :Callback<Data>{
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onResponse(call: Call<Data>, response: Response<Data>) {
