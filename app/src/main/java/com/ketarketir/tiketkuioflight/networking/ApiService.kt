@@ -9,6 +9,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiService {
 
@@ -16,8 +17,11 @@ interface ApiService {
     @GET("/api/v1/user")
     fun getAllUser(@Header("Authorization") bearerToken: String): Call<List<Data>>
 
-    @GET("/api/v1/user")
-    fun getDetailUser(@Header("Authorization") bearerToken: String): Call<Data>
+    @GET("/api/v1/user/{id}")
+    fun getDetailUser(
+        @Header("Authorization") bearerToken: String,
+        @Path("id") id: Int
+    ): Call<Data>
 
     @POST("/api/v1/user/login")
     fun loginUser(
@@ -32,5 +36,11 @@ interface ApiService {
     //airport
     @GET("/api/v1/airport/")
     fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<List<com.ketarketir.tiketkuioflight.model.airport.Data>>
+
+    @GET("/api/v1/airport/{id}")
+    fun getDetailAirport(
+        @Header("Authorization") bearerToken: String,
+        @Path("id") id:Int
+    )
 
 }
