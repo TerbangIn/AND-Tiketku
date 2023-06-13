@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+        binding.btnBottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.riwayat -> {
                     findNavController().navigate(R.id.action_homeFragment_to_bookingHistoryNonLoginFragment)
