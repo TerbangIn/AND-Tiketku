@@ -39,7 +39,6 @@ class LoginFragment : Fragment() {
 
         binding.btnLogin.setOnClickListener {
             login()
-            findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
         }
         binding.tvRegisterHere.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment2_to_registerFragment)
@@ -68,6 +67,7 @@ class LoginFragment : Fragment() {
                         }
                     })
                     Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
                 } else{
                     Toast.makeText(requireContext(), "Login Failed, Incorrect Email/Password", Toast.LENGTH_SHORT).show()
                 }

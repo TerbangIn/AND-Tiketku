@@ -30,5 +30,5 @@ interface ApiService {
     ): Call<List<Data>>
 
     //airport
-    
+
 }
