@@ -13,20 +13,22 @@ import retrofit2.http.POST
 interface ApiService {
 
     //user
-
-    @GET("user")
+    @GET("/api/v1/user")
     fun getAllUser(@Header("Authorization") bearerToken: String): Call<List<Data>>
 
-    @GET("user")
+    @GET("/api/v1/user")
     fun getDetailUser(@Header("Authorization") bearerToken: String): Call<Data>
 
-    @POST("user/login")
+    @POST("/api/v1/user/login")
     fun loginUser(
         @Body request: DataPostUserLogin
     ): Call<DataX>
 
-    @POST("user/register")
+    @POST("/api/v1/user/register")
     fun registerUser(
         @Body request: DataPostUser
     ): Call<List<Data>>
+
+    //airport
+    
 }
