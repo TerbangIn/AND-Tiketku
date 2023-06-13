@@ -30,5 +30,7 @@ interface ApiService {
     ): Call<List<Data>>
 
     //airport
+    @GET("/api/v1/airport/")
+    fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<List<com.ketarketir.tiketkuioflight.model.airport.Data>>
 
 }
