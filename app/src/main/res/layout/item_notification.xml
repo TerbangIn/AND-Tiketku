@@ -24,7 +24,7 @@
             />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_alert_promosi"
+            android:id="@+id/tv_promotion_alert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
@@ -36,19 +36,19 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_tanggal"
+            android:id="@+id/tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:text="@string/_20_maret_14_04"
+            android:text="@string/tv__20_maret_14_04"
             android:textColor="@color/neutral03"
             android:fontFamily="@font/poppins_regular"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/tv_alert_promosi"
+            app:layout_constraintStart_toEndOf="@id/tv_promotion_alert"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_potongan"
+            android:id="@+id/tv_discount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
@@ -58,10 +58,10 @@
             android:fontFamily="@font/poppins_regular"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/iv_icon_bell"
-            app:layout_constraintTop_toBottomOf="@id/tv_tanggal"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_date"/>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_syarat"
+            android:id="@+id/tv_terms_and_condition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
@@ -71,7 +71,7 @@
             android:fontFamily="@font/poppins_regular"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/iv_icon_bell"
-            app:layout_constraintTop_toBottomOf="@id/tv_potongan"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_discount"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

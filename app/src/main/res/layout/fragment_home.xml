@@ -17,7 +17,7 @@
             android:layout_marginVertical="32dp"
             android:layout_marginHorizontal="16dp">
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_say_hello"
+                android:id="@+id/tv_sign_say_hello"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/neutral05"
@@ -30,20 +30,20 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvContainer"
+                android:id="@+id/cv_container"
                 android:layout_width="match_parent"
                 android:layout_height="470dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:elevation="8dp"
                 app:cardCornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_say_hello">
+                app:layout_constraintTop_toBottomOf="@+id/tv_sign_say_hello">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/containerDeparture"
+                        android:id="@+id/cv_plane_flight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:strokeColor="@color/darkblue03"
@@ -55,7 +55,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
                             <LinearLayout
-                                android:id="@+id/containerFrom"
+                                android:id="@+id/ll_from"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
@@ -65,7 +65,7 @@
                                 android:layout_margin="20dp">
 
                                 <com.google.android.material.imageview.ShapeableImageView
-                                    android:id="@+id/iv_plane_1"
+                                    android:id="@+id/ic_plane_1"
                                     android:layout_width="20dp"
                                     android:layout_height="22dp"
                                     android:src="@drawable/baseline_icon_plane" />
@@ -80,7 +80,7 @@
                                     android:fontFamily="@font/poppins_regular"/>
 
                                 <com.google.android.material.textview.MaterialTextView
-                                    android:id="@+id/tv_destination"
+                                    android:id="@+id/tv_destination_from"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/tv_jakarta_jkt"
@@ -91,7 +91,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:id="@+id/containerDivider"
+                                android:id="@+id/cv_divider"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
@@ -99,14 +99,14 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 android:layout_marginStart="35dp"
                                 android:gravity="center"
-                                app:layout_constraintTop_toBottomOf="@+id/containerFrom">
+                                app:layout_constraintTop_toBottomOf="@+id/ll_from">
                                 <com.google.android.material.divider.MaterialDivider
                                     android:id="@+id/divider_1"
                                     android:layout_width="220dp"
                                     android:layout_height="1dp"
                                     android:background="@color/darkblue03"/>
                                 <com.google.android.material.imageview.ShapeableImageView
-                                    android:id="@+id/btnSwitch"
+                                    android:id="@+id/btn_switch"
                                     android:layout_width="30dp"
                                     android:layout_height="30dp"
                                     android:layout_marginStart="10dp"
@@ -114,23 +114,23 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:id="@+id/containerTo"
+                                android:id="@+id/ll_to"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/containerDivider"
+                                app:layout_constraintTop_toBottomOf="@+id/cv_divider"
                                 android:layout_marginHorizontal="20dp">
 
                                 <com.google.android.material.imageview.ShapeableImageView
-                                    android:id="@+id/planeTo"
+                                    android:id="@+id/ic_plane_2"
                                     android:layout_width="20dp"
                                     android:layout_height="22dp"
                                     android:src="@drawable/baseline_icon_plane" />
 
                                 <com.google.android.material.textview.MaterialTextView
-                                    android:id="@+id/tvTo"
+                                    android:id="@+id/tv_to"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/tv_to"
@@ -139,7 +139,7 @@
                                     android:fontFamily="@font/poppins_regular"/>
 
                                 <com.google.android.material.textview.MaterialTextView
-                                    android:id="@+id/tvDestinationTo"
+                                    android:id="@+id/tv_destination_to"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/tv_melbourne_mlb"
@@ -152,13 +152,13 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </com.google.android.material.card.MaterialCardView>
                     <LinearLayout
-                        android:id="@+id/containerRoundTrip"
+                        android:id="@+id/ll_switch_round_trip"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/containerDeparture"
+                        app:layout_constraintTop_toBottomOf="@+id/cv_plane_flight"
                         android:layout_marginVertical="15dp"
                         android:layout_marginHorizontal="25dp">
                         <com.google.android.material.textview.MaterialTextView
@@ -179,17 +179,17 @@
                     </LinearLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/containerChooseCriteria"
+                        android:id="@+id/cl_choose_criteria"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@+id/containerRoundTrip"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_switch_round_trip"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:layout_marginTop="20dp"
                         android:layout_marginHorizontal="25dp">
 
                         <LinearLayout
-                            android:id="@+id/containerDepartureChoose"
+                            android:id="@+id/ll_container_departure"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
@@ -197,13 +197,13 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
                             <com.google.android.material.imageview.ShapeableImageView
-                                android:id="@+id/imgDeparture"
+                                android:id="@+id/ic_departure"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:src="@drawable/baseline_date_range_24"
                                 android:layout_marginEnd="10dp"/>
                             <LinearLayout
-                                android:id="@+id/containerContentDeparture"
+                                android:id="@+id/ll_departure"
                                 android:orientation="vertical"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
@@ -234,22 +234,22 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/containerReturn"
+                            android:id="@+id/ll_container_return"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:gravity="center"
-                            app:layout_constraintStart_toEndOf="@+id/containerDepartureChoose"
+                            app:layout_constraintStart_toEndOf="@+id/ll_container_departure"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintEnd_toEndOf="parent">
                             <com.google.android.material.imageview.ShapeableImageView
-                                android:id="@+id/imgReturn"
+                                android:id="@+id/ic_return"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:src="@drawable/baseline_date_range_24"
                                 android:layout_marginEnd="10dp"/>
                             <LinearLayout
-                                android:id="@+id/containerContentReturn"
+                                android:id="@+id/ll_return"
                                 android:orientation="vertical"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
@@ -280,23 +280,23 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/containerPassengers"
+                            android:id="@+id/ll_container_passenger"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:gravity="center"
                             android:layout_marginTop="20dp"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/containerDepartureChoose"
+                            app:layout_constraintTop_toBottomOf="@id/ll_container_departure"
                             >
                             <com.google.android.material.imageview.ShapeableImageView
-                                android:id="@+id/imgPassenger"
+                                android:id="@+id/iv_passenger"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:src="@drawable/baseline_person_24"
                                 android:layout_marginEnd="10dp"/>
                             <LinearLayout
-                                android:id="@+id/containerPassenger"
+                                android:id="@+id/ll_passenger"
                                 android:orientation="vertical"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
@@ -309,7 +309,7 @@
                                     android:textSize="16sp"/>
 
                                 <com.google.android.material.textview.MaterialTextView
-                                    android:id="@+id/tv_passengers"
+                                    android:id="@+id/tv_passenger"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/tv_2_passengers"
@@ -327,15 +327,15 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/containerSeat"
+                            android:id="@+id/ll_container_seat_class"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:gravity="center"
                             android:layout_marginTop="20dp"
                             android:layout_marginStart="5dp"
-                            app:layout_constraintTop_toBottomOf="@id/containerReturn"
-                            app:layout_constraintStart_toEndOf="@+id/containerPassengers">
+                            app:layout_constraintTop_toBottomOf="@id/ll_container_return"
+                            app:layout_constraintStart_toEndOf="@+id/ll_container_passenger">
                             <com.google.android.material.imageview.ShapeableImageView
                                 android:id="@+id/iv_seat_class"
                                 android:layout_width="24dp"
@@ -343,7 +343,7 @@
                                 android:src="@drawable/baseline_airline_seat_recline_normal_24"
                                 android:layout_marginEnd="10dp"/>
                             <LinearLayout
-                                android:id="@+id/containerContentSeat"
+                                android:id="@+id/ll_seat_class"
                                 android:orientation="vertical"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
@@ -384,7 +384,7 @@
                         android:fontFamily="@font/poppins_bold"
                         android:text="@string/btn_search_flights"
                         android:layout_marginVertical="10dp"
-                        app:layout_constraintTop_toBottomOf="@id/containerChooseCriteria"
+                        app:layout_constraintTop_toBottomOf="@id/cl_choose_criteria"
                         app:layout_constraintBottom_toBottomOf="parent"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -401,13 +401,13 @@
                 android:layout_marginTop="24dp"
                 app:fontFamily="@font/poppins_medium"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cvContainer" />
+                app:layout_constraintTop_toBottomOf="@+id/cv_container" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+        android:id="@+id/btn_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
