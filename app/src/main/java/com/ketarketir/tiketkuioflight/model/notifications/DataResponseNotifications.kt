@@ -8,4 +8,6 @@ data class DataResponseNotifications(
     val `data`: List<Data>,
     @SerializedName("status")
     val status: String
+//    @SerializedName("status")
+//val status: String
 )

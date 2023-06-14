@@ -20,4 +20,6 @@ data class Data(
     val userId: Int,
     @SerializedName("users")
     val users: Users
+//    @SerializedName("users")
+//val users: Users
 )

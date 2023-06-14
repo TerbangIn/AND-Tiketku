@@ -26,4 +26,6 @@ data class Users(
     val role: String,
     @SerializedName("updatedAt")
     val updatedAt: String
+//    @SerializedName("updatedAt")
+//val updatedAt: String
 )
