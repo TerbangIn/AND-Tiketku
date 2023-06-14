@@ -7,26 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ketarketir.tiketkuioflight.R
-import com.ketarketir.tiketkuioflight.viewmodel.BookingHistoryNonLoginViewModel
+import com.ketarketir.tiketkuioflight.viewmodel.HomeSearchDestinationViewModel
 
-class BookingHistoryNonLoginFragment : Fragment() {
+class HomeSearchDestinationFragment : Fragment() {
 
     companion object {
-        fun newInstance() = BookingHistoryNonLoginFragment()
+        fun newInstance() = HomeSearchDestinationFragment()
     }
 
-    private lateinit var viewModel: BookingHistoryNonLoginViewModel
+    private lateinit var viewModel: HomeSearchDestinationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_booking_history_non_login, container, false)
+        return inflater.inflate(R.layout.fragment_home_search_destination, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(BookingHistoryNonLoginViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(HomeSearchDestinationViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
