@@ -23,6 +23,7 @@
                 android:textColor="@color/neutral05"
                 android:textStyle="bold"
                 android:textSize="22sp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="@string/tv_say_Hello"
                 app:layout_constraintStart_toStartOf="parent"
