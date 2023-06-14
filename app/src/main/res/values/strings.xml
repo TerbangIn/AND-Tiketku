@@ -145,7 +145,7 @@
     <string name="btn_account">Account</string>
 
     <string name="tv_booking_biodata">Booking Biodata</string>
-    <string name="tv_booking_personal_data">Booking Persoal Data</string>
+    <string name="tv_booking_personal_data">Booking Personal Data</string>
     <string name="tv_got_family_name">Got a Family Name</string>
     <string name="tv_family_name">Family Name</string>
     
@@ -198,6 +198,12 @@
     <string name="tv_2_passengers">2 Passengers</string>
     <string name="tv__20_maret_14_04">20 Maret, 14:04</string>
     <string name="tv_jet_air_economy">Jet Air - Economy</string>
+    <string name="tv_mlb">MLB</string>
+    <string name="tv__11_00">11:00</string>
+    <string name="tv_direct">Direct</string>
+    <string name="tv__4h_0m">4h 0m</string>
+    <string name="tv_jkt">JKT</string>
+    <string name="tv__07_00">07:00</string>
 
     <string-array name="tv_online_payment">
         <item>Gopay</item>
