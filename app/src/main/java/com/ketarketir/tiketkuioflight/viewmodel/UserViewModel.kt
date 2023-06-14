@@ -30,7 +30,6 @@ class UserViewModel:ViewModel() {
     val token : LiveData<String> get() = _token
 
 
-
     fun callApiPostRegisterUser(email :String, password:String, first_name:String, phone_number:String){
         ApiClient.RetrofitClient.instance.registerUser(DataPostUser(email,password, first_name, phone_number))
             .enqueue(object :Callback<List<Data>>{
