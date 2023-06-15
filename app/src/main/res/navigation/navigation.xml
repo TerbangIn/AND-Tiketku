@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment22"
             app:destination="@id/loginFragment2" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
 
     </fragment>
     <fragment
@@ -56,18 +59,7 @@
             android:id="@+id/action_resetPasswordFragment_to_loginFragment2"
             app:destination="@id/loginFragment2" />
     </fragment>
-    <fragment
-        android:id="@+id/bookingHistoryNonLoginFragment"
-        android:name="com.ketarketir.tiketkuioflight.view.BookingHistoryNonLoginFragment"
-        android:label="fragment_riwayat_pesanan_non_login"
-        tools:layout="@layout/fragment_booking_history_non_login" >
-        <action
-            android:id="@+id/action_bookingHistoryNonLoginFragment_to_loginFragment2"
-            app:destination="@id/loginFragment2" />
-        <action
-            android:id="@+id/action_bookingHistoryNonLoginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/sendOTPFragment"
         android:name="com.ketarketir.tiketkuioflight.view.SendOTPFragment"
@@ -88,18 +80,14 @@
         <action
             android:id="@+id/action_homeFragment_to_notificationFragment"
             app:destination="@id/notificationFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_bookingHistoryNonLoginFragment"
-            app:destination="@id/bookingHistoryNonLoginFragment" />
+
         <action
             android:id="@+id/action_homeFragment_self"
             app:destination="@id/homeFragment" />
         <action
             android:id="@+id/action_homeFragment_to_loginFragment2"
             app:destination="@id/loginFragment2" />
-        <action
-            android:id="@+id/action_homeFragment_to_bookingHistoryLoginFragment"
-            app:destination="@id/bookingHistoryLoginFragment" />
+
     </fragment>
 
     <fragment
@@ -114,11 +102,7 @@
             android:id="@+id/action_splashFragment_to_loginFragment2"
             app:destination="@id/loginFragment2" />
     </fragment>
-    <fragment
-        android:id="@+id/bookingHistoryLoginFragment"
-        android:name="com.ketarketir.tiketkuioflight.view.BookingHistoryLoginFragment"
-        android:label="fragment_booking_history_login"
-        tools:layout="@layout/fragment_booking_history_login" />
+
     <fragment
         android:id="@+id/loginFragment2"
         android:name="com.ketarketir.tiketkuioflight.view.LoginFragment"

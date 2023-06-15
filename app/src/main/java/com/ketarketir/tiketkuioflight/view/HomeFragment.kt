@@ -38,10 +38,10 @@ class HomeFragment : Fragment() {
 
         binding.btnBottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.riwayat -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_bookingHistoryNonLoginFragment)
-                    true
-                }
+//                R.id.riwayat -> {
+//                    findNavController().navigate(R.id.action_homeFragment_to_bookingHistoryNonLoginFragment)
+//                    true
+//                }
                 R.id.notifikasi -> {
                     findNavController().navigate(R.id.action_homeFragment_to_notificationFragment)
                     true
