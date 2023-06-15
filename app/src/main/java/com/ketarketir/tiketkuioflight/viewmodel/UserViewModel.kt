@@ -21,6 +21,9 @@ class UserViewModel:ViewModel() {
     private val _loginUsers: MutableLiveData<Users> = MutableLiveData()
     val loginUsers : LiveData<Users> get() = _loginUsers
 
+    private val _registerUser : MutableLiveData<DataXX> = MutableLiveData()
+    val registerUser : LiveData<DataXX> get() = _registerUser
+
     private val _users: MutableLiveData<List<Data>> = MutableLiveData()
     val users : LiveData<List<Data>> get() = _users
 
@@ -33,20 +36,22 @@ class UserViewModel:ViewModel() {
 
     fun callApiPostRegisterUser(email :String, password:String, first_name:String, phone_number:String){
         ApiClient.RetrofitClient.instance.registerUser(DataPostUser(email,password, first_name, phone_number))
-            .enqueue(object :Callback<List<Data>>{
+            .enqueue(object :Callback<DataResponseUserRegister>{
                 @SuppressLint("NullSafeMutableLiveData")
-                override fun onResponse(call: Call<List<Data>>, response: Response<List<Data>>) {
+                override fun onResponse(call: Call<DataResponseUserRegister>, response: Response<DataResponseUserRegister>) {
                     if (response.isSuccessful){
                         val data = response.body()
-                        _users.postValue(data!!)
+                        _registerUser.postValue(data!!.data)
                     } else{
                         Log.e("Error : ", "onFailure : ${response.message()}")
+                        _registerUser.postValue(null)
                     }
                 }
 
                 @SuppressLint("NullSafeMutableLiveData")
-                override fun onFailure(call: Call<List<Data>>, t: Throwable) {
+                override fun onFailure(call: Call<DataResponseUserRegister>, t: Throwable) {
                     Log.e("Error : ", "onFailure : ${t.message}")
+                    _registerUser.postValue(null)
                 }
 
             })
@@ -60,9 +65,7 @@ class UserViewModel:ViewModel() {
                     if (response.isSuccessful){
                         val data = response.body()
                         _loginUsers.postValue(data!!.data.users)
-                        Log.e("users : ", data.data.users.toString())
                         _token.postValue(data.data.token)
-                        Log.e("token : ", data.data.token)
                     } else{
                         _token.postValue(null)
                         Log.e("Error : ", "onFailure : ${response.message()}")

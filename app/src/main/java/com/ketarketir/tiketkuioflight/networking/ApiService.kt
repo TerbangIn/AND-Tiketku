@@ -29,7 +29,7 @@ interface ApiService {
     @POST("api/v1/user/register")
     fun registerUser(
         @Body request: DataPostUser
-    ): Call<List<Data>>
+    ): Call<DataResponseUserRegister>
 
     //airport
     @GET("api/v1/airport/")

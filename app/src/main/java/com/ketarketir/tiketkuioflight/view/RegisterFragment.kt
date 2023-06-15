@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentRegisterBinding
@@ -40,17 +41,29 @@ class RegisterFragment : Fragment() {
     }
 
     private fun register(){
-        val inputName = binding.tiName.toString()
-        val inputEmail = binding.tiEmail.toString()
-        val phoneNumber = binding.tiPhoneNumber.toString()
-        val password = binding.tiPassword.toString()
+        val inputName = binding.tieName.text.toString()
+        val inputEmail = binding.tieEmail.text.toString()
+        val phoneNumber = binding.tiePhoneNumber.text.toString()
+        val password = binding.tiePassword.text.toString()
+        val confirmPassword = binding.tieConfirmPassword.text.toString()
 
         if (inputName.isEmpty() || inputEmail.isEmpty() || phoneNumber.isEmpty() || password.isEmpty()){
             Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
         } else{
-            userViewModel.callApiPostRegisterUser(inputName, inputEmail, phoneNumber, password)
-            Toast.makeText(requireContext(), "Register Success", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment22)
+            if (password!= confirmPassword){
+                binding.tieConfirmPassword.error = "Confirm password tidak sama dengan password"
+                binding.tieConfirmPassword.requestFocus()
+            } else{
+                userViewModel.callApiPostRegisterUser(inputName, inputEmail, phoneNumber, password)
+                userViewModel.registerUser.observe(viewLifecycleOwner, Observer {
+                    if (it!= null){
+                        Toast.makeText(requireContext(), "Register Success", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_registerFragment_to_loginFragment22)
+                    } else{
+
+                    }
+                })
+            }
         }
     }
 
