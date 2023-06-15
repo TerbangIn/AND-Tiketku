@@ -8,7 +8,7 @@ data class DataPostUser(
     @SerializedName("password")
     val password: String,
     @SerializedName("first_name")
-    val first_name: String,
+    val firstName: String,
     @SerializedName("phone_number")
-    val phone_number: String
+    val phoneNumber: String
 )

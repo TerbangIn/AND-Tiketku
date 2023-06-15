@@ -2,6 +2,7 @@ package com.ketarketir.tiketkuioflight.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.provider.Settings.Global
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -56,23 +57,23 @@ class LoginFragment : Fragment() {
             Toast.makeText(requireActivity(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
         } else{
             userViewModel.callApiPostUserLogin(inputEmail, inputPassword)
-            userViewModel.loginUsers.observe(viewLifecycleOwner, Observer {
-                if (inputEmail == it.email && inputPassword==it.password){
-                    val userId = it.id
-                    val email = it.email
-                    userViewModel.token.observe(viewLifecycleOwner, Observer { token ->
-                        val bearerToken = token.toString()
+            userViewModel.token.observe(viewLifecycleOwner, Observer {token->
+                if (token!=null){
+                    val userToken = token
+                    userViewModel.loginUsers.observe(viewLifecycleOwner, Observer {
+                        val userId = it.id
+                        val email = it.email
                         GlobalScope.async {
-                            userManager.saveData(email, true, bearerToken, userId)
+                            userManager.saveData(email, true, userToken, userId)
                         }
                     })
+
                     Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
                 } else{
                     Toast.makeText(requireContext(), "Login Failed, Incorrect Email/Password", Toast.LENGTH_SHORT).show()
                 }
             })
-
         }
 
     }

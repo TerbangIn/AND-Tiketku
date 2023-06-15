@@ -33,7 +33,6 @@ class RegisterFragment : Fragment() {
 
         binding.btnRegister.setOnClickListener {
             register()
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment22)
         }
         binding.tvLogin.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment22)
@@ -51,6 +50,7 @@ class RegisterFragment : Fragment() {
         } else{
             userViewModel.callApiPostRegisterUser(inputName, inputEmail, phoneNumber, password)
             Toast.makeText(requireContext(), "Register Success", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment22)
         }
     }
 

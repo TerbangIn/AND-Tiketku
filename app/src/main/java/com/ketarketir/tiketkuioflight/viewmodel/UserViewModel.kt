@@ -2,6 +2,7 @@ package com.ketarketir.tiketkuioflight.viewmodel
 
 import android.annotation.SuppressLint
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -53,21 +54,24 @@ class UserViewModel:ViewModel() {
 
     fun callApiPostUserLogin(email: String, password: String){
         ApiClient.RetrofitClient.instance.loginUser(DataPostUserLogin(email,password))
-            .enqueue(object : Callback<DataX>{
+            .enqueue(object : Callback<DataResponseUserLogin>{
                 @SuppressLint("NullSafeMutableLiveData")
-                override fun onResponse(call: Call<DataX>, response: Response<DataX>) {
+                override fun onResponse(call: Call<DataResponseUserLogin>, response: Response<DataResponseUserLogin>) {
                     if (response.isSuccessful){
                         val data = response.body()
-                        _loginUsers.postValue(data!!.users)
-                        _token.postValue(data.token)
+                        _loginUsers.postValue(data!!.data.users)
+                        Log.e("users : ", data.data.users.toString())
+                        _token.postValue(data.data.token)
+                        Log.e("token : ", data.data.token)
                     } else{
+                        _token.postValue(null)
                         Log.e("Error : ", "onFailure : ${response.message()}")
                     }
                 }
-
                 @SuppressLint("NullSafeMutableLiveData")
-                override fun onFailure(call: Call<DataX>, t: Throwable) {
+                override fun onFailure(call: Call<DataResponseUserLogin>, t: Throwable) {
                     Log.e("Error : ", "onFailure : ${t.message}")
+                    _token.postValue(null)
                 }
 
             })
