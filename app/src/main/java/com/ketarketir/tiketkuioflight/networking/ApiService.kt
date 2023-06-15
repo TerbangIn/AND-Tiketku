@@ -24,7 +24,7 @@ interface ApiService {
     @POST("api/v1/user/login")
     fun loginUser(
         @Body request: DataPostUserLogin
-    ): Call<DataX>
+    ): Call<DataResponseUserLogin>
 
     @POST("api/v1/user/register")
     fun registerUser(

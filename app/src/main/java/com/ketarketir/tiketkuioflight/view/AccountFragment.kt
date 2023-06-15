@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.R
@@ -40,6 +41,7 @@ class AccountFragment : Fragment() {
                 userManager.clearData()
             }
             findNavController().navigate(R.id.action_accountFragment_to_loginFragment2)
+            Toast.makeText(requireContext(), "Logout Berhasil, Anda telah Logout", Toast.LENGTH_SHORT).show()
         }
     }
 
