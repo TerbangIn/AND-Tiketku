@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.ketarketir.tiketkuioflight.R
@@ -20,7 +21,7 @@ class HomeFragment : Fragment() {
 
 
 
-//    private lateinit var viewModel: HomeViewModel
+    private lateinit var homeViewModel: HomeViewModel
     private lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +35,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         binding.tvDepartureDate.setOnClickListener {
             showDateRangePickerDialog()
@@ -75,10 +77,16 @@ class HomeFragment : Fragment() {
 
             if (startDateMillis > 0 && endDateMillis > 0) {
                 calendar.timeInMillis = startDateMillis
-                startDate.text = formatDate(calendar.time)
+//                startDate.text = formatDate(calendar.time)
+//                homeViewModel.selectedStartDate = calendar.time
+                homeViewModel.postSelectedStartDate(calendar.time)
 
                 calendar.timeInMillis = endDateMillis
-                endDate.text = formatDate(calendar.time)
+//                endDate.text = formatDate(calendar.time)
+//                homeViewModel.selectedEndDate = calendar.time
+                homeViewModel.postSelectedEndDate(calendar.time)
+
+                updateSelectedDatesInView()
             }
         }
 
@@ -88,6 +96,23 @@ class HomeFragment : Fragment() {
     private fun formatDate(date: Date): String {
         val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         return dateFormat.format(date)
+    }
+
+    private fun updateSelectedDatesInView() {
+        var startDate = binding.tvDepartureDate
+        var endDate = binding.tvReturnDate
+//        val startDateText = homeViewModel.selectedStartDate?.let { formatDate(it) } ?: "-"
+//        val endDateText = homeViewModel.selectedEndDate?.let { formatDate(it) } ?: "-"
+
+        homeViewModel.selectedStartDate.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            val startDateText = formatDate(it)
+            startDate.text = startDateText
+        })
+        homeViewModel.selectedEndDate.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            val endDateText = formatDate(it)
+            endDate.text = endDateText
+        })
+
     }
 
 
