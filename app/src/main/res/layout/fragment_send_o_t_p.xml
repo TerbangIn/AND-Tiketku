@@ -265,8 +265,6 @@
 
         </RelativeLayout>
 
-
-
     </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
