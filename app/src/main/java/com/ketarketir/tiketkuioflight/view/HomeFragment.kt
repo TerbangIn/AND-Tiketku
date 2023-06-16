@@ -1,5 +1,7 @@
 package com.ketarketir.tiketkuioflight.view
 
+import DestinationAdapter
+import DestinationViewModel
 import android.app.DatePickerDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,9 +9,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.lifecycle.get
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentHomeBinding
@@ -19,16 +22,18 @@ import java.util.*
 
 class HomeFragment : Fragment() {
 
-
-
     private lateinit var homeViewModel: HomeViewModel
+    private lateinit var destinationViewModel: DestinationViewModel
+    private val destinationAdapter: DestinationAdapter by lazy { DestinationAdapter() }
     private lateinit var binding: FragmentHomeBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
+
     }
 
 
@@ -43,6 +48,10 @@ class HomeFragment : Fragment() {
         binding.tvReturnDate.setOnClickListener {
             showDateRangePickerDialog()
         }
+
+        destinationViewModel = ViewModelProvider(this).get(DestinationViewModel::class.java)
+        setupRecyclerView()
+        observeDestinations()
 
 
         binding.btnBottomNavigation.setOnNavigationItemSelectedListener { item ->
@@ -61,6 +70,19 @@ class HomeFragment : Fragment() {
                 }
                 else -> false
             }
+        }
+
+
+    }
+
+    private fun setupRecyclerView() {
+        binding.rvDestination.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvDestination.adapter = destinationAdapter
+    }
+
+    private fun observeDestinations() {
+        destinationViewModel.destinations.observe(viewLifecycleOwner) { destinations ->
+            destinationAdapter.setData(destinations)
         }
     }
 
