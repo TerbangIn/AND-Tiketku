@@ -14,7 +14,7 @@ class NotificationViewModel : ViewModel() {
     private val _notifications = MutableLiveData<List<Data>>()
     val notifications: LiveData<List<Data>> = _notifications
 
-    fun loadNotifications(bearerToken: String, id: Int) {
+    fun loadNotifications(bearerToken: String, id: Int?) {
         val apiService = ApiClient.RetrofitClient.instance
         val call = apiService.getNotifications(bearerToken, id)
         call.enqueue(object : Callback<List<Data>> {

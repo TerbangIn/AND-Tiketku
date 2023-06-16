@@ -33,6 +33,7 @@ class UserViewModel:ViewModel() {
     private val _token:MutableLiveData<String> = MutableLiveData()
     val token : LiveData<String> get() = _token
 
+    private var loggedInUserId: Int? = null
 
     fun callApiPostRegisterUser(email :String, password:String, first_name:String, phone_number:String){
         ApiClient.RetrofitClient.instance.registerUser(DataPostUser(email,password, first_name, phone_number))
@@ -57,26 +58,29 @@ class UserViewModel:ViewModel() {
             })
     }
 
-    fun callApiPostUserLogin(email: String, password: String){
-        ApiClient.RetrofitClient.instance.loginUser(DataPostUserLogin(email,password))
-            .enqueue(object : Callback<DataResponseUserLogin>{
+    fun callApiPostUserLogin(email: String, password: String) {
+        ApiClient.RetrofitClient.instance.loginUser(DataPostUserLogin(email, password))
+            .enqueue(object : Callback<DataResponseUserLogin> {
                 @SuppressLint("NullSafeMutableLiveData")
-                override fun onResponse(call: Call<DataResponseUserLogin>, response: Response<DataResponseUserLogin>) {
-                    if (response.isSuccessful){
+                override fun onResponse(
+                    call: Call<DataResponseUserLogin>,
+                    response: Response<DataResponseUserLogin>
+                ) {
+                    if (response.isSuccessful) {
                         val data = response.body()
-                        _loginUsers.postValue(data!!.data.users)
-                        _token.postValue(data.data.token)
-                    } else{
+                        _token.postValue(data?.data?.token)
+                        loggedInUserId = data?.data?.users?.id
+                    } else {
                         _token.postValue(null)
-                        Log.e("Error : ", "onFailure : ${response.message()}")
+                        Log.e("Error:", "onFailure: ${response.message()}")
                     }
                 }
+
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onFailure(call: Call<DataResponseUserLogin>, t: Throwable) {
-                    Log.e("Error : ", "onFailure : ${t.message}")
+                    Log.e("Error:", "onFailure: ${t.message}")
                     _token.postValue(null)
                 }
-
             })
     }
 
@@ -120,6 +124,10 @@ class UserViewModel:ViewModel() {
                 }
 
             })
+    }
+
+    fun getUserId(): Int? {
+        return loggedInUserId
     }
 
 }
