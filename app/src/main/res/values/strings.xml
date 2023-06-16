@@ -25,7 +25,10 @@
     <string name="tv_register_here">Register Here</string>
     <string name="btn_login">Login</string>
 
-
+    <string name="btn_update">Update</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_cancel">Cancel</string>
+    
     <string name="tv_reset_password">Reset Password</string>
     <string name="tv_enter_new_password">Enter New Password</string>
     <string name="tv_enter_new_password_again">Enter New Password Again</string>
@@ -204,6 +207,7 @@
     <string name="tv__4h_0m">4h 0m</string>
     <string name="tv_jkt">JKT</string>
     <string name="tv__07_00">07:00</string>
+    <string name="tv_coming_soon">Coming Soon</string>
 
     <string-array name="tv_online_payment">
         <item>Gopay</item>

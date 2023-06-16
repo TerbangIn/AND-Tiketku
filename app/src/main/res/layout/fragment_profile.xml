@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_cover"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ProfileFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/darkblue01"
+            app:title="@string/tv_account"
+            app:navigationIcon="@drawable/baseline_arrow_back_24" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginVertical="225dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="20dp"
+                app:strokeColor="@color/darkblue03"
+                app:strokeWidth="3dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="20dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_full_name"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="23dp"
+                        android:layout_marginVertical="4dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_full_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/et_full_name" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_email"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="23dp"
+                        android:layout_marginVertical="4dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ti_full_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/tv_email" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_phone_number"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="23dp"
+                        android:layout_marginVertical="4dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ti_email">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tie_phone_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/tv_phone_number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_update"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginVertical="24dp"
+                        android:backgroundTint="@color/darkblue04"
+                        android:paddingVertical="12dp"
+                        android:text="@string/btn_update"
+                        app:cornerRadius="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ti_phone_number" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp"
+                        android:backgroundTint="@color/darkblue04"
+                        android:paddingVertical="12dp"
+                        android:text="@string/btn_logout"
+                        app:cornerRadius="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_update" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
