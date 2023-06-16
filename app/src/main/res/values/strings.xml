@@ -109,7 +109,7 @@
 
     <string name="tv_today_only">Today Only!</string>
 
-    <string name="tv_cheapest_price">Price - Cheapest</string>
+    <string name="tv_cheapest_price"><b>Price </b>- Cheapest</string>
     <string name="tv_shortest_duration">Duration - Shortest</string>
     <string name="tv_earliest_departure">Departure - Earliest</string>
     <string name="tv_latest_latest">Departure - Latest</string>
