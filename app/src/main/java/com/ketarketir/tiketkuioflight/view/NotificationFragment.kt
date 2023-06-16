@@ -2,6 +2,7 @@ package com.ketarketir.tiketkuioflight.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -36,14 +37,14 @@ class NotificationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        setupViewModel()
+        setupViewModels()
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-        userViewModel.token.observe(viewLifecycleOwner, Observer { token ->
+        userViewModel.token.observe(viewLifecycleOwner, { token ->
             if (token != null) {
-                val bearerToken = "Bearer $token"
-                val id = userViewModel.getUserId() // Menggunakan fungsi getUserId() dari UserViewModel
-                notificationViewModel.loadNotifications(bearerToken, id)
+                val bearerToken = token
+                val id = userViewModel.getUserId()
+                notificationViewModel.getNotifications(bearerToken, id)
             } else {
                 handleTokenError()
             }
@@ -62,9 +63,9 @@ class NotificationFragment : Fragment() {
         }
     }
 
-    private fun setupViewModel() {
+    private fun setupViewModels() {
         notificationViewModel = ViewModelProvider(this).get(NotificationViewModel::class.java)
-        notificationViewModel.notifications.observe(viewLifecycleOwner, Observer { notifications ->
+        notificationViewModel.notifications.observe(viewLifecycleOwner, { notifications ->
             updateNotifications(notifications)
         })
     }

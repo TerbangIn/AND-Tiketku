@@ -21,7 +21,7 @@ class DestinationViewModel : ViewModel() {
                 "Bangkok",
                 "Air Asia",
                 "20-30 March 2023",
-                "IDR 950",
+                "IDR 950.000",
                 R.drawable.iv_sample_destionation
             ),
             ListDataDestination(
@@ -29,7 +29,7 @@ class DestinationViewModel : ViewModel() {
                 "Singapore",
                 "Singapore Airlines",
                 "10-20 April 2023",
-                "IDR 950",
+                "IDR 845.000",
                 R.drawable.iv_sample_destionation
             ),
             ListDataDestination(
@@ -37,7 +37,7 @@ class DestinationViewModel : ViewModel() {
                 "Seoul",
                 "Korean Air",
                 "15-25 May 2023",
-                "IDR 950",
+                "IDR 780.000",
                 R.drawable.iv_sample_destionation
             )
             // Add more data items as needed
