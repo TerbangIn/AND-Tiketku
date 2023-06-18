@@ -33,14 +33,8 @@ class UserViewModel:ViewModel() {
     private val _token:MutableLiveData<String> = MutableLiveData()
     val token : LiveData<String> get() = _token
 
-    private val _statusVerify : MutableLiveData<DataResponseVerifyUser> = MutableLiveData()
-    val statusVerify : LiveData<DataResponseVerifyUser> get() = _statusVerify
 
     private var loggedInUserId: Int? = null
-
-    fun callApiVerifyUser(){
-        ApiClient.RetrofitClient.instance
-    }
 
     fun callApiPostRegisterUser(email :String, password:String, first_name:String, phone_number:String){
         ApiClient.RetrofitClient.instance.registerUser(DataPostUser(email,password, first_name, phone_number))
