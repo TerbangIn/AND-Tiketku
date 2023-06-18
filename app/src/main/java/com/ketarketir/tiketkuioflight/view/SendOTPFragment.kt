@@ -11,9 +11,6 @@ import com.ketarketir.tiketkuioflight.viewmodel.SendOTPViewModel
 
 class SendOTPFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SendOTPFragment()
-    }
 
     private lateinit var viewModel: SendOTPViewModel
 
