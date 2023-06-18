@@ -30,6 +30,11 @@ interface ApiService {
         @Body request: DataPostUser
     ): Call<DataResponseUserRegister>
 
+    @POST("api/v1/user/verify")
+    fun verifyUser(
+        @Body request : DataPostUserVerify
+    ) : Call<DataResponseVerifyUser>
+
     //airport
     @GET("api/v1/airport/")
     fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<List<com.ketarketir.tiketkuioflight.model.airport.Data>>
