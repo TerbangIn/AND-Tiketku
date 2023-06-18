@@ -7,76 +7,90 @@
     android:background="@drawable/background_cover"
     tools:context=".view.SendOTPFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/darkblue01"
-            app:navigationIcon="@drawable/baseline_arrow_back_24" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="40dp"
-            android:layout_gravity="center">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_sign_enter_otp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
-                android:text="@string/tv_the_otp"
-                android:textColor="@color/black"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_bold"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_sign_enter_otp"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="25dp"
-                android:fontFamily="@font/poppins_regular"
-                android:gravity="center"
-                android:text="@string/tv_otp_sent"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
-
-            <LinearLayout
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/abl_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_code"
-                android:gravity="center"
-                >
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/topAppBar"
+                    android:background="@color/darkblue01"
+                    app:title="@string/tv_otp_request"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:navigationIcon="@drawable/baseline_arrow_back_24" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/abl_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_sign_enter_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_the_otp"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/darkblue03"
+                    android:layout_marginTop="150dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:text="@string/tv_otp_sent"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_sign_enter_otp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/ll_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_code"
+                    app:layout_constraintEnd_toEndOf="parent">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_to"
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:gravity="center"
                     android:fontFamily="@font/poppins_regular"
                     android:text="@string/tv_to"
-                    android:textSize="14sp" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_number"
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxWidth="220dp"
@@ -84,187 +98,167 @@
                     android:textStyle="bold"
                     android:fontFamily="@font/poppins_regular"
                     android:text="@string/tv__6281212121212"
-                    android:textSize="14sp" />
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_code"
+                    app:layout_constraintStart_toEndOf="@id/tv_to" />
+                </LinearLayout>
 
-            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_container_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/ll_container"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_kode1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp">
 
-            <LinearLayout
-                android:id="@+id/ll_otp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:layout_below="@+id/tv_code"
-                android:orientation="horizontal">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_kode1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppins_medium"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:textColor="@color/neutral05" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ti_kode1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:boxCornerRadiusBottomEnd="18dp"
-                    app:boxCornerRadiusBottomStart="18dp"
-                    app:boxCornerRadiusTopEnd="18dp"
-                    app:boxCornerRadiusTopStart="18dp"
-                    android:layout_marginHorizontal="5dp">
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_kode1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_medium"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:textColor="@color/neutral02"
-                        android:textSize="18sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_kode2"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ti_kode2"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:boxCornerRadiusBottomEnd="18dp"
-                    app:boxCornerRadiusBottomStart="18dp"
-                    app:boxCornerRadiusTopEnd="18dp"
-                    app:boxCornerRadiusTopStart="18dp"
-                    android:layout_marginHorizontal="5dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_kode2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppins_medium"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:textColor="@color/neutral05" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_kode2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_medium"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:textColor="@color/neutral02"
-                        android:textSize="18sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ti_kode3"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:boxCornerRadiusBottomEnd="18dp"
-                    app:boxCornerRadiusBottomStart="18dp"
-                    app:boxCornerRadiusTopEnd="18dp"
-                    app:boxCornerRadiusTopStart="18dp"
-                    android:layout_marginHorizontal="5dp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_kode3"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_kode3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_medium"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:textColor="@color/neutral02"
-                        android:textSize="18sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_kode3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppins_medium"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:textColor="@color/neutral05" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ti_kode4"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:boxCornerRadiusBottomEnd="18dp"
-                    app:boxCornerRadiusBottomStart="18dp"
-                    app:boxCornerRadiusTopEnd="18dp"
-                    app:boxCornerRadiusTopStart="18dp"
-                    android:layout_marginHorizontal="5dp">
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_kode4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_medium"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:textColor="@color/neutral02"
-                        android:textSize="18sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_kode4"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ti_kode5"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:boxCornerRadiusBottomEnd="18dp"
-                    app:boxCornerRadiusBottomStart="18dp"
-                    app:boxCornerRadiusTopEnd="18dp"
-                    app:boxCornerRadiusTopStart="18dp"
-                    android:layout_marginHorizontal="5dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_kode4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppins_medium"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:textColor="@color/neutral05" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_kode5"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_medium"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:textColor="@color/neutral02"
-                        android:textSize="18sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ti_kode6"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:boxCornerRadiusBottomEnd="18dp"
-                    app:boxCornerRadiusBottomStart="18dp"
-                    app:boxCornerRadiusTopEnd="18dp"
-                    app:boxCornerRadiusTopStart="18dp"
-                    android:layout_marginHorizontal="5dp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_kode5"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_kode6"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_medium"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:textColor="@color/neutral02"
-                        android:textSize="18sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_kode5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppins_medium"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:textColor="@color/neutral05" />
 
-            </LinearLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_resend_otp"
-                android:textSize="14sp"
-                android:layout_marginVertical="24dp"
-                android:layout_below="@id/ll_otp"
-                android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/black"
-                android:text="@string/tv_otp_resent_after"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_kode6"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="5dp">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_request_verify_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_resend_otp"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="41dp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/tv_otp_request"
-                android:textColor="@color/darkblue05"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_kode6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppins_medium"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:textColor="@color/neutral05" />
 
-        </RelativeLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_resend_otp"
+                    android:textSize="14sp"
+                    android:layout_marginVertical="24dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black"
+                    android:text="@string/tv_otp_resent_after"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_container_code"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_request_verify_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/tv_otp_request"
+                    android:textColor="@color/darkblue05"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_resend_otp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
