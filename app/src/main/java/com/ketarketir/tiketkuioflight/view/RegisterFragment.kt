@@ -150,8 +150,10 @@ class RegisterFragment : Fragment() {
                 userViewModel.callApiPostRegisterUser(inputEmail, password, inputName, phoneNumber)
                 userViewModel.registerUser.observe(viewLifecycleOwner, Observer {
                     if (it!= null){
+                        val bundle = Bundle()
+                        bundle.putString("email", it.email)
                         Toast.makeText(requireContext(), "Register Success", Toast.LENGTH_SHORT).show()
-                        findNavController().navigate(R.id.action_registerFragment_to_loginFragment2)
+                        findNavController().navigate(R.id.action_registerFragment_to_sendOTPFragment, bundle)
                     } else{
                         Toast.makeText(requireContext(), "Register Failed", Toast.LENGTH_SHORT).show()
                     }
