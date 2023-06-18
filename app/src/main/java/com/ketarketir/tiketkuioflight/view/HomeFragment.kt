@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.ketarketir.tiketkuioflight.R
+import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetHomeSearchDestinationBinding
 import com.ketarketir.tiketkuioflight.databinding.FragmentHomeBinding
 import com.ketarketir.tiketkuioflight.viewmodel.HomeViewModel
 import java.text.SimpleDateFormat
@@ -41,6 +42,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+
+
+        binding.tvDestinationFrom.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_bottomSheetHomeSearchDestinationFragment)
+        }
+        binding.tvDestinationTo.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_bottomSheetHomeSearchDestinationFragment)
+        }
 
         binding.tvDepartureDate.setOnClickListener {
             showDateRangePickerDialog()
@@ -136,129 +145,5 @@ class HomeFragment : Fragment() {
         })
 
     }
-
-
-
-//    private fun showDateRangePickerDialog() {
-//        var startDate = binding.tvDepartureDate
-//        var endDate = binding.tvReturnDate
-//        val calendar = Calendar.getInstance()
-//        val year = calendar.get(Calendar.YEAR)
-//        val month = calendar.get(Calendar.MONTH)
-//        val day = calendar.get(Calendar.DAY_OF_MONTH)
-//
-//        val datePickerDialog = DatePickerDialog(
-//            requireContext(),
-//            { _, pickedYear, pickedMonth, pickedDay ->
-//                val formattedDate = formatDate(pickedDay, pickedMonth, pickedYear)
-//                if (startDate.text.isEmpty()) {
-//                    startDate.text = formattedDate
-//                    calendar.set(pickedYear, pickedMonth, pickedDay)
-//                    showDatePickerDialog()
-//                } else {
-//                    val selectedStartDate = calendar.time
-//                    val selectedEndDate = formatDate(pickedDay, pickedMonth, pickedYear)
-//
-//                    if (selectedStartDate.before(calendar.time)) {
-//                        endDate.text = selectedEndDate
-//                    } else {
-//                        startDate.text = selectedEndDate
-//                        endDate.text = formattedDate
-//                    }
-//                }
-//            },
-//            year, month, day
-//        )
-//
-//        datePickerDialog.datePicker.minDate = System.currentTimeMillis() - 1000
-//
-//        datePickerDialog.show()
-//    }
-//
-//    private fun showDatePickerDialog() {
-//        var startDate = binding.tvDepartureDate
-//        var endDate = binding.tvReturnDate
-//        val calendar = Calendar.getInstance()
-//        val year = calendar.get(Calendar.YEAR)
-//        val month = calendar.get(Calendar.MONTH)
-//        val day = calendar.get(Calendar.DAY_OF_MONTH)
-//
-//        val datePickerDialog = DatePickerDialog(
-//            requireContext(),
-//            { _, pickedYear, pickedMonth, pickedDay ->
-//                val formattedDate = formatDate(pickedDay, pickedMonth, pickedYear)
-//                endDate.text = formattedDate
-//            },
-//            year, month, day
-//        )
-//
-//        datePickerDialog.datePicker.minDate = calendar.timeInMillis
-//
-//        datePickerDialog.show()
-//    }
-//
-//    private fun formatDate(day: Int, month: Int, year: Int): String {
-//        val calendar = Calendar.getInstance()
-//        calendar.set(year, month, day)
-//
-//        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-//        return dateFormat.format(calendar.time)
-
-
-
-
-
-//    private fun showDatePickerDialog(){
-//        val calendar = Calendar.getInstance()
-//        val year = calendar.get(Calendar.YEAR)
-//        val month = calendar.get(Calendar.MONTH)
-//        val day = calendar.get(Calendar.DAY_OF_MONTH)
-//
-////        val datePickerDialog = DatePickerDialog(
-////            requireContext(),
-////            { _, pickedYear, pickedMonth, pickedDay ->
-////                val formattedDate = formatDate(pickedDay, pickedMonth, pickedYear)
-////                textView.text = formattedDate
-////
-////            },
-////            year, month, day
-////        )
-////
-////        datePickerDialog.show()
-//
-//        var startDate = binding.tvDepartureDate.text
-//        var endDatee = binding.tvReturnDate.text
-//        val datePickerDialog = DatePickerDialog(
-//            requireContext(),
-//            { _, pickedYear, pickedMonth, pickedDay ->
-//                if (startDate.isEmpty()) {
-//                    // Jika startDate belum dipilih, set startDate
-//                    val formattedStartDate = formatDate(pickedDay, pickedMonth, pickedYear)
-//                    startDate = formattedStartDate
-//                    calendar.set(pickedYear, pickedMonth, pickedDay)
-//                } else {
-//                    // Jika startDate sudah dipilih, set endDate
-//                    val formattedEndDate = formatDate(pickedDay, pickedMonth, pickedYear)
-//                    endDatee = formattedEndDate
-//                    calendar.set(pickedYear, pickedMonth, pickedDay)
-//                }
-//            },
-//            year, month, day
-//        )
-//
-//        // Batasi rentang tanggal yang dapat dipilih
-//        datePickerDialog.datePicker.minDate = System.currentTimeMillis() - 1000
-//
-//        datePickerDialog.show()
-//    }
-//
-//    private fun formatDate(day: Int, month: Int, year: Int): String {
-//        val calendar = Calendar.getInstance()
-//        calendar.set(year, month, day)
-//
-//        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-//        return dateFormat.format(calendar.time)
-
-
 
 }
