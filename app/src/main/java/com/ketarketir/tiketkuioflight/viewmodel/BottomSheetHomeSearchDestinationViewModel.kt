@@ -7,17 +7,21 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ketarketir.tiketkuioflight.model.airport.DataResponseAirport
 import com.ketarketir.tiketkuioflight.networking.ApiClient
+import com.ketarketir.tiketkuioflight.networking.ApiService
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class BottomSheetHomeSearchDestinationViewModel : ViewModel() {
+@HiltViewModel
+class BottomSheetHomeSearchDestinationViewModel @Inject constructor(val apiService: ApiService) : ViewModel() {
     private val _airport : MutableLiveData<List<DataResponseAirport>> = MutableLiveData()
     val airport : LiveData<List<DataResponseAirport>> get() = _airport
 
 
     fun callApiAirport(bearerToken: String){
-        ApiClient.RetrofitClient.instance.getListAllAirport(bearerToken)
+        apiService.getListAllAirport(bearerToken)
             .enqueue(object : Callback<List<DataResponseAirport>>{
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onResponse(

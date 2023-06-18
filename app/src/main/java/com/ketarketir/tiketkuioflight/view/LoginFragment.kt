@@ -15,9 +15,11 @@ import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentLoginBinding
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var userViewModel: UserViewModel

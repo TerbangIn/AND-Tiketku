@@ -11,7 +11,9 @@ import androidx.lifecycle.Observer
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentSendOTPBinding
 import com.ketarketir.tiketkuioflight.viewmodel.SendOTPViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SendOTPFragment : Fragment() {
     private lateinit var binding:FragmentSendOTPBinding
     private lateinit var sendOTPViewModel: SendOTPViewModel

@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.viewmodel.ProfileViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     companion object {
