@@ -14,9 +14,11 @@ import com.ketarketir.tiketkuioflight.databinding.FragmentAccountBinding
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
 import com.ketarketir.tiketkuioflight.viewmodel.AccountViewModel
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
+@AndroidEntryPoint
 class AccountFragment : Fragment() {
 
     private lateinit var binding:FragmentAccountBinding

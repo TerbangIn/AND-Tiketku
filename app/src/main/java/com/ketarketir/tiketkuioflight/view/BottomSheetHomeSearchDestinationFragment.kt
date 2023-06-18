@@ -11,7 +11,9 @@ import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetHomeSearchDestinationBinding
 import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetHomeSearchDestinationViewModel
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BottomSheetHomeSearchDestinationFragment : Fragment() {
 
     private lateinit var binding: FragmentBottomSheetHomeSearchDestinationBinding

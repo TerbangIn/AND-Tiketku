@@ -10,13 +10,17 @@ import androidx.lifecycle.viewModelScope
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
 import com.ketarketir.tiketkuioflight.model.user.*
 import com.ketarketir.tiketkuioflight.networking.ApiClient
+import com.ketarketir.tiketkuioflight.networking.ApiService
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class UserViewModel:ViewModel() {
+@HiltViewModel
+class UserViewModel @Inject constructor(val apiService: ApiService, val userManager: UserManager):ViewModel() {
 
     private val _loginUsers: MutableLiveData<Users> = MutableLiveData()
     val loginUsers : LiveData<Users> get() = _loginUsers
@@ -37,7 +41,7 @@ class UserViewModel:ViewModel() {
     private var loggedInUserId: Int? = null
 
     fun callApiPostRegisterUser(email :String, password:String, first_name:String, phone_number:String){
-        ApiClient.RetrofitClient.instance.registerUser(DataPostUser(email,password, first_name, phone_number))
+        apiService.registerUser(DataPostUser(email,password, first_name, phone_number))
             .enqueue(object :Callback<DataResponseUserRegister>{
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onResponse(call: Call<DataResponseUserRegister>, response: Response<DataResponseUserRegister>) {
@@ -60,7 +64,7 @@ class UserViewModel:ViewModel() {
     }
 
     fun callApiPostUserLogin(email: String, password: String) {
-        ApiClient.RetrofitClient.instance.loginUser(DataPostUserLogin(email, password))
+        apiService.loginUser(DataPostUserLogin(email, password))
             .enqueue(object : Callback<DataResponseUserLogin> {
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onResponse(
@@ -86,7 +90,7 @@ class UserViewModel:ViewModel() {
     }
 
     fun callApiGetAllUser(bearerToken:String){
-        ApiClient.RetrofitClient.instance.getAllUser(bearerToken)
+        apiService.getAllUser(bearerToken)
             .enqueue(object : Callback<List<Data>>{
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onResponse(call: Call<List<Data>>, response: Response<List<Data>>) {
@@ -107,7 +111,7 @@ class UserViewModel:ViewModel() {
     }
 
     fun callApiGetDetailUser(bearerToken: String, id:Int){
-        ApiClient.RetrofitClient.instance.getDetailUser(bearerToken, id)
+        apiService.getDetailUser(bearerToken, id)
             .enqueue(object :Callback<Data>{
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onResponse(call: Call<Data>, response: Response<Data>) {

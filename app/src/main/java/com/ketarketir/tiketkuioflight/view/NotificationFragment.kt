@@ -13,7 +13,9 @@ import com.ketarketir.tiketkuioflight.viewmodel.NotificationViewModel
 import com.ketarketir.tiketkuioflight.model.notifications.Data
 import com.ketarketir.tiketkuioflight.view.adapter.NotificationAdapter
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NotificationFragment : Fragment() {
 
     private var _binding: FragmentNotificationBinding? = null
