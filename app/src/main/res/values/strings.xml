@@ -113,11 +113,11 @@
     <string name="tv_today_only">Today Only!</string>
 
     <string name="tv_cheapest_price"><b>Price </b>- Cheapest</string>
-    <string name="tv_shortest_duration">Duration - Shortest</string>
-    <string name="tv_earliest_departure">Departure - Earliest</string>
-    <string name="tv_latest_latest">Departure - Latest</string>
-    <string name="tv_earliest_arrival">Arrival - Earliest</string>
-    <string name="tv_latest_arrival">Arrival - Latest</string>
+    <string name="tv_shortest_duration"><b>Duration </b>- Shortest</string>
+    <string name="tv_earliest_departure"><b>Departure </b>- Earliest</string>
+    <string name="tv_latest_departure"><b>Departure </b>- Latest</string>
+    <string name="tv_earliest_arrival"><b>Arrival </b>- Earliest</string>
+    <string name="tv_latest_arrival"><b>Arrival </b>- Latest</string>
 
     <string name="tv_flight_options">Flight Options</string>
     <string name="tv_soekarno_hatta">Soekarno Hatta</string>
