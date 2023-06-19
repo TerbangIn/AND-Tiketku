@@ -6,28 +6,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ketarketir.tiketkuioflight.R
-import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetClassSeatViewModel
+import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetSetPassengerViewModel
 
-class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
+class BottomSheetSetPassengerFragment : Fragment() {
 
     companion object {
-        val bsSeatClass: String = "BottomSheetClassSeatFragment"
+        fun newInstance() = BottomSheetSetPassengerFragment()
     }
 
-    private lateinit var viewModel: BottomSheetClassSeatViewModel
+    private lateinit var viewModel: BottomSheetSetPassengerViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_bottom_sheet_class_seat, container, false)
+        return inflater.inflate(R.layout.fragment_bottom_sheet_set_passenger, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(BottomSheetClassSeatViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(BottomSheetSetPassengerViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

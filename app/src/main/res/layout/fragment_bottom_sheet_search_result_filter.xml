@@ -25,23 +25,43 @@
             android:background="@color/neutral03"
             android:layout_below="@id/ic_close"/>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ll_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ic_close"
-            android:orientation="vertical">
+            android:layout_below="@id/ic_close">
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_container_1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.button.MaterialButton
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingVertical="12dp"
-                    android:textAlignment="textStart"
-                    android:text="@string/tv_cheapest_price" />
+                    android:layout_marginTop="14dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/tv_cheapest_price"
+                    android:gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cek"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="16dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.divider.MaterialDivider
@@ -50,102 +70,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/neutral03"/>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ic_close">
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="12dp"
-                    android:textAlignment="textStart"
-                    android:text="@string/tv_shortest_duration" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/neutral03"/>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ic_close">
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="12dp"
-                    android:textAlignment="textStart"
-                    android:text="@string/tv_earliest_departure" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/neutral03"/>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ic_close">
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="12dp"
-                    android:textAlignment="textStart"
-                    android:text="@string/tv_latest_departure" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/neutral03"/>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ic_close">
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="12dp"
-                    android:textAlignment="textStart"
-                    android:text="@string/tv_earliest_arrival" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/neutral03"/>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ic_close">
-
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="12dp"
-                    android:textAlignment="textStart"
-                    android:text="@string/tv_latest_arrival" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider_6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/neutral03"/>
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

@@ -40,7 +40,6 @@ class HomeFragment : Fragment() {
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
@@ -81,6 +80,10 @@ class HomeFragment : Fragment() {
                 }
                 else -> false
             }
+        }
+
+        binding.tvSeatClass.setOnClickListener {
+            BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager,BottomSheetClassSeatFragment.bsSeatClass)
         }
 
 
