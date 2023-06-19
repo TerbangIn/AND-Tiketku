@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.BottomSheetSearchResultFilterFragment">
+    tools:context=".view.BottomSheetClassSeatFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,13 +18,6 @@
             android:layout_alignParentEnd="true"
             android:layout_marginHorizontal="10dp" />
 
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/neutral03"
-            android:layout_below="@id/ic_close"/>
-
         <LinearLayout
             android:id="@+id/ll_container"
             android:layout_width="match_parent"
@@ -36,12 +29,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.button.MaterialButton
+                <com.google.android.material.button.MaterialButtonToggleGroup
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingVertical="12dp"
-                    android:textAlignment="textStart"
-                    android:text="@string/tv_cheapest_price" />
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="12dp"
+                        android:textAlignment="textStart"
+                        android:text="@string/tv_economy" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv__4h_0m"/>
+                </com.google.android.material.button.MaterialButtonToggleGroup>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.divider.MaterialDivider
@@ -162,4 +163,5 @@
                 app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
+
 </RelativeLayout>
