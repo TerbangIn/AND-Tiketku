@@ -1,7 +1,9 @@
 package com.ketarketir.tiketkuioflight.view
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +19,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class SendOTPFragment : Fragment() {
     private lateinit var binding:FragmentSendOTPBinding
     private lateinit var sendOTPViewModel: SendOTPViewModel
-
+    private var countDownTimer: CountDownTimer? = null
+    private var isTimeRunning = false
+    private val countDownTime = 60000L
+    private val countDownInterval = 1000L
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,6 +34,12 @@ class SendOTPFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sendOTPViewModel = ViewModelProvider(this).get(SendOTPViewModel::class.java)
+
+        startCountDownTimer()
+        binding.tvRequestVerifyEmail.setOnClickListener {
+            startCountDownTimer()
+            binding.tvRequestVerifyEmail.visibility = View.GONE
+        }
     }
 
     private fun verifyOtp(){
@@ -50,8 +61,39 @@ class SendOTPFragment : Fragment() {
                 Toast.makeText(requireContext(), "failed", Toast.LENGTH_SHORT).show()
             }
         })
+    }
 
+    private fun startCountDownTimer(){
+        countDownTimer?.cancel()
 
+        countDownTimer = object : CountDownTimer(countDownTime, countDownInterval) {
+            @SuppressLint("SetTextI18n")
+            override fun onTick(millisUntilFinished: Long) {
+                val seconds = millisUntilFinished / 1000
+                binding.tvResendOtp.text = "Resensd OTP in" + "  " + seconds.toString() + "  " + "Seconds"
+            }
+
+            override fun onFinish() {
+                binding.tvResendOtp.text = " "
+                binding.tvRequestVerifyEmail.visibility = View.VISIBLE
+            }
+        }
+
+        countDownTimer?.start()
+        isTimeRunning = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        countDownTimer?.cancel()
+        isTimeRunning = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!isTimeRunning){
+            startCountDownTimer()
+        }
     }
 
 }
