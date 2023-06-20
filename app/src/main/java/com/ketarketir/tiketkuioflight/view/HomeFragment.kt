@@ -101,33 +101,55 @@ class HomeFragment : Fragment() {
     }
 
     private fun showDateRangePickerDialog() {
-        var startDate = binding.tvDepartureDate
-        var endDate = binding.tvReturnDate
-        val calendar = Calendar.getInstance()
-        val builder = MaterialDatePicker.Builder.dateRangePicker()
-        val picker = builder.build()
+        if (binding.smSwitch.isChecked) {
 
-        picker.addOnPositiveButtonClickListener { selection ->
-            val startDateMillis = selection.first ?: 0L
-            val endDateMillis = selection.second ?: 0L
+            val builder = MaterialDatePicker.Builder.dateRangePicker()
+            val picker = builder.build()
 
-            if (startDateMillis > 0 && endDateMillis > 0) {
-                calendar.timeInMillis = startDateMillis
-//                startDate.text = formatDate(calendar.time)
-//                homeViewModel.selectedStartDate = calendar.time
-                homeViewModel.postSelectedStartDate(calendar.time)
+            picker.addOnPositiveButtonClickListener { selection ->
+                val startDateMillis = selection.first ?: 0L
+                val endDateMillis = selection.second ?: 0L
 
-                calendar.timeInMillis = endDateMillis
-//                endDate.text = formatDate(calendar.time)
-//                homeViewModel.selectedEndDate = calendar.time
-                homeViewModel.postSelectedEndDate(calendar.time)
+                if (startDateMillis > 0 && endDateMillis > 0) {
+                    val calendar = Calendar.getInstance()
+                    calendar.timeInMillis = startDateMillis
+                    val startDate = calendar.time
 
-                updateSelectedDatesInView()
+                    calendar.timeInMillis = endDateMillis
+                    val endDate = calendar.time
+
+                    homeViewModel.postSelectedStartDate(startDate)
+                    homeViewModel.postSelectedEndDate(endDate)
+
+                    updateSelectedDatesInView()
+                }
             }
-        }
 
-        picker.show(fragmentManager!!, picker.toString())
+            picker.show(fragmentManager!!, picker.toString())
+        } else {
+
+            val builder = MaterialDatePicker.Builder.datePicker()
+            val picker = builder.build()
+
+            picker.addOnPositiveButtonClickListener { selection ->
+                val dateMillis = selection ?: 0L
+
+                if (dateMillis > 0) {
+                    val calendar = Calendar.getInstance()
+                    calendar.timeInMillis = dateMillis
+                    val startDate = calendar.time
+
+                    homeViewModel.postSelectedStartDate(startDate)
+                    homeViewModel.postSelectedEndDate(null)
+
+                    updateSelectedDatesInView()
+                }
+            }
+
+            picker.show(fragmentManager!!, picker.toString())
+        }
     }
+
 
     private fun formatDate(date: Date): String {
         val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
@@ -145,8 +167,13 @@ class HomeFragment : Fragment() {
             startDate.text = startDateText
         })
         homeViewModel.selectedEndDate.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-            val endDateText = formatDate(it)
-            endDate.text = endDateText
+            if (it!=null){
+                val endDateText = formatDate(it)
+                endDate.text = endDateText
+            } else {
+                endDate.text = "Return Date"
+            }
+
         })
 
     }

@@ -1,5 +1,6 @@
 package com.ketarketir.tiketkuioflight.viewmodel
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -21,7 +22,8 @@ class HomeViewModel @Inject constructor(val apiService: ApiService) : ViewModel(
         _selectedStartDate.postValue(date)
     }
 
-    fun postSelectedEndDate(date: Date) {
+    @SuppressLint("NullSafeMutableLiveData")
+    fun postSelectedEndDate(date: Date?) {
         _selectedEndDate.postValue(date)
     }
 
