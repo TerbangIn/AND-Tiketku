@@ -218,6 +218,14 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/neutral03"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_first_class"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
