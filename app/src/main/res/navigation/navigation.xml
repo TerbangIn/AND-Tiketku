@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
 
-    app:startDestination="@id/sendOTPFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/accountFragment"

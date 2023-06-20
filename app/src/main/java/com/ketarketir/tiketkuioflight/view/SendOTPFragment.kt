@@ -35,6 +35,9 @@ class SendOTPFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         sendOTPViewModel = ViewModelProvider(this).get(SendOTPViewModel::class.java)
 
+        val email = arguments?.getString("email")
+        binding.tvNumber.text = email.toString()
+
         startCountDownTimer()
         binding.tvRequestVerifyEmail.setOnClickListener {
             startCountDownTimer()
