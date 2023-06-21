@@ -68,7 +68,6 @@ class SendOTPFragment : Fragment() {
 
     private fun startCountDownTimer(){
         countDownTimer?.cancel()
-
         countDownTimer = object : CountDownTimer(countDownTime, countDownInterval) {
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
@@ -81,7 +80,6 @@ class SendOTPFragment : Fragment() {
                 binding.tvRequestVerifyEmail.visibility = View.VISIBLE
             }
         }
-
         countDownTimer?.start()
         isTimeRunning = true
     }
@@ -98,5 +96,4 @@ class SendOTPFragment : Fragment() {
             startCountDownTimer()
         }
     }
-
 }
