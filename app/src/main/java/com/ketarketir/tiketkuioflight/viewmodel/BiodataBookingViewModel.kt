@@ -1,4 +1,4 @@
-package com.ketarketir.tiketkuioflight.view
+package com.ketarketir.tiketkuioflight.viewmodel
 
 import androidx.lifecycle.ViewModel
 

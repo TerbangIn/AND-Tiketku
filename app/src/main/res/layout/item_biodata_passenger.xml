@@ -176,7 +176,7 @@
                 android:id="@+id/tv_birth_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_family_name"
+                android:text="@string/tv_biodata_passenger_birthdate"
                 android:textColor="@color/darkblue05"
                 android:textStyle="bold"
                 android:layout_marginHorizontal="26dp"
@@ -207,7 +207,110 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_citizenship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_passenger_citizenship"
+                android:textColor="@color/darkblue05"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="26dp"
+                android:layout_marginVertical="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ti_birth_date" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_citizenship"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="23dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:endIconDrawable="@drawable/ic_check"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_citizenship">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tie_citizenship"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:hint="@string/tv_city_or_country" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_card_passport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_passenger_id_card_passport"
+                android:textColor="@color/darkblue05"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="26dp"
+                android:layout_marginVertical="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ti_citizenship" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_card_passport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="23dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:endIconDrawable="@drawable/ic_check"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_card_passport">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tie_card_passport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/tv_passenger_id_card_passport" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_publication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_passenger_country_publication"
+                android:textColor="@color/darkblue05"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="26dp"
+                android:layout_marginVertical="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ti_card_passport" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti_publication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="23dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:endIconDrawable="@drawable/ic_check"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_publication">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tie_publication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/tv_passenger_country_publication" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
