@@ -1,6 +1,8 @@
 package com.ketarketir.tiketkuioflight.view
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.text.Editable
@@ -16,13 +18,14 @@ import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentRegisterBinding
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
-import dagger.hilt.android.AndroidEntryPoint
+//import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+//@AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
     private lateinit var binding:FragmentRegisterBinding
     private lateinit var userViewModel: UserViewModel
+    private lateinit var sharedRegis: SharedPreferences
 
 
     override fun onCreateView(
@@ -37,6 +40,8 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
+        sharedRegis = requireContext().getSharedPreferences("dataUser", Context.MODE_PRIVATE)
 
         binding.btnRegister.setOnClickListener {
             register()
@@ -140,6 +145,15 @@ class RegisterFragment : Fragment() {
         val phoneNumber = binding.tiePhoneNumber.text.toString()
         val password = binding.tiePassword.text.toString()
         val confirmPassword = binding.tieConfirmPassword.text.toString()
+
+        val addUser = sharedRegis.edit()
+        addUser.putString("name", inputName)
+
+        val addEmail = sharedRegis.edit()
+        addEmail.putString("email", inputEmail)
+
+        val addPhoneNumber = sharedRegis.edit()
+        addPhoneNumber.putString("phone_number", phoneNumber)
 
         if (inputName.isEmpty() || inputEmail.isEmpty() || phoneNumber.isEmpty() || password.isEmpty()){
             Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()

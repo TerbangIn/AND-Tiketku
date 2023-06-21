@@ -90,6 +90,9 @@
         <action
             android:id="@+id/action_homeFragment_to_bottomSheetHomeSearchDestinationFragment"
             app:destination="@id/bottomSheetHomeSearchDestinationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
 
     </fragment>
 
@@ -132,5 +135,14 @@
         <action
             android:id="@+id/action_bottomSheetHomeSearchDestinationFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
     </fragment>
 </navigation>
