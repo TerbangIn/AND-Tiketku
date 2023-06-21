@@ -156,6 +156,7 @@
     <string name="tv_family_name">Family Name</string>
     
     <string name="tv_passenger_biodata">Passenger Biodata</string>
+    <string name="btn_next_choose_seat">Next Choose Seat</string>
     <string name="tv_passenger_seat">Passenger 1 - Adult</string>
     <string name="tv_biodata_passenger_title">Title</string>
     <string name="tv_passenger_title">Mr</string>

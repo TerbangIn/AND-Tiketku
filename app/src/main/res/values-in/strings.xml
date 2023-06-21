@@ -107,6 +107,7 @@
     <string name="tv_got_family_name">Punya Nama Keluarga</string>
     <string name="tv_family_name">Nama Keluarga</string>
     <string name="tv_passenger_biodata">Biodata Penumpang</string>
+    <string name="btn_next_choose_seat">Lanjut Pilih Kursi</string>
     <string name="tv_passenger_seat">Penumpang 1 - Dewasa</string>
     <string name="tv_biodata_passenger_title">Gelar</string>
     <string name="tv_passenger_title">Mr</string>
