@@ -36,6 +36,11 @@ interface ApiService {
         @Body request : DataPostUserVerify
     ) : Call<DataResponseVerifyUser>
 
+    @POST("api/v1/user/otp")
+    fun generateOtp(
+        @Body request : DataPostGenerateOtp
+    ) : Call<DataResponseGenerateOtp>
+
     //airport
     @GET("api/v1/airport/")
     fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<List<DataResponseAirport>>
