@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +45,25 @@ class SendOTPFragment : Fragment() {
             startCountDownTimer()
             binding.tvRequestVerifyEmail.visibility = View.GONE
         }
+
+        binding.tvRequestVerifyEmail.setOnClickListener {
+            generateOtp()
+        }
+
+        binding.etKode6.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                //
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                //
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+                verifyOtp()
+            }
+
+        })
     }
 
     private fun verifyOtp(){
@@ -62,6 +83,18 @@ class SendOTPFragment : Fragment() {
                 Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
             } else{
                 Toast.makeText(requireContext(), "failed", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun generateOtp(){
+        val email = arguments?.getString("email")
+        sendOTPViewModel.callApiPostGenerateOtp(email.toString())
+        sendOTPViewModel.statusGenerate.observe(viewLifecycleOwner, Observer {
+            if (it == "success"){
+                Toast.makeText(context, "Send OTP Berhasil! Silahkan cek email anda !", Toast.LENGTH_SHORT).show()
+            } else{
+                Toast.makeText(context, "Send OTP Gagal!", Toast.LENGTH_SHORT).show()
             }
         })
     }
