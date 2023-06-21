@@ -36,6 +36,7 @@
 
     <string name="tv_register">Register</string>
     <string name="tv_name">Name</string>
+    <string name="tv_full_name">Full Name</string>
     <string name="et_full_name">Full Name</string>
     <string name="tv_email" translatable="false">Email</string>
     <string name="tv_phone_number">Phone Number</string>
@@ -156,8 +157,10 @@
     
     <string name="tv_passenger_biodata">Passenger Biodata</string>
     <string name="tv_passenger_seat">Passenger 1 - Adult</string>
-    <string name="tv_passenger_title">Title</string>
-    <string name="tv_passenger_birthdate">Birth Date</string>
+    <string name="tv_biodata_passenger_title">Title</string>
+    <string name="tv_passenger_title">Mr</string>
+    <string name="tv_biodata_passenger_birthdate">Birth Date</string>
+    <string name="tv_passenger_birthdate">dd/mm/yyyy</string>
     <string name="tv_passenger_citizenship">Citizenship</string>
     <string name="tv_passenger_id_card_passport">ID Card/Passport</string>
     <string name="tv_passenger_country_publication">Country Publication</string>

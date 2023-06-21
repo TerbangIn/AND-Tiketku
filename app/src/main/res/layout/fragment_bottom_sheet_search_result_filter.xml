@@ -27,10 +27,16 @@
             android:layout_below="@id/ic_close"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ll_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/divider">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_cheapest_price"
@@ -258,6 +264,9 @@
                 app:layout_constraintTop_toBottomOf="@id/cv_latest_arrival"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_update"
@@ -273,5 +282,6 @@
         android:fontFamily="@font/poppins_medium"
         app:cornerRadius="16dp"
         android:layout_below="@id/rl_container" />
+
 
 </RelativeLayout>
