@@ -27,6 +27,7 @@
     <string name="btn_save">Simpan</string>
     <string name="tv_register">Daftar</string>
     <string name="tv_name">Nama</string>
+    <string name="tv_full_name">Full Name</string>
     <string name="et_full_name">Nama Lengkap</string>
     <string name="tv_phone_number">Nomor Telepon</string>
     <string name="tv_create_password">Buat Kata Sandi</string>
@@ -107,8 +108,10 @@
     <string name="tv_family_name">Nama Keluarga</string>
     <string name="tv_passenger_biodata">Biodata Penumpang</string>
     <string name="tv_passenger_seat">Penumpang 1 - Dewasa</string>
-    <string name="tv_passenger_title">Judul</string>
-    <string name="tv_passenger_birthdate">Tanggal Lahir</string>
+    <string name="tv_biodata_passenger_title">Gelar</string>
+    <string name="tv_passenger_title">Mr</string>
+    <string name="tv_biodata_passenger_birthdate">Tanggal Lahir</string>
+    <string name="tv_passenger_birthdate">dd/mm/yyyy</string>
     <string name="tv_passenger_citizenship">Kewarganegaraan</string>
     <string name="tv_passenger_id_card_passport">Kartu Identitas/Paspor</string>
     <string name="tv_passenger_country_publication">Publikasi Negara</string>
