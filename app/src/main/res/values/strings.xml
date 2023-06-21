@@ -94,6 +94,8 @@
     <string name="tv_age_child">(2 – 11 Years)</string>
     <string name="tv_baby">Baby</string>
     <string name="tv_age_baby">(Under 2 Years)</string>
+    <string name="btn_minus" translatable="false">-</string>
+    <string name="btn_plus" translatable="false">+</string>
 
     <string name="tv_economy">Economy</string>
     <string name="tv_idr_economy" translatable="false">IDR 4.950.000</string>
@@ -195,6 +197,7 @@
     <string name="tv_logout">Logout</string>
     <string name="tv_version">Version 1.1.0</string>
     <string name="tv_tuesday">Tuesday</string>
+    <string name="tv_zero" translatable="false">0</string>
     <string name="tv__01_03_2023" translatable="false">01–03–2023</string>
     <string name="tv__6281212121212" translatable="false">+6281212121212</string>
     <string name="tv_1_march_2023">1 march 2023</string>
