@@ -6,28 +6,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ketarketir.tiketkuioflight.R
+import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetSetPassengerBinding
 import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetSetPassengerViewModel
 
-class BottomSheetSetPassengerFragment : Fragment() {
+class BottomSheetSetPassengerFragment : BottomSheetDialogFragment() {
 
-    companion object {
-        fun newInstance() = BottomSheetSetPassengerFragment()
-    }
-
+    private lateinit var binding: FragmentBottomSheetSetPassengerBinding
     private lateinit var viewModel: BottomSheetSetPassengerViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentBottomSheetSetPassengerBinding.inflate(layoutInflater, container, false)
         return inflater.inflate(R.layout.fragment_bottom_sheet_set_passenger, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(BottomSheetSetPassengerViewModel::class.java)
-        // TODO: Use the ViewModel
+
+
     }
 
 }
