@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.ketarketir.tiketkuioflight.R
@@ -90,7 +91,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        binding.rvDestination.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvDestination.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvDestination.adapter = destinationAdapter
     }
 

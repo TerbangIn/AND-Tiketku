@@ -1,5 +1,7 @@
 package com.ketarketir.tiketkuioflight.view
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.provider.Settings.Global
@@ -15,12 +17,13 @@ import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentLoginBinding
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
-//import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
+
     private lateinit var binding: FragmentLoginBinding
     private lateinit var userViewModel: UserViewModel
     private lateinit var userManager: UserManager
@@ -37,6 +40,12 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        userManager = UserManager.getInstance(requireContext())
+
+
+
         binding.btnLogin.setOnClickListener {
             login()
         }
@@ -51,6 +60,7 @@ class LoginFragment : Fragment() {
     private fun login(){
         val inputEmail = binding.tieEmailNomorTelepon.text.toString()
         val inputPassword = binding.tiePassword.text.toString()
+
 
         if (inputEmail.isEmpty() || inputPassword.isEmpty()){
             Toast.makeText(requireActivity(), "Please fill all the fields", Toast.LENGTH_SHORT).show()

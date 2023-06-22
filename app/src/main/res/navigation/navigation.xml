@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
 
+<<<<<<< HEAD
     app:startDestination="@id/splashFragment">
+=======
+    app:startDestination="@id/loginFragment2">
+>>>>>>> 13e91cafa3d5c19cc6f9e734a6fe58cc8a11656e
 
     <fragment
         android:id="@+id/accountFragment"
@@ -20,6 +24,9 @@
         <action
             android:id="@+id/action_accountFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/notificationFragment"
