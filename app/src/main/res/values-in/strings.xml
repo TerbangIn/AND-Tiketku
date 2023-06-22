@@ -27,6 +27,7 @@
     <string name="btn_save">Simpan</string>
     <string name="tv_register">Daftar</string>
     <string name="tv_name">Nama</string>
+    <string name="tv_full_name">Full Name</string>
     <string name="et_full_name">Nama Lengkap</string>
     <string name="tv_phone_number">Nomor Telepon</string>
     <string name="tv_create_password">Buat Kata Sandi</string>
@@ -81,7 +82,7 @@
     <string name="tv_earliest_arrival"><b>Kedatangan </b>- Paling awal</string>
     <string name="tv_latest_arrival"><b>Kedatangan </b>- Terbaru</string>
     <string name="tv_flight_options">Pilihan Penerbangan</string>
-    <string name="tv_terminal_1a_domestic">Terminal 1A Domestik</string>
+    <string name="tv_departure_place_detail">Terminal 1A Domestik</string>
     <string name="tv_melbourne_international_airport">Bandara Internasional Melbourne</string>
     <string name="tv_total">Jumlah</string>
     <string name="tv_search_not_found">Maaf, pencarian Anda tidak ditemukan</string>
@@ -106,9 +107,12 @@
     <string name="tv_got_family_name">Punya Nama Keluarga</string>
     <string name="tv_family_name">Nama Keluarga</string>
     <string name="tv_passenger_biodata">Biodata Penumpang</string>
+    <string name="btn_next_choose_seat">Lanjut Pilih Kursi</string>
     <string name="tv_passenger_seat">Penumpang 1 - Dewasa</string>
-    <string name="tv_passenger_title">Judul</string>
-    <string name="tv_passenger_birthdate">Tanggal Lahir</string>
+    <string name="tv_biodata_passenger_title">Gelar</string>
+    <string name="tv_passenger_title">Mr</string>
+    <string name="tv_biodata_passenger_birthdate">Tanggal Lahir</string>
+    <string name="tv_passenger_birthdate">dd/mm/yyyy</string>
     <string name="tv_passenger_citizenship">Kewarganegaraan</string>
     <string name="tv_passenger_id_card_passport">Kartu Identitas/Paspor</string>
     <string name="tv_passenger_country_publication">Publikasi Negara</string>
@@ -138,6 +142,11 @@
     <string name="tv_tuesday">Selasa</string>
     <string name="tv_1_march_2023">1 Maret 2023</string>
     <string name="tv_2_passengers">2 Penumpang</string>
+    <string name="tv_information">Informasi</string>
     <string name="tv_direct">Langsung</string>
     <string name="tv_coming_soon">Segera hadir</string>
+    <string name="baggage_20_kg">Baggage 20 kg</string>
+    <string name="cabin_baggage_7_kg">Cabin baggage 7 kg</string>
+    <string name="in_flight_entertainment">In Flight Entertainment</string>
+    <string name="tv_arrival">Arrival</string>
 </resources>

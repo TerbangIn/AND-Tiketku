@@ -37,8 +37,8 @@ class UserViewModel @Inject constructor(val apiService: ApiService, val userMana
     private val _token:MutableLiveData<String> = MutableLiveData()
     val token : LiveData<String> get() = _token
 
-
     private var loggedInUserId: Int? = null
+
 
     fun callApiPostRegisterUser(email :String, password:String, first_name:String, phone_number:String){
         apiService.registerUser(DataPostUser(email,password, first_name, phone_number))

@@ -6,7 +6,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
+import com.ketarketir.tiketkuioflight.model.user.DataPostGenerateOtp
 import com.ketarketir.tiketkuioflight.model.user.DataPostUserVerify
+import com.ketarketir.tiketkuioflight.model.user.DataResponseGenerateOtp
 import com.ketarketir.tiketkuioflight.model.user.DataResponseVerifyUser
 import com.ketarketir.tiketkuioflight.networking.ApiClient
 import com.ketarketir.tiketkuioflight.networking.ApiService
@@ -20,6 +22,9 @@ import javax.inject.Inject
 class SendOTPViewModel @Inject constructor(val apiService: ApiService) : ViewModel() {
     private val _statusVerify : MutableLiveData<String> = MutableLiveData()
     val statusVerify : LiveData<String> get() = _statusVerify
+
+    private val _statusGenerate : MutableLiveData<String> = MutableLiveData()
+    val statusGenerate : LiveData<String> get() = _statusGenerate
 
     fun callApiVerifyUser(email : String, otp : String){
         apiService.verifyUser(DataPostUserVerify(email, otp))
@@ -45,5 +50,26 @@ class SendOTPViewModel @Inject constructor(val apiService: ApiService) : ViewMod
                 }
 
             })
+    }
+
+    fun callApiPostGenerateOtp(email: String){
+        apiService.generateOtp(DataPostGenerateOtp(email)).enqueue(object : Callback<DataResponseGenerateOtp>{
+            @SuppressLint("NullSafeMutableLiveData")
+            override fun onResponse(
+                call: Call<DataResponseGenerateOtp>,
+                response: Response<DataResponseGenerateOtp>
+            ) {
+                if (response.isSuccessful){
+                    val data = response.body()
+                    _statusGenerate.postValue(data!!.status)
+                } else{
+                    _statusGenerate.postValue(null)
+                    Log.e("Error : ", "onFailure : ${response.message()}")
+                }
+            }
+            override fun onFailure(call: Call<DataResponseGenerateOtp>, t: Throwable) {
+                Log.e("Error : ", "onFailure : ${t.message}")
+            }
+        })
     }
 }
