@@ -19,9 +19,9 @@ class NotificationViewModel @Inject constructor(val apiService: ApiService) : Vi
     private val _notifications = MutableLiveData<List<Data>>()
     val notifications: LiveData<List<Data>> get() = _notifications
 
-    fun getNotifications(bearerToken: String, id: Int?) {
+    fun getNotifications(bearerToken: String) {
 
-        val call = apiService.getNotifications(bearerToken, id)
+        val call = apiService.getNotifications(bearerToken)
         call.enqueue(object : Callback<List<Data>> {
             override fun onResponse(call: Call<List<Data>>, response: Response<List<Data>>) {
                 if (response.isSuccessful) {
