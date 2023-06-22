@@ -1,13 +1,10 @@
 package com.ketarketir.tiketkuioflight.networking
 
 import com.ketarketir.tiketkuioflight.model.airport.DataResponseAirport
+import com.ketarketir.tiketkuioflight.model.notifications.DataResponseNotifications
 import com.ketarketir.tiketkuioflight.model.user.*
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -55,5 +52,5 @@ interface ApiService {
     @GET("api/v1/notification")
     fun getNotifications(
         @Header("Authorization") bearerToken: String
-    ): Call<List<com.ketarketir.tiketkuioflight.model.notifications.Data>>
+    ): Call<DataResponseNotifications>
 }

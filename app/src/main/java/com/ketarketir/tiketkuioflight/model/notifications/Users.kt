@@ -1,6 +1,5 @@
 package com.ketarketir.tiketkuioflight.model.notifications
 
-
 import com.google.gson.annotations.SerializedName
 
 data class Users(

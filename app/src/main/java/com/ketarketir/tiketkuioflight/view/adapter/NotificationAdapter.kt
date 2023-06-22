@@ -26,7 +26,6 @@ class NotificationAdapter(var notifications: List<Data>) :
 
     inner class NotificationViewHolder(private val binding: ItemNotificationBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun bind(notification: Data) {
             binding.tvTitle.text = notification.title
             binding.tvDate.text = notification.createdAt
