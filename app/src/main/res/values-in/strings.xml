@@ -145,8 +145,8 @@
     <string name="tv_information">Informasi</string>
     <string name="tv_direct">Langsung</string>
     <string name="tv_coming_soon">Segera hadir</string>
-    <string name="baggage_20_kg">Baggage 20 kg</string>
-    <string name="cabin_baggage_7_kg">Cabin baggage 7 kg</string>
-    <string name="in_flight_entertainment">In Flight Entertainment</string>
+    <string name="tv_baggage_20_kg">Baggage 20 kg</string>
+    <string name="tv_cabin_baggage_7_kg">Cabin baggage 7 kg</string>
+    <string name="tv_in_flight_entertainment">In Flight Entertainment</string>
     <string name="tv_arrival">Arrival</string>
 </resources>

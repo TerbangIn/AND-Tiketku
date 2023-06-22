@@ -22,7 +22,7 @@ class DestinationViewModel : ViewModel() {
                 "Air Asia",
                 "20-30 March 2023",
                 "IDR 950.000",
-                R.drawable.iv_sample_destionation
+                R.drawable.iv_sample_destination
             ),
             ListDataDestination(
                 "Bali",
@@ -30,7 +30,7 @@ class DestinationViewModel : ViewModel() {
                 "Singapore Airlines",
                 "10-20 April 2023",
                 "IDR 845.000",
-                R.drawable.iv_sample_destionation
+                R.drawable.iv_sample_destination
             ),
             ListDataDestination(
                 "Tokyo",
@@ -38,7 +38,7 @@ class DestinationViewModel : ViewModel() {
                 "Korean Air",
                 "15-25 May 2023",
                 "IDR 780.000",
-                R.drawable.iv_sample_destionation
+                R.drawable.iv_sample_destination
             ),
             ListDataDestination(
                 "Tokyo",
@@ -46,7 +46,7 @@ class DestinationViewModel : ViewModel() {
                 "Korean Air",
                 "15-25 May 2023",
                 "IDR 780.000",
-                R.drawable.iv_sample_destionation
+                R.drawable.iv_sample_destination
             ),
             ListDataDestination(
                 "Tokyo",
@@ -54,7 +54,7 @@ class DestinationViewModel : ViewModel() {
                 "Korean Air",
                 "15-25 May 2023",
                 "IDR 780.000",
-                R.drawable.iv_sample_destionation
+                R.drawable.iv_sample_destination
             ),
             ListDataDestination(
                 "Tokyo",
@@ -62,7 +62,7 @@ class DestinationViewModel : ViewModel() {
                 "Korean Air",
                 "15-25 May 2023",
                 "IDR 780.000",
-                R.drawable.iv_sample_destionation
+                R.drawable.iv_sample_destination
             ),
             ListDataDestination(
                 "Tokyo",
@@ -70,7 +70,7 @@ class DestinationViewModel : ViewModel() {
                 "Korean Air",
                 "15-25 May 2023",
                 "IDR 780.000",
-                R.drawable.iv_sample_destionation
+                R.drawable.iv_sample_destination
             )
 
         )
