@@ -62,23 +62,23 @@ class ProfileFragment : Fragment() {
 
                 val request = DataUserUpdate(getNamaLengkap, getEmail, getPhoneNumber)
 
-                apiService.updateUser(bearerToken, userId, request).enqueue(object : Callback<DataResponseUserUpdate> {
-                    override fun onResponse(call: Call<DataResponseUserUpdate>, response: Response<DataResponseUserUpdate>) {
-                        if (response.isSuccessful) {
-                            val dataResponse = response.body()
-                            if (dataResponse != null) {
-                                val successMessage = dataResponse.message
-                                Toast.makeText(context, successMessage, Toast.LENGTH_SHORT).show()
-                            }
-                        } else {
-                            Toast.makeText(context, "Gagal memperbarui data", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-
-                    override fun onFailure(call: Call<DataResponseUserUpdate>, t: Throwable) {
-                        Toast.makeText(context, "Gagal komunikasi dengan server", Toast.LENGTH_SHORT).show()
-                    }
-                })
+//                apiService.updateUser(bearerToken, userId, request).enqueue(object : Callback<DataResponseUserUpdate> {
+//                    override fun onResponse(call: Call<DataResponseUserUpdate>, response: Response<DataResponseUserUpdate>) {
+//                        if (response.isSuccessful) {
+//                            val dataResponse = response.body()
+//                            if (dataResponse != null) {
+//                                val successMessage = dataResponse.message
+//                                Toast.makeText(context, successMessage, Toast.LENGTH_SHORT).show()
+//                            }
+//                        } else {
+//                            Toast.makeText(context, "Gagal memperbarui data", Toast.LENGTH_SHORT).show()
+//                        }
+//                    }
+//
+//                    override fun onFailure(call: Call<DataResponseUserUpdate>, t: Throwable) {
+//                        Toast.makeText(context, "Gagal komunikasi dengan server", Toast.LENGTH_SHORT).show()
+//                    }
+//                })
             }
         }
 

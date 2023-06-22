@@ -12,8 +12,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentSendOTPBinding
+import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
 import com.ketarketir.tiketkuioflight.viewmodel.SendOTPViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
@@ -27,7 +29,7 @@ class SendOTPFragment : Fragment() {
     private var isTimeRunning = false
     private val countDownTime = 60000L
     private val countDownInterval = 1000L
-
+    private lateinit var userManager: UserManager
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +41,7 @@ class SendOTPFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sendOTPViewModel = ViewModelProvider(this).get(SendOTPViewModel::class.java)
+        userManager = UserManager.getInstance(requireContext())
 
         val email = arguments?.getString("email")
         binding.tvNumber.text = email.toString()
@@ -84,9 +87,7 @@ class SendOTPFragment : Fragment() {
         sendOTPViewModel.statusVerify.observe(viewLifecycleOwner, Observer {
             if (it!= null){
                 Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
-                GlobalScope.async {
-
-                }
+                findNavController().navigate(R.id.action_sendOTPFragment_to_loginFragment2)
             } else{
                 Toast.makeText(requireContext(), "failed", Toast.LENGTH_SHORT).show()
             }
