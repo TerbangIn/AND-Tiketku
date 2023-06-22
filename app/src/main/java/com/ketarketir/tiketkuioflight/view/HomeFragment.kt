@@ -84,8 +84,12 @@ class HomeFragment : Fragment() {
         }
 
         binding.tvSeatClass.setOnClickListener {
-            BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager,BottomSheetClassSeatFragment.bsSeatClass)
+            BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager, "BottomSheetClassSeatFragment")
         }
+        binding.tvPassenger.setOnClickListener {
+            BottomSheetSetPassengerFragment().show(requireActivity().supportFragmentManager, "BottomSheetSetPassengerFragment")
+        }
+
 
 
     }
