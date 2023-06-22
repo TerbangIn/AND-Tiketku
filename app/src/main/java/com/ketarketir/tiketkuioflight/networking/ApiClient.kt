@@ -3,10 +3,9 @@ package com.ketarketir.tiketkuioflight.networking
 import android.app.Application
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.Provides
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -18,7 +17,7 @@ object ApiClient {
     private const val BASE_URL =" https://be-tiketku-production.up.railway.app/"
 
     @Singleton
-    @get:Provides
+   @get:Provides
     val instance : ApiService by lazy {
         val retrofit= Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -32,4 +31,6 @@ object ApiClient {
     fun provideUserManager(application: Application): UserManager {
         return UserManager.getInstance(application)
     }
+
+
 }

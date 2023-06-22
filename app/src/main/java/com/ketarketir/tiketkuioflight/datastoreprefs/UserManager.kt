@@ -7,8 +7,11 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 
 class UserManager(private val context: Context) {
 
@@ -51,5 +54,15 @@ class UserManager(private val context: Context) {
             .map { preferences ->
                 preferences[IS_LOGIN_KEY] ?: false
             }
+    }
+
+    suspend fun getToken(): String {
+        val preferences = context.datastore.data.first()
+        return preferences[TOKEN] ?: ""
+    }
+
+    suspend fun getUserId(): Int {
+        val preferences = context.datastore.data.first()
+        return preferences[USER_ID] ?: 0
     }
 }

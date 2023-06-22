@@ -18,15 +18,14 @@ import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentRegisterBinding
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
-//import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
     private lateinit var binding:FragmentRegisterBinding
     private lateinit var userViewModel: UserViewModel
     private lateinit var sharedRegis: SharedPreferences
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -138,44 +137,40 @@ class RegisterFragment : Fragment() {
 
     }
 
-
-    private fun register(){
+    private fun register() {
         val inputName = binding.tieName.text.toString()
         val inputEmail = binding.tieEmail.text.toString()
         val phoneNumber = binding.tiePhoneNumber.text.toString()
         val password = binding.tiePassword.text.toString()
         val confirmPassword = binding.tieConfirmPassword.text.toString()
 
-        val addUser = sharedRegis.edit()
-        addUser.putString("name", inputName)
-
-        val addEmail = sharedRegis.edit()
-        addEmail.putString("email", inputEmail)
-
-        val addPhoneNumber = sharedRegis.edit()
-        addPhoneNumber.putString("phone_number", phoneNumber)
-
-        if (inputName.isEmpty() || inputEmail.isEmpty() || phoneNumber.isEmpty() || password.isEmpty()){
+        if (inputName.isEmpty() || inputEmail.isEmpty() || phoneNumber.isEmpty() || password.isEmpty()) {
             Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
-        } else{
-            validatePassword(password)
-            if (password!= confirmPassword){
-                binding.tieConfirmPassword.error = "Confirm password tidak sama dengan password"
-                binding.tieConfirmPassword.requestFocus()
-            } else{
-                userViewModel.callApiPostRegisterUser(inputEmail, password, inputName, phoneNumber)
-                userViewModel.registerUser.observe(viewLifecycleOwner, Observer {
-                    if (it!= null){
-                        val bundle = Bundle()
-                        bundle.putString("email", it.email)
-                        Toast.makeText(requireContext(), "Register Success", Toast.LENGTH_SHORT).show()
-                        findNavController().navigate(R.id.action_registerFragment_to_sendOTPFragment, bundle)
-                    } else{
-                        Toast.makeText(requireContext(), "Register Failed", Toast.LENGTH_SHORT).show()
-                    }
-                })
-            }
+        } else if (password != confirmPassword) {
+            binding.tieConfirmPassword.error = "Confirm password tidak sama dengan password"
+            binding.tieConfirmPassword.requestFocus()
+        } else if (!validatePassword(password)) {
+            Toast.makeText(requireContext(), "Invalid password", Toast.LENGTH_SHORT).show()
+        } else {
+            val addUser = sharedRegis.edit()
+            addUser.putString("name", inputName)
+            addUser.putString("email", inputEmail)
+            addUser.putString("phone_number", phoneNumber)
+            addUser.apply()
+
+            userViewModel.callApiPostRegisterUser(inputEmail, password, inputName, phoneNumber)
+            userViewModel.registerUser.observe(viewLifecycleOwner, Observer {
+                if (it != null) {
+                    val bundle = Bundle()
+                    bundle.putString("email", it.email)
+                    Toast.makeText(requireContext(), "Register Success", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_registerFragment_to_sendOTPFragment, bundle)
+                } else {
+                    Toast.makeText(requireContext(), "Register Failed", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
+
 
 }

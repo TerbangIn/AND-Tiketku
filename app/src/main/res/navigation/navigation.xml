@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
 
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment2">
 
     <fragment
         android:id="@+id/accountFragment"
@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_accountFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/notificationFragment"

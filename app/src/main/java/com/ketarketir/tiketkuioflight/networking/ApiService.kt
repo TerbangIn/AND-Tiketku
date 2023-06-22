@@ -3,11 +3,7 @@ package com.ketarketir.tiketkuioflight.networking
 import com.ketarketir.tiketkuioflight.model.airport.DataResponseAirport
 import com.ketarketir.tiketkuioflight.model.user.*
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -35,6 +31,13 @@ interface ApiService {
     fun verifyUser(
         @Body request : DataPostUserVerify
     ) : Call<DataResponseVerifyUser>
+
+    @PUT("api/v1/user/{id}")
+    fun updateUser(
+        @Header("Authorization") bearerToken: String,
+        @Path("id") id: Int,
+        @Body request: DataUserUpdate
+    ): Call<DataResponseUserUpdate>
 
     //airport
     @GET("api/v1/airport/")

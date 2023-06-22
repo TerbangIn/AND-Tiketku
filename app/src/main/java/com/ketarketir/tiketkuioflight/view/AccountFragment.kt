@@ -38,6 +38,11 @@ class AccountFragment : Fragment() {
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         userManager = UserManager.getInstance(requireContext())
 
+        binding.tvChangeProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_accountFragment_to_profileFragment)
+            Toast.makeText(requireContext(), "Account", Toast.LENGTH_SHORT).show()
+        }
+
         binding.tvLogout.setOnClickListener {
             GlobalScope.async {
                 userManager.clearData()

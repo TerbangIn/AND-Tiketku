@@ -39,8 +39,40 @@ class DestinationViewModel : ViewModel() {
                 "15-25 May 2023",
                 "IDR 780.000",
                 R.drawable.iv_sample_destionation
+            ),
+            ListDataDestination(
+                "Tokyo",
+                "Seoul",
+                "Korean Air",
+                "15-25 May 2023",
+                "IDR 780.000",
+                R.drawable.iv_sample_destionation
+            ),
+            ListDataDestination(
+                "Tokyo",
+                "Seoul",
+                "Korean Air",
+                "15-25 May 2023",
+                "IDR 780.000",
+                R.drawable.iv_sample_destionation
+            ),
+            ListDataDestination(
+                "Tokyo",
+                "Seoul",
+                "Korean Air",
+                "15-25 May 2023",
+                "IDR 780.000",
+                R.drawable.iv_sample_destionation
+            ),
+            ListDataDestination(
+                "Tokyo",
+                "Seoul",
+                "Korean Air",
+                "15-25 May 2023",
+                "IDR 780.000",
+                R.drawable.iv_sample_destionation
             )
-            // Add more data items as needed
+
         )
         _destinations.value = data
     }
