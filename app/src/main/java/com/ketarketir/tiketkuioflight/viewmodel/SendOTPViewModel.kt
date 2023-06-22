@@ -20,11 +20,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SendOTPViewModel @Inject constructor(val apiService: ApiService) : ViewModel() {
-    private val _statusVerify : MutableLiveData<String> = MutableLiveData()
-    val statusVerify : LiveData<String> get() = _statusVerify
+    private val _statusVerify : MutableLiveData<DataResponseVerifyUser> = MutableLiveData()
+    val statusVerify : LiveData<DataResponseVerifyUser> get() = _statusVerify
 
-    private val _statusGenerate : MutableLiveData<String> = MutableLiveData()
-    val statusGenerate : LiveData<String> get() = _statusGenerate
+    private val _statusGenerate : MutableLiveData<DataResponseGenerateOtp> = MutableLiveData()
+    val statusGenerate : LiveData<DataResponseGenerateOtp> get() = _statusGenerate
 
     fun callApiVerifyUser(email : String, otp : String){
         apiService.verifyUser(DataPostUserVerify(email, otp))
@@ -36,7 +36,7 @@ class SendOTPViewModel @Inject constructor(val apiService: ApiService) : ViewMod
                 ) {
                     if (response.isSuccessful){
                         val data = response.body()
-                        _statusVerify.postValue(data!!.status)
+                        _statusVerify.postValue(data!!)
                     } else{
                         Log.e("Error : ", "onFailure : ${response.message()}")
                         _statusVerify.postValue(null)
@@ -61,7 +61,7 @@ class SendOTPViewModel @Inject constructor(val apiService: ApiService) : ViewMod
             ) {
                 if (response.isSuccessful){
                     val data = response.body()
-                    _statusGenerate.postValue(data!!.status)
+                    _statusGenerate.postValue(data!!)
                 } else{
                     _statusGenerate.postValue(null)
                     Log.e("Error : ", "onFailure : ${response.message()}")

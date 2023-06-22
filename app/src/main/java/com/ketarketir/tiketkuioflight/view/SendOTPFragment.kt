@@ -16,6 +16,8 @@ import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentSendOTPBinding
 import com.ketarketir.tiketkuioflight.viewmodel.SendOTPViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 
 @AndroidEntryPoint
 class SendOTPFragment : Fragment() {
@@ -25,6 +27,7 @@ class SendOTPFragment : Fragment() {
     private var isTimeRunning = false
     private val countDownTime = 60000L
     private val countDownInterval = 1000L
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -80,7 +83,10 @@ class SendOTPFragment : Fragment() {
         sendOTPViewModel.callApiVerifyUser(email.toString(), inputOtp)
         sendOTPViewModel.statusVerify.observe(viewLifecycleOwner, Observer {
             if (it!= null){
-                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
+                GlobalScope.async {
+
+                }
             } else{
                 Toast.makeText(requireContext(), "failed", Toast.LENGTH_SHORT).show()
             }
@@ -91,7 +97,7 @@ class SendOTPFragment : Fragment() {
         val email = arguments?.getString("email")
         sendOTPViewModel.callApiPostGenerateOtp(email.toString())
         sendOTPViewModel.statusGenerate.observe(viewLifecycleOwner, Observer {
-            if (it == "success"){
+            if (it!= null){
                 Toast.makeText(context, "Send OTP Berhasil! Silahkan cek email anda !", Toast.LENGTH_SHORT).show()
             } else{
                 Toast.makeText(context, "Send OTP Gagal!", Toast.LENGTH_SHORT).show()
