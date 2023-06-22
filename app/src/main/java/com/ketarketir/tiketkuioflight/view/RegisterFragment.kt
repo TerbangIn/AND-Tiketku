@@ -20,6 +20,7 @@ import com.ketarketir.tiketkuioflight.databinding.FragmentRegisterBinding
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
@@ -39,7 +40,6 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-
         sharedRegis = requireContext().getSharedPreferences("dataUser", Context.MODE_PRIVATE)
 
         binding.btnRegister.setOnClickListener {

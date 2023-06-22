@@ -27,7 +27,7 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var userViewModel: UserViewModel
     private lateinit var userManager: UserManager
-    private lateinit var sharedPreferences: SharedPreferences
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,9 +40,11 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         userManager = UserManager.getInstance(requireContext())
-        sharedPreferences = requireContext().getSharedPreferences("dataUser", Context.MODE_PRIVATE)
+
+
 
         binding.btnLogin.setOnClickListener {
             login()
@@ -59,13 +61,10 @@ class LoginFragment : Fragment() {
         val inputEmail = binding.tieEmailNomorTelepon.text.toString()
         val inputPassword = binding.tiePassword.text.toString()
 
-        val addUser = sharedPreferences.edit()
-        addUser.putString("user", inputEmail)
 
         if (inputEmail.isEmpty() || inputPassword.isEmpty()){
             Toast.makeText(requireActivity(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
         } else{
-            addUser.apply()
             userViewModel.callApiPostUserLogin(inputEmail, inputPassword)
             userViewModel.token.observe(viewLifecycleOwner, Observer {token->
                 if (token!=null){
