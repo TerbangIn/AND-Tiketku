@@ -38,6 +38,14 @@ interface ApiService {
         @Body request : DataPostGenerateOtp
     ) : Call<DataResponseGenerateOtp>
 
+    // Update User
+    @PUT("api/v1/user/{id}")
+    fun updateUser(
+        @Header("Authorization") bearerToken: String,
+        @Path("id") id: Int,
+        @Body request: DataUserUpdate
+    ): Call<DataResponseUserUpdate>
+
     //airport
     @GET("api/v1/airport/")
     fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<List<DataResponseAirport>>

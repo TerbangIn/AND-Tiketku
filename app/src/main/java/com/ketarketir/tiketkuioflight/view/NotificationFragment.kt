@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ketarketir.tiketkuioflight.databinding.FragmentNotificationBinding
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager

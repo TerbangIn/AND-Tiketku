@@ -8,5 +8,5 @@ data class DataUserUpdate(
     @SerializedName("first_name")
     val firstName: String,
     @SerializedName("phone_number")
-    val phoneNumber: String,
+    val phoneNumber: String
 )

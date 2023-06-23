@@ -18,8 +18,6 @@ import com.ketarketir.tiketkuioflight.databinding.FragmentSendOTPBinding
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
 import com.ketarketir.tiketkuioflight.viewmodel.SendOTPViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 
 @AndroidEntryPoint
 class SendOTPFragment : Fragment() {
