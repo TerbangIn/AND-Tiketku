@@ -5,14 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.R
-import com.ketarketir.tiketkuioflight.databinding.FragmentResetPasswordBinding
+import com.ketarketir.tiketkuioflight.databinding.FragmentInputEmailBinding
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
 
-class ResetPasswordFragment : Fragment() {
-    private var _binding: FragmentResetPasswordBinding? = null
+class InputEmailFragment : Fragment() {
+    private var _binding: FragmentInputEmailBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var userViewModel: UserViewModel
@@ -21,7 +22,7 @@ class ResetPasswordFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentResetPasswordBinding.inflate(inflater, container, false)
+        _binding = FragmentInputEmailBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -30,16 +31,25 @@ class ResetPasswordFragment : Fragment() {
 
         userViewModel = ViewModelProvider(requireActivity()).get(UserViewModel::class.java)
 
-        binding.btnSimpan.setOnClickListener {
-            val newPassword = binding.tieEnterNerPassword.text.toString()
-            // Call API to reset password with new password
-            userViewModel.resetPassword("","","Sekaradmin123.","Sekaradmin123.")
-            navigateToLoginFragment()
+        binding.btnNext.setOnClickListener {
+            val email = binding.tieMasukanEmail.text.toString()
+
+            userViewModel.resetPassword(email, "", "","").observe(viewLifecycleOwner, Observer { response ->
+                if (response != null) {
+                    if (response.isSuccessful) {
+                        navigateToOtpFragment()
+                    } else {
+
+                    }
+                } else {
+
+                }
+            })
         }
     }
 
-    private fun navigateToLoginFragment() {
-        findNavController().navigate(R.id.action_resetPasswordFragment_to_loginFragment2)
+    private fun navigateToOtpFragment() {
+        findNavController().navigate(R.id.action_inputEmailFragment_to_sendOTPFragment)
     }
 
     override fun onDestroyView() {

@@ -40,7 +40,9 @@ class LoginFragment : Fragment() {
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         userManager = UserManager.getInstance(requireContext())
 
-
+        binding.tvForgotPassword.setOnClickListener {
+            navigateToInputEmailFragment()
+        }
 
         binding.btnLogin.setOnClickListener {
             login()
@@ -48,9 +50,7 @@ class LoginFragment : Fragment() {
         binding.tvRegisterHere.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment2_to_registerFragment)
         }
-        binding.tvForgotPassword.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment2_to_resetPasswordFragment)
-        }
+
     }
 
     private fun login(){
@@ -83,5 +83,8 @@ class LoginFragment : Fragment() {
 
     }
 
+    private fun navigateToInputEmailFragment() {
+        findNavController().navigate(R.id.action_loginFragment2_to_inputEmailFragment)
+    }
 
 }

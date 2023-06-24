@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ketarketir.tiketkuioflight.databinding.FragmentNotificationBinding
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
 import com.ketarketir.tiketkuioflight.viewmodel.NotificationViewModel
-import com.ketarketir.tiketkuioflight.model.notifications.Data
+import com.ketarketir.tiketkuioflight.model.user.Notification
 import com.ketarketir.tiketkuioflight.view.adapter.NotificationAdapter
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -89,7 +89,7 @@ class NotificationFragment : Fragment() {
         })
     }
 
-    private fun updateNotifications(notifications: List<Data>) {
+    private fun updateNotifications(notifications: List<Notification>) {
         notificationAdapter.notifications = notifications
         notificationAdapter.notifyDataSetChanged()
     }

@@ -2,21 +2,16 @@ package com.ketarketir.tiketkuioflight.view
 
 import DestinationAdapter
 import DestinationViewModel
-import android.app.DatePickerDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.ketarketir.tiketkuioflight.R
-import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetHomeSearchDestinationBinding
 import com.ketarketir.tiketkuioflight.databinding.FragmentHomeBinding
 import com.ketarketir.tiketkuioflight.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -88,9 +83,6 @@ class HomeFragment : Fragment() {
         binding.tvPassenger.setOnClickListener {
             BottomSheetSetPassengerFragment().show(requireActivity().supportFragmentManager, "BottomSheetSetPassengerFragment")
         }
-
-
-
     }
 
     private fun setupRecyclerView() {

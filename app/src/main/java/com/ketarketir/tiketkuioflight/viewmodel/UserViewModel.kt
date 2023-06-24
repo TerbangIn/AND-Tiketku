@@ -2,18 +2,14 @@ package com.ketarketir.tiketkuioflight.viewmodel
 
 import android.annotation.SuppressLint
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
 import com.ketarketir.tiketkuioflight.model.user.*
-import com.ketarketir.tiketkuioflight.networking.ApiClient
 import com.ketarketir.tiketkuioflight.networking.ApiService
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.ketarketir.tiketkuioflight.model.user.DataResponseResetPassword
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -136,6 +132,32 @@ class UserViewModel @Inject constructor(val apiService: ApiService, val userMana
 
     fun getUserId(): Int? {
         return loggedInUserId
+    }
+
+    fun resetPassword(email: String, otp: String, password: String, confirm_password: String): LiveData<DataResponseResetPassword> {
+        val resetPasswordResponse: MutableLiveData<DataResponseResetPassword> = MutableLiveData()
+
+        val request = DataResetPassword(email,otp,password, confirm_password )
+        apiService.resetPassword(request).enqueue(object : Callback<DataResponseResetPassword> {
+            override fun onResponse(
+                call: Call<DataResponseResetPassword>,
+                response: Response<DataResponseResetPassword>
+            ) {
+                if (response.isSuccessful) {
+                    resetPasswordResponse.value = response.body()
+                } else {
+                    Log.e("Error:", "onFailure: ${response.message()}")
+                    resetPasswordResponse.value = null
+                }
+            }
+
+            override fun onFailure(call: Call<DataResponseResetPassword>, t: Throwable) {
+                Log.e("Error:", "onFailure: ${t.message}")
+                resetPasswordResponse.value = null
+            }
+        })
+
+        return resetPasswordResponse
     }
 
 }

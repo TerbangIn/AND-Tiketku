@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">TiketkuIOFlight</string>
     <string name="tv_choose_language">Choose Language</string>
 
@@ -6,7 +6,7 @@
     <string name="john_doe" translatable="false">John Doe</string>
     <string name="john_doe_example_email" translatable="false">Contoh: johndoe@gmail.com</string>
     <string name="john_doe_email" translatable="false">johndoe@gmail.com</string>
-    
+
     <string name="toast_warning_email_not_registered">Email Address not Registered!</string>
     <string name="toast_warning_incorrect_password">Sorry, Incorrect Password</string>
     <string name="toast_success_reset_password_link">Reset Password Link Sent</string>
@@ -15,7 +15,7 @@
     <string name="toast_success_otp_code_sent">OTP Code has been sent!</string>
     <string name="toast_success_registration_successful">Registration Successful</string>
     <string name="toast_warning_otp_incorrect_otp_code">Sorry, Incorrect OTP Code!</string>
-    
+
     <string name="tv_login">Login</string>
     <string name="tv_email_telephone">Email / Phone Number</string>
     <string name="tv_forgot_password">Forgot Password</string>
@@ -28,7 +28,7 @@
     <string name="btn_update">Update</string>
     <string name="btn_logout">Logout</string>
     <string name="btn_cancel">Cancel</string>
-    
+
     <string name="tv_reset_password">Reset Password</string>
     <string name="tv_enter_new_password">Enter New Password</string>
     <string name="tv_enter_new_password_again">Enter New Password Again</string>
@@ -46,14 +46,14 @@
     <string name="btn_register">Register</string>
     <string name="tv_already_have_an_account">Already have an Account?</string>
     <string name="tv_login_here">Login Here</string>
-    
+
     <string name="tv_the_otp">Enter the OTP</string>
     <string name="tv_otp_sent">Type the 6-digit code sent</string>
     <string name="tv_to">To</string>
     <string name="tv_otp_resent">Resend</string>
     <string name="tv_otp_resent_after">Resend OTP in 60 Seconds</string>
     <string name="tv_otp_request">Request OTP Code via Email</string>
-    
+
     <string name="tv_say_Hello">Hey, Where are you going?</string>
     <string name="tv_from">From</string>
     <string name="tv_jakarta_jkt" translatable="false">Jakarta (JKT)</string>
@@ -79,12 +79,12 @@
     <string name="tv_sydney" translatable="false">Sydney</string>
     <string name="tv_5_25_march_2023">5 – 25 March 2023</string>
     <string name="tv_idr_3650" translatable="false">IDR 3.650.000</string>
-    
+
     <string name="tv_city_or_country">Enter City or Country</string>
     <string name="tv_recent_search">Recent Search</string>
     <string name="tv_remove">Remove</string>
     <string name="tv_bandung" translatable="false">Bandung</string>
-    
+
     <string name="tv_departure_date">Departure Date</string>
     <string name="tv_return_date">Return Date</string>
     <string name="btn_choose">Choose</string>
@@ -133,10 +133,10 @@
     <string name="tv_try_other_search">Try searching for other trips!</string>
     <string name="btn_change_search">Change Search</string>
     <string name="tv_ticket_sold_out">Sorry, tickets are sold out!</string>
-    
+
     <string name="tv_booking_history">Booking History</string>
     <string name="tv_login_first">Sorry, you must login first!</string>
-    
+
     <string name="tv_promotion">Promotion</string>
     <string name="tv_get_promotion_ticket">Get 50% OFF Tickets!</string>
     <string name="tv_terms_condition">Terms and Conditions Apply!</string>
@@ -155,7 +155,7 @@
     <string name="tv_booking_personal_data">Booking Personal Data</string>
     <string name="tv_got_family_name">Got a Family Name</string>
     <string name="tv_family_name">Family Name</string>
-    
+
     <string name="tv_passenger_biodata">Passenger Biodata</string>
     <string name="btn_next_choose_seat">Next Choose Seat</string>
     <string name="tv_passenger_seat">Passenger 1 - Adult</string>
@@ -170,7 +170,7 @@
     <string name="tv_flight_details">Flight Details</string>
     <string name="tv_price_details">Price Details</string>
     <string name="tv_tax">Tax</string>
-    <string name="tv_promo">Promo</string>
+    <string name="tv_promo" tools:ignore="MissingTranslation">Promo</string>
     <string name="btn_continue_payment">Continue Payment</string>
 
     <string name="tv_processing_payment">Processing Payment</string>
@@ -178,14 +178,14 @@
     <string name="tv_class">Class</string>
 
     <string name="tv_card_number">Card Number</string>
-    <string name="et_card_number">4480 0000 0000 0000</string>
+    <string name="et_card_number" translatable="false">4480 0000 0000 0000</string>
     <string name="tv_card_holder_name">Card Holder Name</string>
-    <string name="tv_cvv">CVV</string>
-    <string name="et_cvv">000</string>
+    <string name="tv_cvv" translatable="false">CVV</string>
+    <string name="et_cvv" tools:ignore="MissingTranslation">000</string>
     <string name="tv_expiry_date">Expiry Date</string>
-    <string name="et_expiry_date">07/24</string>
+    <string name="et_expiry_date" tools:ignore="MissingTranslation">07/24</string>
     <string name="tv_pay">Pay</string>
-    
+
     <string name="tv_congratulations">Congratulations!</string>
     <string name="tv_successful_payments">Your ticket payment transaction was successful!</string>
     <string name="btn_issue_ticket">Issue Ticket</string>
@@ -196,7 +196,7 @@
     <string name="tv_issued">Issued</string>
     <string name="tv_up_paid">Unpaid</string>
     <string name="tv_cancelled">Canceled</string>
-    
+
     <string name="tv_change_profile">Change Profile</string>
     <string name="tv_account_setting">Account Setting</string>
     <string name="tv_logout">Logout</string>
@@ -234,7 +234,7 @@
         <item>American Express</item>
         <item>Paypal</item>
     </string-array>
-    
+
     <string-array name="tv_best_flight">
         <item>Jet Air - Economy</item>
         <item>Jet Airline - Economy</item>
@@ -294,4 +294,9 @@
         <item>November</item>
         <item>December</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="tv_input_email" tools:ignore="MissingTranslation">Masukkan Email</string>
+    <string name="tv_enter_email" translatable="false">Enter email</string>
+    <string name="btn_next" translatable="false">NEXT</string>
 </resources>
