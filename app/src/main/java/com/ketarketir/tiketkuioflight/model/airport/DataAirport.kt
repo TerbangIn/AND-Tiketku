@@ -3,7 +3,7 @@ package com.ketarketir.tiketkuioflight.model.airport
 
 import com.google.gson.annotations.SerializedName
 
-data class Data(
+data class DataAirport(
     @SerializedName("city")
     val city: String,
     @SerializedName("code")

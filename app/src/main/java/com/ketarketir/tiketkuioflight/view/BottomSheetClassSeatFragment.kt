@@ -31,6 +31,7 @@ class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
 
         binding.cvBusiness.setOnClickListener {
             selectSeat("Business")
+            Toast.makeText(context, "testtttt", Toast.LENGTH_SHORT).show()
         }
         binding.cvFirstClass.setOnClickListener {
             selectSeat("First Class")
