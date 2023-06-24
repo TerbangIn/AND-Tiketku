@@ -46,57 +46,55 @@ class BottomSheetHomeSearchDestinationFragment : Fragment() {
 
 
 
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                viewModel.getToken()
-                viewModel.token.observe(viewLifecycleOwner, Observer {
-                    val token = it
-                    viewModel.callApiListAirport(token)
-                    viewModel.listAirport.observe(viewLifecycleOwner, Observer {
-                        val data = it.toString()
-                        if (it!= null){
-                            if (data.contains(query.orEmpty(), ignoreCase = true)){
-                                val adapter : ArrayAdapter<Char> = ArrayAdapter(
-                                    requireContext(),
-                                    android.R.layout.simple_list_item_1,
-                                    data.toList()
-                                )
-                                adapter.filter.filter(query)
-                            }
-                        } else {
-                            Toast.makeText(context, "Airport Tidak ditemukan", Toast.LENGTH_SHORT).show()
-                        }
-                    })
-                })
-                return false
-            }
-
-            override fun onQueryTextChange(newQuery: String?): Boolean {
-                viewModel.getToken()
-                viewModel.token.observe(viewLifecycleOwner, Observer {
-                    val token = it
-                    viewModel.callApiListAirport(token)
-                    viewModel.listAirport.observe(viewLifecycleOwner, Observer {
-                        val data = it.toString()
-                        if (it!= null){
-                            if (data.contains(newQuery.orEmpty(), ignoreCase = true)){
-                                val adapter : ArrayAdapter<Char> = ArrayAdapter(
-                                    requireContext(),
-                                    android.R.layout.simple_list_item_1,
-//                                    data.toList()
-                                )
-                                adapter.filter.filter(newQuery)
-                            }
-                        } else {
-                            Toast.makeText(context, "Airport Tidak ditemukan", Toast.LENGTH_SHORT).show()
-                        }
-                    })
-                })
-
-                return false
-            }
-
-        })
+//        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+////                viewModel.getToken()
+////                viewModel.token.observe(viewLifecycleOwner, Observer {
+////                    val token = it
+////                    viewModel.callApiListAirport(token)
+////                    viewModel.listAirport.observe(viewLifecycleOwner, Observer {
+////                        val data = it.toString()
+////                        if (it!= null){
+////                            if (data.contains(query.orEmpty(), ignoreCase = true)){
+////                                val adapter : ArrayAdapter<Char> = ArrayAdapter(
+////                                    requireContext(),
+////                                    android.R.layout.simple_list_item_1,
+////                                    data.toList()
+////                                )
+////                                adapter.filter.filter(query)
+////                            }
+////                        } else {
+////                            Toast.makeText(context, "Airport Tidak ditemukan", Toast.LENGTH_SHORT).show()
+////                        }
+////                    })
+//                })
+////                return false
+//            }
+//
+//            override fun onQueryTextChange(newQuery: String?): Boolean {
+////                viewModel.getToken()
+////                viewModel.token.observe(viewLifecycleOwner, Observer {
+////                    val token = it
+////                    viewModel.callApiListAirport(token)
+////                    viewModel.listAirport.observe(viewLifecycleOwner, Observer {
+////                        val data = it.toString()
+////                        if (it!= null){
+////                            if (data.contains(newQuery.orEmpty(), ignoreCase = true)){
+////                                val adapter : ArrayAdapter<Char> = ArrayAdapter(
+////                                    requireContext(),
+////                                    android.R.layout.simple_list_item_1,
+//////                                    data.toList()
+////                                )
+////                                adapter.filter.filter(newQuery)
+////                            }
+////                        } else {
+////                            Toast.makeText(context, "Airport Tidak ditemukan", Toast.LENGTH_SHORT).show()
+////                        }
+////                    })
+////                })
+////                return false
+////            }
+//        })
     }
 
     fun showAirport(){
@@ -107,13 +105,14 @@ class BottomSheetHomeSearchDestinationFragment : Fragment() {
             viewModel.listAirport.observe(viewLifecycleOwner, Observer {
                 if (it!= null){
                     val adapter = AirportAdapter(it)
-                    binding.rvRecentSearch.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                    binding.rvRecentSearch.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                     binding.rvRecentSearch.adapter = adapter
                 } else{
                     Toast.makeText(context, "null", Toast.LENGTH_SHORT).show()
                 }
             })
         })
+
     }
 
 }

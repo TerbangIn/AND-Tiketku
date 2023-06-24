@@ -12,6 +12,7 @@ import com.ketarketir.tiketkuioflight.model.airport.DataResponseAirport
 import com.ketarketir.tiketkuioflight.networking.ApiClient
 import com.ketarketir.tiketkuioflight.networking.ApiService
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -31,15 +32,15 @@ class BottomSheetHomeSearchDestinationViewModel @Inject constructor(val apiServi
 
 
     fun callApiListAirport(bearerToken: String){
-        apiService.getListAllAirport(bearerToken).enqueue(object :Callback<List<DataAirport>>{
+        apiService.getListAllAirport(bearerToken).enqueue(object :Callback<DataResponseAirport>{
             @SuppressLint("NullSafeMutableLiveData")
             override fun onResponse(
-                call: Call<List<DataAirport>>,
-                response: Response<List<DataAirport>>
+                call: Call<DataResponseAirport>,
+                response: Response<DataResponseAirport>
             ) {
                 if (response.isSuccessful){
                     val data = response.body()
-                    _listAirport.postValue(data)
+                    _listAirport.postValue(data!!.data)
                 } else{
                     Log.e("Error : ", "onFailure : ${response.message()}")
                     _listAirport.postValue(null)
@@ -47,7 +48,7 @@ class BottomSheetHomeSearchDestinationViewModel @Inject constructor(val apiServi
             }
 
             @SuppressLint("NullSafeMutableLiveData")
-            override fun onFailure(call: Call<List<DataAirport>>, t: Throwable) {
+            override fun onFailure(call: Call<DataResponseAirport>, t: Throwable) {
                 Log.e("Error : ", "onFailure : ${t.message}")
                 _listAirport.postValue(null)
             }
@@ -78,7 +79,7 @@ class BottomSheetHomeSearchDestinationViewModel @Inject constructor(val apiServi
     }
 
     fun getToken(){
-        viewModelScope.launch {
+        GlobalScope.launch {
             val token = userManager.getToken()
             _token.postValue(token)
         }
