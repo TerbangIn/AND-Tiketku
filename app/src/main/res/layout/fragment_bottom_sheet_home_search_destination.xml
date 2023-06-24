@@ -62,6 +62,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_recent_search"
             android:layout_width="match_parent"
+            tools:listitem="@layout/item_airport"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_recent_search" />
 
