@@ -69,8 +69,7 @@ class UserViewModel @Inject constructor(val apiService: ApiService, val userMana
                 ) {
                     if (response.isSuccessful) {
                         val data = response.body()
-                        _token.postValue(data?.data?.token)
-                        loggedInUserId = data?.data?.users?.id
+                        _token.postValue(data!!.data.token)
                         _loginUsers.postValue(data!!.data.users)
                     } else {
                         _token.postValue(null)
@@ -82,8 +81,8 @@ class UserViewModel @Inject constructor(val apiService: ApiService, val userMana
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onFailure(call: Call<DataResponseUserLogin>, t: Throwable) {
                     Log.e("Error:", "onFailure: ${t.message}")
-                    _token.postValue(null)
                     _loginUsers.postValue(null)
+                    _token.postValue(null)
                 }
             })
     }
@@ -128,6 +127,13 @@ class UserViewModel @Inject constructor(val apiService: ApiService, val userMana
                 }
 
             })
+    }
+
+    fun getToken(){
+        viewModelScope.launch {
+            val token = userManager.getToken()
+            _token.postValue(token)
+        }
     }
 
     fun getUserId(): Int? {

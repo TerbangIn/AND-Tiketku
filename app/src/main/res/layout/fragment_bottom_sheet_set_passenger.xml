@@ -85,12 +85,12 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textColor="@color/darkblue05"
                     android:textSize="18sp"
                     app:strokeColor="@color/darkblue05"
                     app:strokeWidth="1dp"
                     android:gravity="center"
-                    app:icon="@drawable/ic_minus_icon"/>
+                    app:icon="@drawable/ic_minus_icon"
+                    app:iconTint="@color/darkblue05"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_adult"
@@ -115,7 +115,8 @@
                     app:strokeColor="@color/darkblue05"
                     app:strokeWidth="1dp"
                     android:gravity="center"
-                    app:icon="@drawable/ic_plus_icon"/>
+                    app:icon="@drawable/ic_plus_icon"
+                    app:iconTint="@color/darkblue05"/>
 
             </LinearLayout>
 
@@ -191,7 +192,8 @@
                     app:strokeColor="@color/darkblue05"
                     app:strokeWidth="1dp"
                     android:gravity="center"
-                    app:icon="@drawable/ic_minus_icon"/>
+                    app:icon="@drawable/ic_minus_icon"
+                    app:iconTint="@color/darkblue05"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_child"
@@ -216,7 +218,8 @@
                     app:strokeColor="@color/darkblue05"
                     app:strokeWidth="1dp"
                     android:gravity="center"
-                    app:icon="@drawable/ic_plus_icon"/>
+                    app:icon="@drawable/ic_plus_icon"
+                    app:iconTint="@color/darkblue05"/>
 
             </LinearLayout>
 
@@ -292,7 +295,8 @@
                     app:strokeColor="@color/darkblue05"
                     app:strokeWidth="1dp"
                     android:gravity="center"
-                    app:icon="@drawable/ic_minus_icon"/>
+                    app:icon="@drawable/ic_minus_icon"
+                    app:iconTint="@color/darkblue05"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_baby"
@@ -317,7 +321,8 @@
                     app:strokeColor="@color/darkblue05"
                     app:strokeWidth="1dp"
                     android:gravity="center"
-                    app:icon="@drawable/ic_plus_icon"/>
+                    app:icon="@drawable/ic_plus_icon"
+                    app:iconTint="@color/darkblue05"/>
 
             </LinearLayout>
 
@@ -338,7 +343,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="50dp"
             android:paddingVertical="12dp"
-            android:backgroundTint="@color/darkblue05"
+            android:backgroundTint="@color/darkblue04"
             android:text="@string/btn_choose"
             android:textSize="14sp"
             android:textStyle="normal"

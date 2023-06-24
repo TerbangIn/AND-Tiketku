@@ -86,9 +86,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        binding.rvDestination.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvDestination.layoutManager = GridLayoutManager(requireContext(), 1, LinearLayoutManager.HORIZONTAL, false)
         binding.rvDestination.adapter = destinationAdapter
     }
+
 
     private fun observeDestinations() {
         destinationViewModel.destinations.observe(viewLifecycleOwner) { destinations ->
