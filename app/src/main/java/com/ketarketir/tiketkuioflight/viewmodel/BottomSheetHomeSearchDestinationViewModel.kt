@@ -23,11 +23,39 @@ class BottomSheetHomeSearchDestinationViewModel @Inject constructor(val apiServi
     private val _airport : MutableLiveData<DataAirport> = MutableLiveData()
     val airport : LiveData<DataAirport> get() = _airport
 
+    private val _listAirport : MutableLiveData<List<DataAirport>> = MutableLiveData()
+    val listAirport : LiveData<List<DataAirport>> get() = _listAirport
+
     private val _token:MutableLiveData<String> = MutableLiveData()
     val token : LiveData<String> get() = _token
 
-    fun callApiAirport(bearerToken: String){
-        apiService.getListAllAirport(bearerToken)
+
+    fun callApiListAirport(bearerToken: String){
+        apiService.getListAllAirport(bearerToken).enqueue(object :Callback<List<DataAirport>>{
+            @SuppressLint("NullSafeMutableLiveData")
+            override fun onResponse(
+                call: Call<List<DataAirport>>,
+                response: Response<List<DataAirport>>
+            ) {
+                if (response.isSuccessful){
+                    val data = response.body()
+                    _listAirport.postValue(data)
+                } else{
+                    Log.e("Error : ", "onFailure : ${response.message()}")
+                    _listAirport.postValue(null)
+                }
+            }
+
+            @SuppressLint("NullSafeMutableLiveData")
+            override fun onFailure(call: Call<List<DataAirport>>, t: Throwable) {
+                Log.e("Error : ", "onFailure : ${t.message}")
+                _listAirport.postValue(null)
+            }
+
+        })
+    }
+    fun callApiDetailAirport(bearerToken: String, id :Int){
+        apiService.getDetailAirport(bearerToken, id)
             .enqueue(object : Callback<DataAirport>{
                 @SuppressLint("NullSafeMutableLiveData")
                 override fun onResponse(

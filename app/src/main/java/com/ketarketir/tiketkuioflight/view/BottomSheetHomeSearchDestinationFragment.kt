@@ -11,9 +11,11 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetHomeSearchDestinationBinding
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
+import com.ketarketir.tiketkuioflight.view.adapter.AirportAdapter
 import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetHomeSearchDestinationViewModel
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,13 +42,17 @@ class BottomSheetHomeSearchDestinationFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(BottomSheetHomeSearchDestinationViewModel::class.java)
         userManager = UserManager.getInstance(requireContext())
 
+        showAirport()
+
+
+
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 viewModel.getToken()
                 viewModel.token.observe(viewLifecycleOwner, Observer {
                     val token = it
-                    viewModel.callApiAirport(token)
-                    viewModel.airport.observe(viewLifecycleOwner, Observer {
+                    viewModel.callApiListAirport(token)
+                    viewModel.listAirport.observe(viewLifecycleOwner, Observer {
                         val data = it.toString()
                         if (it!= null){
                             if (data.contains(query.orEmpty(), ignoreCase = true)){
@@ -69,12 +75,11 @@ class BottomSheetHomeSearchDestinationFragment : Fragment() {
                 viewModel.getToken()
                 viewModel.token.observe(viewLifecycleOwner, Observer {
                     val token = it
-                    viewModel.callApiAirport(token)
-                    viewModel.airport.observe(viewLifecycleOwner, Observer {
-                        val data = it
-                        val namaAirport = data.name
+                    viewModel.callApiListAirport(token)
+                    viewModel.listAirport.observe(viewLifecycleOwner, Observer {
+                        val data = it.toString()
                         if (it!= null){
-                            if (namaAirport.contains(newQuery.orEmpty(), ignoreCase = true)){
+                            if (data.contains(newQuery.orEmpty(), ignoreCase = true)){
                                 val adapter : ArrayAdapter<Char> = ArrayAdapter(
                                     requireContext(),
                                     android.R.layout.simple_list_item_1,
@@ -91,6 +96,23 @@ class BottomSheetHomeSearchDestinationFragment : Fragment() {
                 return false
             }
 
+        })
+    }
+
+    fun showAirport(){
+        viewModel.getToken()
+        viewModel.token.observe(viewLifecycleOwner, Observer {
+            val token = it
+            viewModel.callApiListAirport(token)
+            viewModel.listAirport.observe(viewLifecycleOwner, Observer {
+                if (it!= null){
+                    val adapter = AirportAdapter(it)
+                    binding.rvRecentSearch.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                    binding.rvRecentSearch.adapter = adapter
+                } else{
+                    Toast.makeText(context, "null", Toast.LENGTH_SHORT).show()
+                }
+            })
         })
     }
 

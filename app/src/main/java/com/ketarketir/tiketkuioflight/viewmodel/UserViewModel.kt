@@ -73,6 +73,7 @@ class UserViewModel @Inject constructor(val apiService: ApiService, val userMana
                 ) {
                     if (response.isSuccessful) {
                         val data = response.body()
+                        _token.postValue(data!!.data.token)
                         _loginUsers.postValue(data!!.data.users)
                     } else {
                         _token.postValue(null)
@@ -85,6 +86,7 @@ class UserViewModel @Inject constructor(val apiService: ApiService, val userMana
                 override fun onFailure(call: Call<DataResponseUserLogin>, t: Throwable) {
                     Log.e("Error:", "onFailure: ${t.message}")
                     _loginUsers.postValue(null)
+                    _token.postValue(null)
                 }
             })
     }

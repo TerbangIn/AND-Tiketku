@@ -49,7 +49,7 @@ interface ApiService {
 
     //airport
     @GET("api/v1/airport/")
-    fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<DataAirport>
+    fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<List<DataAirport>>
 
     @GET("api/v1/airport/{id}")
     fun getDetailAirport(
