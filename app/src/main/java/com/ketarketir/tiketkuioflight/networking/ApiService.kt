@@ -1,5 +1,6 @@
 package com.ketarketir.tiketkuioflight.networking
 
+import com.ketarketir.tiketkuioflight.model.airport.DataAirport
 import com.ketarketir.tiketkuioflight.model.airport.DataResponseAirport
 import com.ketarketir.tiketkuioflight.model.notifications.DataResponseNotifications
 import com.ketarketir.tiketkuioflight.model.user.*
@@ -48,13 +49,13 @@ interface ApiService {
 
     //airport
     @GET("api/v1/airport/")
-    fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<List<DataResponseAirport>>
+    fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<DataAirport>
 
     @GET("api/v1/airport/{id}")
     fun getDetailAirport(
         @Header("Authorization") bearerToken: String,
         @Path("id") id:Int
-    ) : Call<com.ketarketir.tiketkuioflight.model.airport.Data>
+    ) : Call<com.ketarketir.tiketkuioflight.model.airport.DataAirport>
 
     //notifications
     @GET("api/v1/notification")
