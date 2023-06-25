@@ -57,7 +57,15 @@
                     android:textColor="@color/neutral03"
                     android:fontFamily="@font/poppins_regular"
                     android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@id/tv_promotion_alert"
+                    app:layout_constraintEnd_toStartOf="@id/ic_pointer_notify"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ic_pointer_notify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_pointer_green_24"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
                 <com.google.android.material.textview.MaterialTextView

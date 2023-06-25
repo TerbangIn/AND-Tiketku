@@ -67,6 +67,7 @@
     <string name="tv_favorite_destination">Favorite Destination</string>
     <string name="tv_limited">Limited!</string>
     <string name="tv_jakarta" translatable="false">Jakarta</string>
+    <string name="tv_melbourne" translatable="false">Melbourne</string>
     <string name="icon_right_sign" translatable="false">-></string>
     <string name="tv_bangkok" translatable="false">Bangkok</string>
     <string name="tv_air_asia" translatable="false">AirAsia</string>
@@ -177,6 +178,8 @@
     <string name="tv_booking_code">Booking Code</string>
     <string name="tv_class">Class</string>
 
+    <string name="tv_passengers_payment" translatable="false">Passengers:</string>
+    <string name="tv_total_passengers">2 Adults, 1 Baby</string>
     <string name="tv_card_number">Card Number</string>
     <string name="et_card_number">4480 0000 0000 0000</string>
     <string name="tv_card_holder_name">Card Holder Name</string>
@@ -222,6 +225,7 @@
     <string name="tv_cabin_baggage_7_kg">Cabin baggage 7 kg</string>
     <string name="tv_in_flight_entertainment">In Flight Entertainment</string>
     <string name="tv_arrival">Arrival</string>
+    <string name="tv_15871125258">15871125258</string>
 
     <string-array name="tv_online_payment">
         <item>Gopay</item>

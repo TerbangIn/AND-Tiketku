@@ -123,6 +123,7 @@
     <string name="tv_processing_payment">Memproses Pembayaran</string>
     <string name="tv_booking_code">Kode Pemesanan</string>
     <string name="tv_class">Kelas</string>
+    <string name="tv_total_passengers">2 Dewasa, 1 Bayi</string>
     <string name="tv_card_number">Nomor Kartu</string>
     <string name="tv_card_holder_name">Nama Pemegang Kartu</string>
     <string name="tv_expiry_date">Tanggal Kedaluwarsa</string>
