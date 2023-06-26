@@ -176,6 +176,7 @@
 
     <string name="tv_processing_payment">Processing Payment</string>
     <string name="tv_booking_code">Booking Code</string>
+    <string name="tv_booking_code_demo">Booking Code:</string>
     <string name="tv_class">Class</string>
 
     <string name="tv_passengers_payment" translatable="false">Passengers:</string>
@@ -225,7 +226,21 @@
     <string name="tv_cabin_baggage_7_kg">Cabin baggage 7 kg</string>
     <string name="tv_in_flight_entertainment">In Flight Entertainment</string>
     <string name="tv_arrival">Arrival</string>
-    <string name="tv_15871125258">15871125258</string>
+    <string name="tv_15871125258" translatable="false">15871125258</string>
+    <string name="tv_march_2023">March 2023</string>
+    <string name="tv_2_adults">2 Adults</string>
+    <string name="tv_1_baby">1 Baby</string>
+    <string name="tv_idr_0" translatable="false">IDR 0</string>
+    <string name="tv_idr_300" translatable="false">IDR 300.000</string>
+    <string name="tv_passenger_count">Passenger 1:</string>
+    <string name="tv_harry_potter" translatable="false">Harry Potter</string>
+    <string name="tv_mr" translatable="false">Mr.</string>
+    <string name="tv_id" translatable="false">id</string>
+    <string name="tv_id_demo" translatable="false">id:</string>
+    <string name="tv_test" translatable="false">Test</string>
+    <string name="tv_title" translatable="false">Title</string>
+    <string name="tv_gopay" translatable="false">Gopay</string>
+    <string name="tv_0813" translatable="false">0813*******</string>
 
     <string-array name="tv_online_payment">
         <item>Gopay</item>

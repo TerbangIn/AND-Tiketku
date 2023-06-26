@@ -122,6 +122,7 @@
     <string name="btn_continue_payment">Lanjutkan Pembayaran</string>
     <string name="tv_processing_payment">Memproses Pembayaran</string>
     <string name="tv_booking_code">Kode Pemesanan</string>
+    <string name="tv_booking_code_demo">Kode Pemesanan:</string>
     <string name="tv_class">Kelas</string>
     <string name="tv_total_passengers">2 Dewasa, 1 Bayi</string>
     <string name="tv_card_number">Nomor Kartu</string>
@@ -150,4 +151,8 @@
     <string name="tv_cabin_baggage_7_kg">Cabin baggage 7 kg</string>
     <string name="tv_in_flight_entertainment">In Flight Entertainment</string>
     <string name="tv_arrival">Arrival</string>
+    <string name="tv_march_2023">Maret 2023</string>
+    <string name="tv_2_adults">2 Dewasa</string>
+    <string name="tv_1_baby">1 Bayi</string>
+    <string name="tv_passenger_count">Penumpang 1:</string>
 </resources>
