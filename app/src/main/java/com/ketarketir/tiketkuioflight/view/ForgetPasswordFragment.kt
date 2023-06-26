@@ -73,7 +73,7 @@ class ForgetPasswordFragment : Fragment() {
         forgotPasswordViewModel.passwordSaved.observe(viewLifecycleOwner, { passwordSaved ->
             if (passwordSaved) {
                 showSuccess("New password saved successfully")
-                navigateToLoginScreen()
+//                navigateToLoginScreen()
             } else {
                 showError("Failed to save new password")
             }
@@ -105,7 +105,7 @@ class ForgetPasswordFragment : Fragment() {
         // Display a success message or perform necessary actions for success
     }
 
-    private fun navigateToLoginScreen() {
-        findNavController().navigate(R.id.action_forgetPasswordFragment_to_loginFragment2)
-    }
+//    private fun navigateToLoginScreen() {
+//        findNavController().navigate(R.id.action_forgetPasswordFragment_to_loginFragment2)
+//    }
 }
