@@ -89,8 +89,6 @@ class HomeFragment : Fragment() {
             BottomSheetSetPassengerFragment().show(requireActivity().supportFragmentManager, "BottomSheetSetPassengerFragment")
         }
 
-
-
     }
 
     private fun setupRecyclerView() {
