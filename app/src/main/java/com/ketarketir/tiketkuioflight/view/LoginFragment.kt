@@ -1,13 +1,15 @@
 package com.ketarketir.tiketkuioflight.view
 
-import androidx.lifecycle.ViewModelProvider
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentLoginBinding
@@ -23,7 +25,7 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var userViewModel: UserViewModel
     private lateinit var userManager: UserManager
-
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,9 +38,10 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         userManager = UserManager.getInstance(requireContext())
+
+        sharedPreferences = requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
         binding.tvForgotPassword.setOnClickListener {
             navigateToInputEmailFragment()
@@ -50,41 +53,47 @@ class LoginFragment : Fragment() {
         binding.tvRegisterHere.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment2_to_registerFragment)
         }
-
     }
 
-    private fun login(){
+    private fun login() {
         val inputEmail = binding.tieEmailNomorTelepon.text.toString()
         val inputPassword = binding.tiePassword.text.toString()
 
-
-        if (inputEmail.isEmpty() || inputPassword.isEmpty()){
+        if (inputEmail.isEmpty() || inputPassword.isEmpty()) {
             Toast.makeText(requireActivity(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
-        } else{
+        } else {
             userViewModel.callApiPostUserLogin(inputEmail, inputPassword)
-            userViewModel.token.observe(viewLifecycleOwner, Observer {token->
-                if (token!=null){
+            userViewModel.token.observe(viewLifecycleOwner, { token ->
+                if (token != null) {
                     val userToken = token
-                    userViewModel.loginUsers.observe(viewLifecycleOwner, Observer {
-                        val userId = it.id
-                        val email = it.email
+                    userViewModel.loginUsers.observe(viewLifecycleOwner, { user ->
+                        val userId = user.id
+                        val email = user.email
                         GlobalScope.async {
                             userManager.saveData(email, true, userToken, userId)
+                            saveUserEmail(email)
                         }
                     })
 
                     Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
-                } else{
+                } else {
                     Toast.makeText(requireContext(), "Login Failed, Incorrect Email/Password", Toast.LENGTH_SHORT).show()
                 }
             })
         }
-
     }
+
+    private fun saveUserEmail(email: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString("userEmail", email)
+        editor.apply()
+
+        Log.d("LoginFragment", "Email saved: $email")
+    }
+
 
     private fun navigateToInputEmailFragment() {
         findNavController().navigate(R.id.action_loginFragment2_to_inputEmailFragment)
     }
-
 }

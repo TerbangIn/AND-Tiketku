@@ -5,23 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentInputEmailBinding
+import com.ketarketir.tiketkuioflight.viewmodel.SendOTPViewModel
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
 
 class InputEmailFragment : Fragment() {
+    private val userViewModel: UserViewModel by activityViewModels()
+    private val sendOTPViewModel: SendOTPViewModel by activityViewModels()
+
     private var _binding: FragmentInputEmailBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var userViewModel: UserViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentInputEmailBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -29,31 +27,33 @@ class InputEmailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        userViewModel = ViewModelProvider(requireActivity()).get(UserViewModel::class.java)
-
         binding.btnNext.setOnClickListener {
-            val email = binding.tieMasukanEmail.text.toString()
-
-            userViewModel.resetPassword(email, "", "","").observe(viewLifecycleOwner, Observer { response ->
-                if (response != null) {
-                    if (response.isSuccessful) {
-                        navigateToOtpFragment()
-                    } else {
-
-                    }
-                } else {
-
-                }
-            })
+            navigateToSendOTPFragment()
         }
-    }
-
-    private fun navigateToOtpFragment() {
-        findNavController().navigate(R.id.action_inputEmailFragment_to_sendOTPFragment)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun navigateToSendOTPFragment() {
+        val navController = findNavController()
+        val email = getEmailFromInput()
+        userViewModel.setEmail(email)
+
+        sendOTPViewModel.statusGenerate.observe(viewLifecycleOwner, { response ->
+            if (response != null) {
+                navController.navigate(R.id.action_inputEmailFragment_to_sendOTPFragment)
+            } else {
+                // Tampilkan pesan error jika pemanggilan API gagal
+            }
+        })
+
+        sendOTPViewModel.callApiPostGenerateOtp(email)
+    }
+
+    private fun getEmailFromInput(): String {
+        return binding.tieMasukanEmail.text.toString().trim()
     }
 }

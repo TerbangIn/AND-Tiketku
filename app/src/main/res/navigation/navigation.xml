@@ -5,7 +5,7 @@
     android:id="@+id/navigation"
 
 
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/loginFragment2">
 
     <fragment
         android:id="@+id/accountFragment"
@@ -54,15 +54,6 @@
             app:destination="@id/loginFragment2" />
 
     </fragment>
-    <fragment
-        android:id="@+id/resetPasswordFragment"
-        android:name="com.ketarketir.tiketkuioflight.view.ResetPasswordFragment"
-        android:label="fragment_reset_password"
-        tools:layout="@layout/fragment_reset_password" >
-        <action
-            android:id="@+id/action_resetPasswordFragment_to_loginFragment2"
-            app:destination="@id/loginFragment2" />
-    </fragment>
 
     <fragment
         android:id="@+id/sendOTPFragment"
@@ -76,8 +67,8 @@
             android:id="@+id/action_sendOTPFragment_to_loginFragment2"
             app:destination="@id/loginFragment2" />
         <action
-            android:id="@+id/action_sendOTPFragment_to_resetPasswordFragment"
-            app:destination="@id/resetPasswordFragment" />
+            android:id="@+id/action_sendOTPFragment_to_newPasswordFragment"
+            app:destination="@id/newPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -103,6 +94,9 @@
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailDestinationFragment"
+            app:destination="@id/detailDestinationFragment" />
 
     </fragment>
 
@@ -136,6 +130,9 @@
         <action
             android:id="@+id/action_loginFragment2_to_inputEmailFragment"
             app:destination="@id/inputEmailFragment" />
+        <action
+            android:id="@+id/action_loginFragment2_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/bottomSheetHomeSearchDestinationFragment"
@@ -162,5 +159,31 @@
         <action
             android:id="@+id/action_inputEmailFragment_to_sendOTPFragment"
             app:destination="@id/sendOTPFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.NewPasswordFragment"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_new_password" >
+        <action
+            android:id="@+id/action_newPasswordFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.ForgetPasswordFragment"
+        android:label="ForgetPasswordFragment" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailDestinationFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.DetailDestinationFragment"
+        android:label="fragment_detail_destination"
+        tools:layout="@layout/fragment_detail_destination" >
+        <action
+            android:id="@+id/action_detailDestinationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

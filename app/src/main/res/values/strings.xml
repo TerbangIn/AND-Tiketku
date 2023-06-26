@@ -299,4 +299,5 @@
     <string name="tv_input_email" tools:ignore="MissingTranslation">Masukkan Email</string>
     <string name="tv_enter_email" translatable="false">Enter email</string>
     <string name="btn_next" translatable="false">NEXT</string>
+    <string name="tv_overview" tools:ignore="MissingTranslation">Overview</string>
 </resources>

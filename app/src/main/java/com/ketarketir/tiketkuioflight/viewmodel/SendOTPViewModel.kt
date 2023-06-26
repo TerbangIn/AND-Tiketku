@@ -20,6 +20,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SendOTPViewModel @Inject constructor(val apiService: ApiService) : ViewModel() {
+
+
     private val _statusVerify : MutableLiveData<DataResponseVerifyUser> = MutableLiveData()
     val statusVerify : LiveData<DataResponseVerifyUser> get() = _statusVerify
 
@@ -72,4 +74,31 @@ class SendOTPViewModel @Inject constructor(val apiService: ApiService) : ViewMod
             }
         })
     }
+
+    fun verifyUser(email: String, otp: String) {
+        apiService.verifyUser(DataPostUserVerify(email, otp))
+            .enqueue(object : Callback<DataResponseVerifyUser> {
+                @SuppressLint("NullSafeMutableLiveData")
+                override fun onResponse(
+                    call: Call<DataResponseVerifyUser>,
+                    response: Response<DataResponseVerifyUser>
+                ) {
+                    if (response.isSuccessful) {
+                        val data = response.body()
+                        _statusVerify.postValue(data!!)
+                    } else {
+                        Log.e("Error", "onFailure: ${response.message()}")
+                        _statusVerify.postValue(null)
+                    }
+                }
+
+                @SuppressLint("NullSafeMutableLiveData")
+                override fun onFailure(call: Call<DataResponseVerifyUser>, t: Throwable) {
+                    Log.e("Error", "onFailure: ${t.message}")
+                    _statusVerify.postValue(null)
+                }
+            })
+    }
+
+
 }

@@ -5,9 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ketarketir.tiketkuioflight.databinding.ItemNotificationBinding
 import com.ketarketir.tiketkuioflight.model.notifications.Data
-import com.ketarketir.tiketkuioflight.model.user.Notification
 
-class NotificationAdapter(var notifications: List<Notification>) :
+class NotificationAdapter(var notifications: List<Data>) :
     RecyclerView.Adapter<NotificationAdapter.NotificationViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationViewHolder {
@@ -27,7 +26,7 @@ class NotificationAdapter(var notifications: List<Notification>) :
 
     inner class NotificationViewHolder(private val binding: ItemNotificationBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(notification: Notification) {
+        fun bind(notification: Data) {
             binding.tvTitle.text = notification.title
             binding.tvDate.text = notification.createdAt
             binding.tvPromotionAlert.text = notification.tag
