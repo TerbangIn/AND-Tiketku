@@ -47,6 +47,12 @@ interface ApiService {
         @Body request: DataUserUpdate
     ): Call<DataResponseUserUpdate>
 
+    //reset password
+    @POST("api/v1/user/forget-password")
+    fun resetPassword(
+        @Body request: DataResetPassword
+    ): Call<DataResponseResetPassword>
+
     //airport
     @GET("api/v1/airport/")
     fun getListAllAirport(@Header("Authorization") bearerToken: String) : Call<DataResponseAirport>
@@ -56,6 +62,7 @@ interface ApiService {
         @Header("Authorization") bearerToken: String,
         @Path("id") id:Int
     ) : Call<com.ketarketir.tiketkuioflight.model.airport.DataAirport>
+
 
     //notifications
     @GET("api/v1/notification")

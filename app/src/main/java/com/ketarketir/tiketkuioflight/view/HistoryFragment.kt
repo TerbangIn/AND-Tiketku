@@ -7,28 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ketarketir.tiketkuioflight.R
-import com.ketarketir.tiketkuioflight.viewmodel.ResetPasswordViewModel
-import dagger.hilt.android.AndroidEntryPoint
+import com.ketarketir.tiketkuioflight.viewmodel.HistoryViewModel
 
-@AndroidEntryPoint
-class ResetPasswordFragment : Fragment() {
+class HistoryFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ResetPasswordFragment()
+        fun newInstance() = HistoryFragment()
     }
 
-    private lateinit var viewModel: ResetPasswordViewModel
+    private lateinit var viewModel: HistoryViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_reset_password, container, false)
+        return inflater.inflate(R.layout.fragment_history, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ResetPasswordViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(HistoryViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

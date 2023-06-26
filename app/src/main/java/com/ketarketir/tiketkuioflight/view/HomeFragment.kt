@@ -1,23 +1,23 @@
 package com.ketarketir.tiketkuioflight.view
 
-import DestinationAdapter
+
 import DestinationViewModel
-import android.app.DatePickerDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.ketarketir.tiketkuioflight.R
-import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetHomeSearchDestinationBinding
 import com.ketarketir.tiketkuioflight.databinding.FragmentHomeBinding
+import com.ketarketir.tiketkuioflight.model.destination.ListDataDestination
+import com.ketarketir.tiketkuioflight.view.adapter.DestinationAdapter
 import com.ketarketir.tiketkuioflight.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var destinationViewModel: DestinationViewModel
-    private val destinationAdapter: DestinationAdapter by lazy { DestinationAdapter() }
+    private lateinit var destinationAdapter: DestinationAdapter
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
@@ -43,7 +43,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-
 
         binding.tvDestinationFrom.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_bottomSheetHomeSearchDestinationFragment)
@@ -60,6 +59,9 @@ class HomeFragment : Fragment() {
         }
 
         destinationViewModel = ViewModelProvider(this).get(DestinationViewModel::class.java)
+        destinationAdapter = DestinationAdapter { destination ->
+            navigateToDetailDestination(destination)
+        }
         setupRecyclerView()
         observeDestinations()
 
@@ -88,7 +90,6 @@ class HomeFragment : Fragment() {
         binding.tvPassenger.setOnClickListener {
             BottomSheetSetPassengerFragment().show(requireActivity().supportFragmentManager, "BottomSheetSetPassengerFragment")
         }
-
     }
 
     private fun setupRecyclerView() {
@@ -101,6 +102,11 @@ class HomeFragment : Fragment() {
         destinationViewModel.destinations.observe(viewLifecycleOwner) { destinations ->
             destinationAdapter.setData(destinations)
         }
+    }
+
+    private fun navigateToDetailDestination(destination: ListDataDestination) {
+        val bundle = bundleOf("destination" to destination)
+        view?.findNavController()?.navigate(R.id.detailDestinationFragment, bundle)
     }
 
     private fun showDateRangePickerDialog() {
