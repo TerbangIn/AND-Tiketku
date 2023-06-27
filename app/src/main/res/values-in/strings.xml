@@ -155,4 +155,5 @@
     <string name="tv_2_adults">2 Dewasa</string>
     <string name="tv_1_baby">1 Bayi</string>
     <string name="tv_passenger_count">Penumpang 1:</string>
+    <string name="tv_destination_detail">Rincian Destinasi</string>
 </resources>

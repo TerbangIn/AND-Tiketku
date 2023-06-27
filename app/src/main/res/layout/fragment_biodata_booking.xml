@@ -74,7 +74,8 @@
                         android:id="@+id/cl_container_biodata"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingVertical="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="20dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/ll_container_sign">
 
