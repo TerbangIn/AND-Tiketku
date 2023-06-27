@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentHomeBinding
 import com.ketarketir.tiketkuioflight.model.destination.ListDataDestination
@@ -29,13 +30,14 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var destinationViewModel: DestinationViewModel
     private lateinit var destinationAdapter: DestinationAdapter
-    private lateinit var binding: FragmentHomeBinding
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
 
     }
@@ -65,24 +67,6 @@ class HomeFragment : Fragment() {
         setupRecyclerView()
         observeDestinations()
 
-
-        binding.btnBottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-//                R.id.riwayat -> {
-//                    findNavController().navigate(R.id.action_homeFragment_to_bookingHistoryNonLoginFragment)
-//                    true
-//                }
-                R.id.notifikasi -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_notificationFragment)
-                    true
-                }
-                R.id.akun -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_accountFragment)
-                    true
-                }
-                else -> false
-            }
-        }
 
         binding.tvSeatClass.setOnClickListener {
             BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager, "BottomSheetClassSeatFragment")
@@ -186,5 +170,8 @@ class HomeFragment : Fragment() {
         })
 
     }
-
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

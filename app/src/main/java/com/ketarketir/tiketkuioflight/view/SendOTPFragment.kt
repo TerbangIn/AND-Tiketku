@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentSendOTPBinding
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
@@ -21,7 +22,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SendOTPFragment : Fragment() {
-    private lateinit var binding:FragmentSendOTPBinding
+    private var _binding:FragmentSendOTPBinding? = null
+    private val binding get() = _binding!!
     private lateinit var sendOTPViewModel: SendOTPViewModel
     private var countDownTimer: CountDownTimer? = null
     private var isTimeRunning = false
@@ -32,12 +34,14 @@ class SendOTPFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSendOTPBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentSendOTPBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
+
         sendOTPViewModel = ViewModelProvider(this).get(SendOTPViewModel::class.java)
         userManager = UserManager.getInstance(requireContext())
 
