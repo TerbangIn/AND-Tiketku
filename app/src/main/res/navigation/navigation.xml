@@ -5,7 +5,7 @@
     android:id="@+id/navigation"
 
 
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/accountFragment"
@@ -177,4 +177,9 @@
             android:id="@+id/action_newPasswordFragment_to_loginFragment2"
             app:destination="@id/loginFragment2" />
     </fragment>
+    <fragment
+        android:id="@+id/biodataPassengerFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.BiodataPassengerFragment"
+        android:label="fragment_biodata_passenger"
+        tools:layout="@layout/fragment_biodata_passenger" />
 </navigation>

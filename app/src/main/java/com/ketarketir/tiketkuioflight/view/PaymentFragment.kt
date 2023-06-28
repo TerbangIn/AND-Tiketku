@@ -6,28 +6,33 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
+import com.ketarketir.tiketkuioflight.databinding.FragmentPaymentBinding
+import com.ketarketir.tiketkuioflight.databinding.FragmentResultSearchBinding
 import com.ketarketir.tiketkuioflight.viewmodel.PaymentViewModel
 
 class PaymentFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = PaymentFragment()
-    }
-
+    private var _binding: FragmentPaymentBinding? = null
+    private val binding get() = _binding!!
     private lateinit var viewModel: PaymentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_payment, container, false)
+        _binding = FragmentPaymentBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PaymentViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

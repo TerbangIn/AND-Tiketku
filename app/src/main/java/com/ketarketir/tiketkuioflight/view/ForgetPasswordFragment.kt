@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentForgetPasswordBinding
 import com.ketarketir.tiketkuioflight.viewmodel.ForgetPasswordViewModel
@@ -32,6 +33,7 @@ class ForgetPasswordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
         binding.sendOtpButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()

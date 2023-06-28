@@ -6,28 +6,33 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
+import com.ketarketir.tiketkuioflight.databinding.FragmentBiodataBookingBinding
+import com.ketarketir.tiketkuioflight.databinding.FragmentBiodataPassengerBinding
 import com.ketarketir.tiketkuioflight.viewmodel.BiodataPassengerViewModel
 
 class BiodataPassengerFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = BiodataPassengerFragment()
-    }
-
+    private var _binding: FragmentBiodataPassengerBinding? = null
+    private val binding get() = _binding!!
     private lateinit var viewModel: BiodataPassengerViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_biodata_passenger, container, false)
+        _binding = FragmentBiodataPassengerBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(BiodataPassengerViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

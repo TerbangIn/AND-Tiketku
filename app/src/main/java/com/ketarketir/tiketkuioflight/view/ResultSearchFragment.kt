@@ -1,6 +1,5 @@
 package com.ketarketir.tiketkuioflight.view
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,22 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
-import com.ketarketir.tiketkuioflight.databinding.FragmentDetailFlightHistoryBinding
-import com.ketarketir.tiketkuioflight.databinding.FragmentHistoryBinding
-import com.ketarketir.tiketkuioflight.viewmodel.HistoryViewModel
+import com.ketarketir.tiketkuioflight.databinding.FragmentResultSearchBinding
+import com.ketarketir.tiketkuioflight.databinding.FragmentSendOTPBinding
+import com.ketarketir.tiketkuioflight.viewmodel.ResultSearchViewModel
 
-class HistoryFragment : Fragment() {
+class ResultSearchFragment : Fragment() {
 
-    private var _binding: FragmentHistoryBinding? = null
+    private var _binding: FragmentResultSearchBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: HistoryViewModel
+    private lateinit var viewModel: ResultSearchViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+        _binding = FragmentResultSearchBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 

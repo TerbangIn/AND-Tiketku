@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentInputEmailBinding
 import com.ketarketir.tiketkuioflight.viewmodel.SendOTPViewModel
@@ -26,6 +27,7 @@ class InputEmailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
         binding.btnNext.setOnClickListener {
             navigateToSendOTPFragment()
@@ -55,5 +57,10 @@ class InputEmailFragment : Fragment() {
 
     private fun getEmailFromInput(): String {
         return binding.tieMasukanEmail.text.toString().trim()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

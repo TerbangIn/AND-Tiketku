@@ -10,18 +10,20 @@
         android:paddingVertical="10dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="20dp"
             app:strokeColor="@color/darkblue03"
             app:strokeWidth="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingVertical="20dp">
+                android:paddingVertical="20dp"
+                android:layout_gravity="center">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_departure"

@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentHomeBinding
 import com.ketarketir.tiketkuioflight.model.destination.ListDataDestination
@@ -33,6 +34,7 @@ class HomeFragment : Fragment() {
     private lateinit var destinationAdapter: DestinationAdapter
     private lateinit var binding: FragmentHomeBinding
     private lateinit var bottomSheetClassSeatViewModel: BottomSheetClassSeatViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,24 +70,6 @@ class HomeFragment : Fragment() {
         setupRecyclerView()
         observeDestinations()
 
-
-        binding.btnBottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-//                R.id.riwayat -> {
-//                    findNavController().navigate(R.id.action_homeFragment_to_bookingHistoryNonLoginFragment)
-//                    true
-//                }
-                R.id.notifikasi -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_notificationFragment)
-                    true
-                }
-                R.id.akun -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_accountFragment)
-                    true
-                }
-                else -> false
-            }
-        }
 
         binding.tvSeatClass.setOnClickListener {
             BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager, "BottomSheetClassSeatFragment")
@@ -194,6 +178,7 @@ class HomeFragment : Fragment() {
 
     }
 
+
     private fun showChooseSeatClass(){
         bottomSheetClassSeatViewModel.seatClass.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             if (it!= null){
@@ -203,5 +188,6 @@ class HomeFragment : Fragment() {
             }
         })
     }
+
 
 }

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentNewPasswordBinding
 import com.ketarketir.tiketkuioflight.viewmodel.NewPasswordViewModel
@@ -17,19 +18,21 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class NewPasswordFragment : Fragment() {
 
-    private lateinit var binding: FragmentNewPasswordBinding
+    private var _binding: FragmentNewPasswordBinding? = null
+    private val binding get() = _binding!!
     private lateinit var newPasswordViewModel: NewPasswordViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentNewPasswordBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentNewPasswordBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
         newPasswordViewModel = ViewModelProvider(this).get(NewPasswordViewModel::class.java)
 
         binding.btnSimpan.setOnClickListener {
@@ -70,5 +73,10 @@ class NewPasswordFragment : Fragment() {
                 ).show()
             }
         })
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

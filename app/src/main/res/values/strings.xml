@@ -241,6 +241,7 @@
     <string name="tv_title" translatable="false">Title</string>
     <string name="tv_gopay" translatable="false">Gopay</string>
     <string name="tv_0813" translatable="false">0813*******</string>
+    <string name="tv_destination_detail">Destination Detail</string>
 
     <string-array name="tv_online_payment">
         <item>Gopay</item>

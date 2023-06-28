@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentRegisterBinding
 import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
@@ -24,7 +25,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
-    private lateinit var binding:FragmentRegisterBinding
+    private var _binding:FragmentRegisterBinding? = null
+    private val binding get() = _binding!!
     private lateinit var userViewModel: UserViewModel
     private lateinit var sharedRegis: SharedPreferences
 
@@ -32,12 +34,13 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRegisterBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentRegisterBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         sharedRegis = requireContext().getSharedPreferences("dataUser", Context.MODE_PRIVATE)
@@ -171,6 +174,8 @@ class RegisterFragment : Fragment() {
             })
         }
     }
-
-
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }
