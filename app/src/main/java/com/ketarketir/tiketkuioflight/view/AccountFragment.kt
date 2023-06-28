@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentAccountBinding
 import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
@@ -32,6 +33,7 @@ class AccountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setBottomNavigationVisibility(View.VISIBLE)
 
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         userManager = UserManager.getInstance(requireContext())
@@ -45,7 +47,7 @@ class AccountFragment : Fragment() {
             GlobalScope.async {
                 userManager.clearData()
             }
-            findNavController().navigate(R.id.action_accountFragment_to_loginFragment2)
+            findNavController().navigate(R.id.action_accountFragment_to_loginFragment)
             Toast.makeText(requireContext(), "Logout Berhasil, Anda telah Logout", Toast.LENGTH_SHORT).show()
         }
     }

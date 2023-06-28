@@ -49,7 +49,7 @@ class RegisterFragment : Fragment() {
             register()
         }
         binding.tvLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment22)
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
 
         binding.tiePhoneNumber.addTextChangedListener(object : TextWatcher{

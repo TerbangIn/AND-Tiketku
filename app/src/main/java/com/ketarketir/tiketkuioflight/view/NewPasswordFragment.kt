@@ -64,7 +64,7 @@ class NewPasswordFragment : Fragment() {
             if (it != null) {
                 Toast.makeText(requireContext(), "Password reset successful", Toast.LENGTH_SHORT)
                     .show()
-                findNavController().navigate(R.id.action_newPasswordFragment_to_loginFragment2)
+                findNavController().navigate(R.id.action_newPasswordFragment_to_loginFragment)
             } else {
                 Toast.makeText(
                     requireContext(),

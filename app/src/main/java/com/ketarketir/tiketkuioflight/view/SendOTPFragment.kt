@@ -89,7 +89,7 @@ class SendOTPFragment : Fragment() {
         sendOTPViewModel.statusVerify.observe(viewLifecycleOwner, Observer {
             if (it!= null){
                 Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_sendOTPFragment_to_loginFragment2)
+                findNavController().navigate(R.id.action_sendOTPFragment_to_loginFragment)
             } else{
                 Toast.makeText(requireContext(), "failed", Toast.LENGTH_SHORT).show()
             }

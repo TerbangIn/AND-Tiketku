@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.ketarketir.tiketkuioflight.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,23 +21,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navContainer) as NavHostFragment
         navController = navHostFragment.findNavController()
 
-        binding.btnBottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-//                R.id.riwayat -> {
-//                    navController.navigate(R.id.action_homeFragment_to_bookingHistoryNonLoginFragment)
-//                    true
-//                }
-                R.id.notifikasi -> {
-                    navController.navigate(R.id.action_homeFragment_to_notificationFragment)
-                    true
-                }
-                R.id.akun -> {
-                    navController.navigate(R.id.action_homeFragment_to_accountFragment)
-                    true
-                }
-                else -> false
-            }
-        }
+        binding.btnBottomNavigation.setupWithNavController(navController)
 
     }
     fun setBottomNavigationVisibility(visibility: Int) {

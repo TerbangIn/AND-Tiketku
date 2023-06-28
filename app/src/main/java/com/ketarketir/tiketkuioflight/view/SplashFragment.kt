@@ -47,7 +47,7 @@ class SplashFragment : Fragment() {
                 if (login){
                     findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
                 }else{
-                    findNavController().navigate(R.id.action_splashFragment_to_loginFragment2)
+                    findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
                 }
             }
         },2500)

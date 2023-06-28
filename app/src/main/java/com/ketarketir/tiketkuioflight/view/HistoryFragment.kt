@@ -29,7 +29,7 @@ class HistoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
+        (activity as MainActivity).setBottomNavigationVisibility(View.VISIBLE)
     }
 
     override fun onDestroy() {

@@ -47,6 +47,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).setBottomNavigationVisibility(View.VISIBLE)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         bottomSheetClassSeatViewModel = ViewModelProvider(this).get(BottomSheetClassSeatViewModel::class.java)
         binding.tvDestinationFrom.setOnClickListener {
@@ -71,7 +72,7 @@ class HomeFragment : Fragment() {
         observeDestinations()
         showChooseSeatClass()
 
-        binding.txtSeatClass.setOnClickListener {
+        binding.tvSeatClass.setOnClickListener {
             BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager, "BottomSheetClassSeatFragment")
         }
         binding.tvPassenger.setOnClickListener {

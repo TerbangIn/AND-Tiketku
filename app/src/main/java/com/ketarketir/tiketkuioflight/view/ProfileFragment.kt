@@ -113,7 +113,7 @@ class ProfileFragment : Fragment() {
             addUser.apply()
 
             Toast.makeText(requireContext(), "Logout Berhasil", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_profileFragment_to_loginFragment2)
+            findNavController().navigate(R.id.action_profileFragment_to_loginFragment)
         }
     }
     override fun onDestroy() {

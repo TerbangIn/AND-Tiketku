@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/beranda"
+        android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/baseline_home_24"
         android:title="@string/tv_home"/>
     <item
-        android:id="@+id/riwayat"
+        android:id="@+id/historyFragment"
         android:enabled="true"
         android:icon="@drawable/baseline_event_note_24"
         android:title="@string/tv_history"/>
     <item
-        android:id="@+id/notifikasi"
+        android:id="@+id/notificationFragment"
         android:enabled="true"
         android:icon="@drawable/baseline_notifications_24"
         android:title="@string/tv_notification"/>
     <item
-        android:id="@+id/akun"
+        android:id="@+id/accountFragment"
         android:enabled="true"
         android:icon="@drawable/baseline_account_circle_24"
         android:title="@string/tv_account"/>

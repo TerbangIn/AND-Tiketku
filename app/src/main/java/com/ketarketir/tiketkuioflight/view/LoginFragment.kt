@@ -54,7 +54,7 @@ class LoginFragment : Fragment() {
             login()
         }
         binding.tvRegisterHere.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment2_to_registerFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 
@@ -79,7 +79,7 @@ class LoginFragment : Fragment() {
                     })
 
                     Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
+                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                 } else {
                     Toast.makeText(requireContext(), "Login Failed, Incorrect Email/Password", Toast.LENGTH_SHORT).show()
                 }
@@ -97,7 +97,7 @@ class LoginFragment : Fragment() {
 
 
     private fun navigateToInputEmailFragment() {
-        findNavController().navigate(R.id.action_loginFragment2_to_inputEmailFragment)
+        findNavController().navigate(R.id.action_loginFragment_to_inputEmailFragment)
     }
 
     override fun onDestroy() {
