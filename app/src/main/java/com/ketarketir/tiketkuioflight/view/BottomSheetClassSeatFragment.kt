@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
@@ -53,10 +55,20 @@ class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
     }
     private fun selectSeat(seatClass: String) {
         Toast.makeText(context, "Selected seat class: $seatClass", Toast.LENGTH_SHORT).show()
-        dismiss()
     }
     private fun saveSeat(seatClass: String){
         viewModel.setSeatClass(seatClass)
+        viewModel.seatClass.observe(viewLifecycleOwner, Observer {
+            if (it!= null){
+                val seat = it
+                val bundle = Bundle()
+                bundle.putString("seat", seat)
+                findNavController().navigate(R.id.action_bottomSheetClassSeatFragment_to_homeFragment, bundle)
+            } else{
+                Toast.makeText(context, "Seat class null", Toast.LENGTH_SHORT).show()
+            }
+        })
+
     }
 
 

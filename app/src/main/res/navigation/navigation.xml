@@ -182,4 +182,22 @@
         android:name="com.ketarketir.tiketkuioflight.view.BiodataPassengerFragment"
         android:label="fragment_biodata_passenger"
         tools:layout="@layout/fragment_biodata_passenger" />
+    <dialog
+        android:id="@+id/bottomSheetClassSeatFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.BottomSheetClassSeatFragment"
+        android:label="fragment_bottom_sheet_class_seat"
+        tools:layout="@layout/fragment_bottom_sheet_class_seat" >
+        <action
+            android:id="@+id/action_bottomSheetClassSeatFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/bottomSheetSetPassengerFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.BottomSheetSetPassengerFragment"
+        android:label="fragment_bottom_sheet_set_passenger"
+        tools:layout="@layout/fragment_bottom_sheet_set_passenger" >
+        <action
+            android:id="@+id/action_bottomSheetSetPassengerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </dialog>
 </navigation>

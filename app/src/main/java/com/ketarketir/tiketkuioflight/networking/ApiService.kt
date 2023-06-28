@@ -63,6 +63,12 @@ interface ApiService {
         @Path("id") id:Int
     ) : Call<com.ketarketir.tiketkuioflight.model.airport.DataAirport>
 
+    @GET("api/v1/airport/{city}")
+    fun getSearchAirportbyCity(
+        @Header("Authorization") bearerToken: String,
+        @Path("city") city:String
+    ) : Call<DataResponseAirport>
+
 
     //notifications
     @GET("api/v1/notification")

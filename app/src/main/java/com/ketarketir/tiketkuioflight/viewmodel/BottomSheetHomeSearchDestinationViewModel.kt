@@ -27,6 +27,9 @@ class BottomSheetHomeSearchDestinationViewModel @Inject constructor(val apiServi
     private val _listAirport : MutableLiveData<List<DataAirport>> = MutableLiveData()
     val listAirport : LiveData<List<DataAirport>> get() = _listAirport
 
+    private val _listAirportSearch : MutableLiveData<List<DataAirport>> = MutableLiveData()
+    val listAirportSearch : LiveData<List<DataAirport>> get() = _listAirportSearch
+
     private val _token:MutableLiveData<String> = MutableLiveData()
     val token : LiveData<String> get() = _token
 
@@ -51,6 +54,31 @@ class BottomSheetHomeSearchDestinationViewModel @Inject constructor(val apiServi
             override fun onFailure(call: Call<DataResponseAirport>, t: Throwable) {
                 Log.e("Error : ", "onFailure : ${t.message}")
                 _listAirport.postValue(null)
+            }
+
+        })
+    }
+
+    fun callApiSearchAirportbyCity(bearerToken: String, city:String){
+        apiService.getSearchAirportbyCity(bearerToken, city).enqueue(object : Callback<DataResponseAirport>{
+            @SuppressLint("NullSafeMutableLiveData")
+            override fun onResponse(
+                call: Call<DataResponseAirport>,
+                response: Response<DataResponseAirport>
+            ) {
+                if (response.isSuccessful){
+                    val data = response.body()
+                    _listAirportSearch.postValue(data!!.data)
+                } else{
+                    Log.e("Error : ", "onFailure : ${response.message()}")
+                    _listAirportSearch.postValue(null)
+                }
+            }
+
+            @SuppressLint("NullSafeMutableLiveData")
+            override fun onFailure(call: Call<DataResponseAirport>, t: Throwable) {
+                Log.e("Error : ", "onFailure : ${t.message}")
+                _listAirportSearch.postValue(null)
             }
 
         })

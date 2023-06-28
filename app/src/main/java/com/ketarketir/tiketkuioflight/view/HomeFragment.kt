@@ -69,19 +69,18 @@ class HomeFragment : Fragment() {
         }
         setupRecyclerView()
         observeDestinations()
+        showChooseSeatClass()
 
-
-        binding.tvSeatClass.setOnClickListener {
+        binding.txtSeatClass.setOnClickListener {
             BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager, "BottomSheetClassSeatFragment")
         }
         binding.tvPassenger.setOnClickListener {
             BottomSheetSetPassengerFragment().show(requireActivity().supportFragmentManager, "BottomSheetSetPassengerFragment")
         }
-        binding.tvSeatClass.setOnClickListener {
-            showChooseSeatClass()
-        }
 
     }
+
+
 
     private fun setupRecyclerView() {
         binding.rvDestination.layoutManager = GridLayoutManager(requireContext(), 1, LinearLayoutManager.HORIZONTAL, false)
@@ -178,16 +177,12 @@ class HomeFragment : Fragment() {
 
     }
 
-
-    private fun showChooseSeatClass(){
-        bottomSheetClassSeatViewModel.seatClass.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-            if (it!= null){
-                binding.tvSeatClass.text = it
-            } else {
-                Toast.makeText(context, "null", Toast.LENGTH_SHORT).show()
-            }
-        })
+    fun showChooseSeatClass(){
+        val seat = arguments?.getString("seat")
+        binding.tvSeatClass.setText(seat)
     }
+
+
 
 
 }
