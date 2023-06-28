@@ -46,13 +46,31 @@ class BottomSheetHomeSearchDestinationFragment : Fragment() {
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
+                searchAirportByCity(query.toString())
+                return true
             }
 
             override fun onQueryTextChange(newQuery: String?): Boolean {
-                performSearch(newQuery.toString())
+                searchAirportByCity(newQuery.toString())
                 return true
             }
+        })
+    }
+
+    private fun searchAirportByCity(queryCity:String){
+        viewModel.getToken()
+        viewModel.token.observe(viewLifecycleOwner, Observer {
+            val token = it
+            viewModel.callApiSearchAirportbyCity(token, queryCity)
+            viewModel.listAirportSearch.observe(viewLifecycleOwner, Observer {
+                if (it!= null){
+                    val adapter = AirportAdapter(it)
+                    binding.rvRecentSearch.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                    binding.rvRecentSearch.adapter = adapter
+                } else{
+                    Toast.makeText(context, "kosong", Toast.LENGTH_SHORT).show()
+                }
+            })
         })
     }
 
