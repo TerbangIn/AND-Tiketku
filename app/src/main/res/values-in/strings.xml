@@ -156,4 +156,5 @@
     <string name="tv_1_baby">1 Bayi</string>
     <string name="tv_passenger_count">Penumpang 1:</string>
     <string name="tv_destination_detail">Rincian Destinasi</string>
+    <string name="tv_enter_confirm_password">Masukkan Kembali Kata Sandi</string>
 </resources>

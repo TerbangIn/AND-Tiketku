@@ -320,4 +320,5 @@
     <string name="tv_enter_email" translatable="false">Enter email</string>
     <string name="btn_next" translatable="false">NEXT</string>
     <string name="tv_overview" tools:ignore="MissingTranslation">Overview</string>
+    <string name="tv_enter_confirm_password">Enter Confirm Password</string>
 </resources>
