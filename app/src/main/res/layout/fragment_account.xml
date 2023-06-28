@@ -23,8 +23,7 @@
             app:textAllCaps="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/cv_account"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/cv_account" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cv_account"
@@ -50,6 +49,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_change_profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -95,6 +95,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/divider1">
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_settings_account"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -139,6 +140,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/divider2">
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_logout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"

@@ -20,14 +20,15 @@ import kotlinx.coroutines.async
 @AndroidEntryPoint
 class AccountFragment : Fragment() {
 
-    private lateinit var binding:FragmentAccountBinding
+    private var _binding:FragmentAccountBinding? = null
+    private val binding get() = _binding!!
     private lateinit var userViewModel: UserViewModel
     private lateinit var userManager: UserManager
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAccountBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentAccountBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -38,12 +39,17 @@ class AccountFragment : Fragment() {
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         userManager = UserManager.getInstance(requireContext())
 
-        binding.tvChangeProfile.setOnClickListener {
+        binding.clChangeProfile.setOnClickListener {
             findNavController().navigate(R.id.action_accountFragment_to_profileFragment)
             Toast.makeText(requireContext(), "Account", Toast.LENGTH_SHORT).show()
         }
 
-        binding.tvLogout.setOnClickListener {
+        binding.clSettingsAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_accountFragment_to_accountSettingFragment)
+        }
+
+
+        binding.clLogout.setOnClickListener {
             GlobalScope.async {
                 userManager.clearData()
             }
@@ -52,5 +58,9 @@ class AccountFragment : Fragment() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 
 }
