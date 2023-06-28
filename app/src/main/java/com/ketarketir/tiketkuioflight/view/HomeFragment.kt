@@ -178,8 +178,13 @@ class HomeFragment : Fragment() {
     }
 
     fun showChooseSeatClass(){
-        val seat = arguments?.getString("seat")
-        binding.tvSeatClass.setText(seat)
+        bottomSheetClassSeatViewModel.seatClass.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            if (it!=null){
+                binding.tvSeatClass.text = it
+            } else{
+                Toast.makeText(context, "seat null", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
 
