@@ -22,7 +22,7 @@ class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentBottomSheetClassSeatBinding.inflate(layoutInflater, container, false)
-        return inflater.inflate(R.layout.fragment_bottom_sheet_class_seat, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,25 +30,30 @@ class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
         viewModel = ViewModelProvider(this).get(BottomSheetClassSeatViewModel::class.java)
 
         binding.cvBusiness.setOnClickListener {
+            saveSeat("Business")
             selectSeat("Business")
-            Toast.makeText(context, "testtttt", Toast.LENGTH_SHORT).show()
         }
         binding.cvFirstClass.setOnClickListener {
+            saveSeat("First Class")
             selectSeat("First Class")
         }
         binding.cvEconomy.setOnClickListener {
+            saveSeat("Economy")
             selectSeat("Economy")
         }
         binding.cvPremiumEconomy.setOnClickListener {
+            saveSeat("Premium Economy")
             selectSeat("Premium Economy")
         }
-
 
 
     }
     private fun selectSeat(seatClass: String) {
         Toast.makeText(context, "Selected seat class: $seatClass", Toast.LENGTH_SHORT).show()
         dismiss()
+    }
+    private fun saveSeat(seatClass: String){
+        viewModel.setSeatClass(seatClass)
     }
 
 

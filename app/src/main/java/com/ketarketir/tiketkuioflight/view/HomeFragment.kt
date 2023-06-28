@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -18,6 +19,7 @@ import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentHomeBinding
 import com.ketarketir.tiketkuioflight.model.destination.ListDataDestination
 import com.ketarketir.tiketkuioflight.view.adapter.DestinationAdapter
+import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetClassSeatViewModel
 import com.ketarketir.tiketkuioflight.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
@@ -30,6 +32,7 @@ class HomeFragment : Fragment() {
     private lateinit var destinationViewModel: DestinationViewModel
     private lateinit var destinationAdapter: DestinationAdapter
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var bottomSheetClassSeatViewModel: BottomSheetClassSeatViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +46,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-
+        bottomSheetClassSeatViewModel = ViewModelProvider(this).get(BottomSheetClassSeatViewModel::class.java)
         binding.tvDestinationFrom.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_bottomSheetHomeSearchDestinationFragment)
         }
@@ -90,6 +93,10 @@ class HomeFragment : Fragment() {
         binding.tvPassenger.setOnClickListener {
             BottomSheetSetPassengerFragment().show(requireActivity().supportFragmentManager, "BottomSheetSetPassengerFragment")
         }
+        binding.tvSeatClass.setOnClickListener {
+            showChooseSeatClass()
+        }
+
     }
 
     private fun setupRecyclerView() {
@@ -185,6 +192,16 @@ class HomeFragment : Fragment() {
 
         })
 
+    }
+
+    private fun showChooseSeatClass(){
+        bottomSheetClassSeatViewModel.seatClass.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            if (it!= null){
+                binding.tvSeatClass.text = it
+            } else {
+                Toast.makeText(context, "null", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
 }

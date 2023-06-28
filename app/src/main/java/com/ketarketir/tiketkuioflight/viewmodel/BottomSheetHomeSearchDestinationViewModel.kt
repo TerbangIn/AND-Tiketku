@@ -84,4 +84,5 @@ class BottomSheetHomeSearchDestinationViewModel @Inject constructor(val apiServi
             _token.postValue(token)
         }
     }
+
 }
