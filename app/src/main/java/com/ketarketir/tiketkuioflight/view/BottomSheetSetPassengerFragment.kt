@@ -21,7 +21,7 @@ class BottomSheetSetPassengerFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentBottomSheetSetPassengerBinding.inflate(layoutInflater, container, false)
-        return inflater.inflate(R.layout.fragment_bottom_sheet_set_passenger, container, false)
+        return binding.root
     }
 
 
