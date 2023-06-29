@@ -1,36 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.BottomSheetClassSeatFragment">
 
-    <RelativeLayout
-        android:id="@+id/rl_container"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ic_close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_up"
-            android:paddingVertical="6dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="10dp"/>
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/ic_close"/>
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ll_container"
+            android:id="@+id/cl_close"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/divider">
+            android:layout_marginVertical="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ic_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_up"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/ic_close"
+                app:layout_constraintTop_toBottomOf="@id/ic_close"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_economy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_close">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_economy"
@@ -42,30 +53,29 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingVertical="12dp">
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_economy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_economy"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/neutral05"
-                    android:fontFamily="@font/poppins_bold"
-                    android:layout_marginHorizontal="16dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_idr_economy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_idr_economy"
-                    android:textSize="14sp"
-                    android:textColor="@color/darkblue04"
-                    android:fontFamily="@font/poppins_medium"
-                    android:layout_marginHorizontal="16dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_economy"/>
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="20dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_economy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_economy"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/neutral05"
+                        android:fontFamily="@font/poppins_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_idr_economy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_idr_economy"
+                        android:textSize="14sp"
+                        android:textColor="@color/darkblue04"
+                        android:fontFamily="@font/poppins_medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_economy"/>
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/ic_check"
@@ -82,25 +92,44 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_divider_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_economy">
+
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/divider_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/neutral03"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cv_economy"/>
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_premium_economy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_divider_1">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_premium_economy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider_1">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingVertical="12dp">
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="20dp">
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tv_premium_economy"
                         android:layout_width="wrap_content"
@@ -110,7 +139,6 @@
                         android:textStyle="bold"
                         android:textColor="@color/neutral05"
                         android:fontFamily="@font/poppins_bold"
-                        android:layout_marginHorizontal="16dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"/>
                     <com.google.android.material.textview.MaterialTextView
@@ -121,12 +149,20 @@
                         android:textSize="14sp"
                         android:textColor="@color/darkblue04"
                         android:fontFamily="@font/poppins_medium"
-                        android:layout_marginHorizontal="16dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_premium_economy"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_divider_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_premium_economy">
 
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/divider_2"
@@ -134,19 +170,30 @@
                 android:layout_height="wrap_content"
                 android:background="@color/neutral03"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cv_premium_economy"/>
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_business"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_divider_2">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_business"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider_2">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingVertical="12dp">
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="20dp">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tv_business"
                         android:layout_width="wrap_content"
@@ -156,7 +203,6 @@
                         android:textStyle="bold"
                         android:textColor="@color/neutral05"
                         android:fontFamily="@font/poppins_bold"
-                        android:layout_marginHorizontal="16dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"/>
                     <com.google.android.material.textview.MaterialTextView
@@ -167,12 +213,20 @@
                         android:textSize="14sp"
                         android:textColor="@color/darkblue04"
                         android:fontFamily="@font/poppins_medium"
-                        android:layout_marginHorizontal="16dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_business"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_divider_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_business">
 
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/divider_3"
@@ -180,19 +234,29 @@
                 android:layout_height="wrap_content"
                 android:background="@color/neutral03"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cv_business"/>
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_first_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_divider_3">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_first_class"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider_3">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingVertical="12dp">
+                    android:paddingVertical="12dp"
+                    android:paddingHorizontal="20dp">
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tv_first_class"
                         android:layout_width="wrap_content"
@@ -202,7 +266,6 @@
                         android:textStyle="bold"
                         android:textColor="@color/neutral05"
                         android:fontFamily="@font/poppins_bold"
-                        android:layout_marginHorizontal="16dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"/>
                     <com.google.android.material.textview.MaterialTextView
@@ -213,12 +276,20 @@
                         android:textSize="14sp"
                         android:textColor="@color/darkblue04"
                         android:fontFamily="@font/poppins_medium"
-                        android:layout_marginHorizontal="16dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_first_class"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_divider_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_first_class">
 
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/divider_4"
@@ -226,11 +297,36 @@
                 android:layout_height="wrap_content"
                 android:background="@color/neutral03"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cv_first_class"/>
-
+                app:layout_constraintTop_toTopOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </RelativeLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_btn_choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_divider_4">
 
-</RelativeLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/darkblue05"
+                android:text="@string/btn_save"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:fontFamily="@font/poppins_medium"
+                app:cornerRadius="16dp"
+                android:paddingVertical="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
