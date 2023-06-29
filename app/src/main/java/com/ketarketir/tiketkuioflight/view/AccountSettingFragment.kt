@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentAccountSettingBinding
@@ -32,8 +34,16 @@ class AccountSettingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_accountSettingFragment_to_accountFragment)
+        }
+
         binding.tvChooseLanguage.setOnClickListener {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+        }
+
+        binding.tvComingSoon.setOnClickListener {
+            Toast.makeText(requireContext(), "Coming Soon!", Toast.LENGTH_SHORT).show()
         }
     }
     override fun onDestroy() {

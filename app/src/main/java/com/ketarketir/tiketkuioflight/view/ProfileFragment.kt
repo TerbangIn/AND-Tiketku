@@ -39,6 +39,10 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_accountFragment)
+        }
+
         userManager = UserManager.getInstance(requireContext())
 
         sharedPreferences = requireContext().getSharedPreferences("dataUser", Context.MODE_PRIVATE)
