@@ -1,53 +1,43 @@
 package com.ketarketir.tiketkuioflight.view
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.SearchView
 import android.widget.Toast
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetHomeSearchDestinationBinding
-import com.ketarketir.tiketkuioflight.datastoreprefs.UserManager
+import com.ketarketir.tiketkuioflight.databinding.FragmentHomeSearchAirportFromBinding
 import com.ketarketir.tiketkuioflight.view.adapter.AirportAdapter
 import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetHomeSearchDestinationViewModel
 import com.ketarketir.tiketkuioflight.viewmodel.HomeViewModel
-import com.ketarketir.tiketkuioflight.viewmodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BottomSheetHomeSearchDestinationFragment : Fragment() {
-
-    private lateinit var binding: FragmentBottomSheetHomeSearchDestinationBinding
+class HomeSearchAirportFrom : Fragment() {
+    private lateinit var binding: FragmentHomeSearchAirportFromBinding
     private lateinit var viewModel: BottomSheetHomeSearchDestinationViewModel
-    private lateinit var userManager: UserManager
-    private val homeViewModel: HomeViewModel by viewModels()
+    private val homeViewModel : HomeViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentBottomSheetHomeSearchDestinationBinding.inflate(layoutInflater, container, false)
+        // Inflate the layout for this fragment
+        binding = FragmentHomeSearchAirportFromBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel =
-            ViewModelProvider(this).get(BottomSheetHomeSearchDestinationViewModel::class.java)
-        userManager = UserManager.getInstance(requireContext())
-
+        viewModel = ViewModelProvider(requireActivity()).get(BottomSheetHomeSearchDestinationViewModel::class.java)
         showAirport()
-
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchAirportByCity(query.toString())
@@ -92,10 +82,10 @@ class BottomSheetHomeSearchDestinationFragment : Fragment() {
                         val bundle = Bundle()
                         val city = it.city
                         val code = it.code
-                        bundle.putString("city", city)
-                        bundle.putString("code", code)
-                        homeViewModel.postSelectedAirportTo(city)
-                        findNavController().navigate(R.id.action_bottomSheetHomeSearchDestinationFragment_to_homeFragment, bundle)
+                        bundle.putString("city_from", city)
+                        bundle.putString("code_from", code)
+                        homeViewModel.postSelectedAirportFrom(city)
+                        findNavController().navigate(R.id.action_homeSearchAirportFrom_to_homeFragment, bundle)
                     }
                 } else{
                     Toast.makeText(context, "null", Toast.LENGTH_SHORT).show()
@@ -122,3 +112,6 @@ class BottomSheetHomeSearchDestinationFragment : Fragment() {
     }
 
 }
+
+
+

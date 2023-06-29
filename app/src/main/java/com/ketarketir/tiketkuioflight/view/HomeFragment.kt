@@ -2,18 +2,20 @@ package com.ketarketir.tiketkuioflight.view
 
 
 import DestinationViewModel
+import android.annotation.SuppressLint
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
@@ -33,6 +35,8 @@ class HomeFragment : Fragment() {
     private lateinit var destinationViewModel: DestinationViewModel
     private lateinit var destinationAdapter: DestinationAdapter
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var from : String
+    private lateinit var to : String
     private lateinit var bottomSheetClassSeatViewModel: BottomSheetClassSeatViewModel
 
 
@@ -50,10 +54,10 @@ class HomeFragment : Fragment() {
         (activity as MainActivity).setBottomNavigationVisibility(View.VISIBLE)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         bottomSheetClassSeatViewModel = ViewModelProvider(this).get(BottomSheetClassSeatViewModel::class.java)
-        binding.tvDestinationFrom.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_bottomSheetHomeSearchDestinationFragment)
+        binding.llFrom.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_homeSearchAirportFrom)
         }
-        binding.tvDestinationTo.setOnClickListener {
+        binding.llTo.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_bottomSheetHomeSearchDestinationFragment)
         }
 
@@ -71,6 +75,7 @@ class HomeFragment : Fragment() {
         setupRecyclerView()
         observeDestinations()
         showChooseSeatClass()
+        updateChooseAirport()
 
         binding.tvSeatClass.setOnClickListener {
             BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager, "BottomSheetClassSeatFragment")
@@ -78,9 +83,11 @@ class HomeFragment : Fragment() {
         binding.tvPassenger.setOnClickListener {
             BottomSheetSetPassengerFragment().show(requireActivity().supportFragmentManager, "BottomSheetSetPassengerFragment")
         }
+        binding.btnSearch.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_resultSearchFragment)
+        }
 
     }
-
 
 
     private fun setupRecyclerView() {
@@ -150,6 +157,33 @@ class HomeFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
+    private fun updateChooseAirport(){
+        val arguments = arguments
+        val city = if (arguments != null) arguments.getString("city") else "Jakarta"
+        val code = if (arguments != null) arguments.getString("code") else "JKT"
+        val cityFrom = if (arguments != null) arguments.getString("city_from") else "Seoul"
+        val codeFrom = if (arguments != null) arguments.getString("code_from") else "ICN"
+
+        homeViewModel.postSelectedAirportFrom(cityFrom)
+        homeViewModel.postSelectedAirportTo(city)
+
+        homeViewModel.selectedAirportFrom.observe(viewLifecycleOwner){
+            if (it!= null){
+                binding.tvDestinationFrom.text = it
+            } else{
+                binding.tvDestinationFrom.text = "Seoul (ICN)"
+            }
+        }
+        homeViewModel.selectedAirportTo.observe(viewLifecycleOwner){
+            if (it!= null){
+                binding.tvDestinationTo.text = it
+            } else{
+                binding.tvDestinationTo.text = "Jakarta (JKT)"
+            }
+        }
+
+    }
 
     private fun formatDate(date: Date): String {
         val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())

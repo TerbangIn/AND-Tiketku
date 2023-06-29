@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_homeFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_homeSearchAirportFrom"
+            app:destination="@id/homeSearchAirportFrom" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -112,7 +115,17 @@
     <fragment
         android:id="@+id/forgetPasswordFragment"
         android:name="com.ketarketir.tiketkuioflight.view.ForgetPasswordFragment"
-        android:label="ForgetPasswordFragment" />
+        android:label="ForgetPasswordFragment" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_bottomSheetClassSeatFragment"
+            app:destination="@id/bottomSheetClassSeatFragment" />
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_homeSearchAirportFrom"
+            app:destination="@id/homeSearchAirportFrom" />
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_homeSearchAirportFrom2"
+            app:destination="@id/homeSearchAirportFrom" />
+    </fragment>
     <fragment
         android:id="@+id/biodataBookingFragment"
         android:name="com.ketarketir.tiketkuioflight.view.BiodataBookingFragment"
@@ -186,6 +199,9 @@
         <action
             android:id="@+id/action_bottomSheetSetPassengerFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_bottomSheetSetPassengerFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </dialog>
     <fragment
         android:id="@+id/bottomSheetSearchResultFilterFragment"
@@ -195,6 +211,9 @@
         <action
             android:id="@+id/action_bottomSheetSearchResultFilterFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_bottomSheetSearchResultFilterFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailDestinationFragment"
@@ -242,6 +261,21 @@
         tools:layout="@layout/fragment_history" >
         <action
             android:id="@+id/action_historyFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeSearchAirportFrom"
+        android:name="com.ketarketir.tiketkuioflight.view.HomeSearchAirportFrom"
+        android:label="fragment_home_search_airport_from"
+        tools:layout="@layout/fragment_home_search_airport_from" >
+        <action
+            android:id="@+id/action_homeSearchAirportFrom_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
+        <action
+            android:id="@+id/action_homeSearchAirportFrom_to_forgetPasswordFragment2"
+            app:destination="@id/forgetPasswordFragment" />
+        <action
+            android:id="@+id/action_homeSearchAirportFrom_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
