@@ -9,11 +9,14 @@ import com.ketarketir.tiketkuioflight.model.user.DataResponseResetPassword
 import com.ketarketir.tiketkuioflight.model.user.DataResponseVerifyUser
 import com.ketarketir.tiketkuioflight.model.user.DataResetPassword
 import com.ketarketir.tiketkuioflight.networking.ApiService
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class ForgetPasswordViewModel(private val apiService: ApiService) : ViewModel() {
+@HiltViewModel
+class ForgetPasswordViewModel @Inject constructor(val apiService: ApiService) : ViewModel() {
 
     private val _otpSent = MutableLiveData<Boolean>()
     val otpSent get() = _otpSent

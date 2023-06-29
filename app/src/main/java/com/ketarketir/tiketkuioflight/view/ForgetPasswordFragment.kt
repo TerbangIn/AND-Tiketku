@@ -13,7 +13,9 @@ import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentForgetPasswordBinding
 import com.ketarketir.tiketkuioflight.viewmodel.ForgetPasswordViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ForgetPasswordFragment : Fragment() {
     private var _binding: FragmentForgetPasswordBinding? = null
     private val binding get() = _binding!!
