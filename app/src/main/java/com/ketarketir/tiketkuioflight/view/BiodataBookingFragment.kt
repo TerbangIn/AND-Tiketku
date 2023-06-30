@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentAccountSettingBinding
@@ -29,6 +30,15 @@ class BiodataBookingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
+
+        val fullname = binding.tieName.text.toString()
+        val familyName = binding.tieFamily.text.toString()
+        val phoneNumber = binding.tieNumberPhone.text.toString()
+        val email = binding.tieNumberPhone.text.toString()
+
+        binding.btnSave.setOnClickListener {
+            findNavController().navigate(R.id.action_biodataBookingFragment_to_biodataPassengerFragment)
+        }
     }
 
     override fun onDestroy() {
