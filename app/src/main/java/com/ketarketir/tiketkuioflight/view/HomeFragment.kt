@@ -35,8 +35,6 @@ class HomeFragment : Fragment() {
     private lateinit var destinationViewModel: DestinationViewModel
     private lateinit var destinationAdapter: DestinationAdapter
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var from : String
-    private lateinit var to : String
     private lateinit var bottomSheetClassSeatViewModel: BottomSheetClassSeatViewModel
 
 
