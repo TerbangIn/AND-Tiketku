@@ -132,7 +132,11 @@
         android:id="@+id/biodataBookingFragment"
         android:name="com.ketarketir.tiketkuioflight.view.BiodataBookingFragment"
         android:label="fragment_biodata_booking"
-        tools:layout="@layout/fragment_biodata_booking" />
+        tools:layout="@layout/fragment_biodata_booking" >
+        <action
+            android:id="@+id/action_biodataBookingFragment_to_biodataPassengerFragment"
+            app:destination="@id/biodataPassengerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sendOTPFragment"
         android:name="com.ketarketir.tiketkuioflight.view.SendOTPFragment"
@@ -234,6 +238,9 @@
         <action
             android:id="@+id/action_resultSearchFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_resultSearchFragment_to_biodataBookingFragment"
+            app:destination="@id/biodataBookingFragment" />
     </fragment>
     <fragment
         android:id="@+id/inputEmailFragment"
@@ -292,5 +299,23 @@
         android:id="@+id/paymentFragment"
         android:name="com.ketarketir.tiketkuioflight.view.PaymentFragment"
         android:label="fragment_payment"
-        tools:layout="@layout/fragment_payment" />
+        tools:layout="@layout/fragment_payment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_bottomSheetPaymentSuccessFragment"
+            app:destination="@id/bottomSheetPaymentSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/biodataPassengerFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.BiodataPassengerFragment"
+        android:label="fragment_biodata_passenger"
+        tools:layout="@layout/fragment_biodata_passenger" >
+        <action
+            android:id="@+id/action_biodataPassengerFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomSheetPaymentSuccessFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.BottomSheetPaymentSuccessFragment"
+        android:label="fragment_bottom_sheet_payment_success"
+        tools:layout="@layout/fragment_bottom_sheet_payment_success" />
 </navigation>
