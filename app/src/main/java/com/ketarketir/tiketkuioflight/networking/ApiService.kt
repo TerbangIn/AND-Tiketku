@@ -2,6 +2,7 @@ package com.ketarketir.tiketkuioflight.networking
 
 import com.ketarketir.tiketkuioflight.model.airport.DataAirport
 import com.ketarketir.tiketkuioflight.model.airport.DataResponseAirport
+import com.ketarketir.tiketkuioflight.model.flight.DataResponseFlight
 import com.ketarketir.tiketkuioflight.model.notifications.DataResponseNotifications
 import com.ketarketir.tiketkuioflight.model.user.*
 import retrofit2.Call
@@ -68,6 +69,10 @@ interface ApiService {
         @Header("Authorization") bearerToken: String,
         @Path("city") city:String
     ) : Call<DataResponseAirport>
+
+    //flight
+    @GET("api/v1/flight/")
+    fun getListAllFlight(@Header("Authorization") bearerToken: String) : Call<DataResponseFlight>
 
 
     //notifications
