@@ -6,76 +6,83 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.BiodataPassengerFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_container"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_appbar"
+            android:id="@+id/cl_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/abl_container"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/abl_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.appbar.MaterialToolbar
+                        android:id="@+id/topAppBar"
+                        android:background="@color/darkblue01"
+                        app:title="@string/tv_passenger_biodata"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:navigationIcon="@drawable/baseline_arrow_back_24" />
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/cl_appbar">
 
-                <com.google.android.material.appbar.MaterialToolbar
-                    android:id="@+id/topAppBar"
-                    android:background="@color/darkblue01"
-                    app:title="@string/tv_passenger_biodata"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_destination"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:navigationIcon="@drawable/baseline_arrow_back_24" />
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_biodata_passenger"/>
 
-            </com.google.android.material.appbar.AppBarLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_appbar">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_destination"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_btn_next_choose_seat"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:itemCount="1"
-                tools:listitem="@layout/item_biodata_passenger"/>
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent">
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_choose_next_seat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="50dp"
+                    android:paddingVertical="12dp"
+                    android:backgroundTint="@color/darkblue05"
+                    android:text="@string/btn_next_choose_seat"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/poppins_medium"
+                    app:cornerRadius="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_btn_next_choose_seat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_choose_next_seat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="50dp"
-                android:paddingVertical="12dp"
-                android:backgroundTint="@color/darkblue05"
-                android:text="@string/btn_next_choose_seat"
-                android:textSize="14sp"
-                android:textStyle="normal"
-                android:fontFamily="@font/poppins_medium"
-                app:cornerRadius="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
