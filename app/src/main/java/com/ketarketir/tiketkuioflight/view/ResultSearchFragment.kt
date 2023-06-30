@@ -50,6 +50,9 @@ class ResultSearchFragment : Fragment() {
                     val adapter = FlightAdapter(it)
                     binding.rvFlight.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                     binding.rvFlight.adapter = adapter
+                    adapter.onClick = {
+                        findNavController().navigate(R.id.action_resultSearchFragment_to_biodataBookingFragment)
+                    }
                 } else{
                     Toast.makeText(context, "null", Toast.LENGTH_SHORT).show()
                 }
