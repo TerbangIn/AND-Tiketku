@@ -46,7 +46,9 @@ class InputEmailFragment : Fragment() {
 
         sendOTPViewModel.statusGenerate.observe(viewLifecycleOwner, { response ->
             if (response != null) {
-                navController.navigate(R.id.action_inputEmailFragment_to_sendOTPFragment)
+                navController.navigate(R.id.action_inputEmailFragment_to_sendOTPResetPassword, Bundle().apply {
+                    putString("email", email)
+                })
             } else {
                 // Tampilkan pesan error jika pemanggilan API gagal
             }
@@ -57,10 +59,5 @@ class InputEmailFragment : Fragment() {
 
     private fun getEmailFromInput(): String {
         return binding.tieMasukanEmail.text.toString().trim()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 }

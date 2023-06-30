@@ -58,6 +58,86 @@ class SendOTPFragment : Fragment() {
             generateOtp()
         }
 
+        binding.etKode1.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // No need to implement
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                // No need to implement
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                if (s.length == 1) {
+                    binding.etKode2.requestFocus()
+                }
+            }
+        })
+
+        binding.etKode2.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // No need to implement
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                // No need to implement
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                if (s.length == 1) {
+                    binding.etKode3.requestFocus()
+                }
+            }
+        })
+
+        binding.etKode3.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // No need to implement
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                // No need to implement
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                if (s.length == 1) {
+                    binding.etKode4.requestFocus()
+                }
+            }
+        })
+
+        binding.etKode4.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // No need to implement
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                // No need to implement
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                if (s.length == 1) {
+                    binding.etKode5.requestFocus()
+                }
+            }
+        })
+
+        binding.etKode5.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // No need to implement
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                // No need to implement
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                if (s.length == 1) {
+                    binding.etKode6.requestFocus()
+                }
+            }
+        })
+
         binding.etKode6.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //

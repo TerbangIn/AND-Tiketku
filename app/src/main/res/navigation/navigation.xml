@@ -253,6 +253,9 @@
         <action
             android:id="@+id/action_inputEmailFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_inputEmailFragment_to_sendOTPResetPassword"
+            app:destination="@id/sendOTPResetPassword" />
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
@@ -318,4 +321,13 @@
         android:name="com.ketarketir.tiketkuioflight.view.BottomSheetPaymentSuccessFragment"
         android:label="fragment_bottom_sheet_payment_success"
         tools:layout="@layout/fragment_bottom_sheet_payment_success" />
+    <fragment
+        android:id="@+id/sendOTPResetPassword"
+        android:name="com.ketarketir.tiketkuioflight.view.SendOTPResetPassword"
+        android:label="fragment_send_o_t_p_reset_password"
+        tools:layout="@layout/fragment_send_o_t_p_reset_password" >
+        <action
+            android:id="@+id/action_sendOTPResetPassword_to_newPasswordFragment"
+            app:destination="@id/newPasswordFragment" />
+    </fragment>
 </navigation>

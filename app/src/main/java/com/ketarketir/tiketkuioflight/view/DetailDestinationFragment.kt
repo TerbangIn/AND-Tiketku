@@ -36,10 +36,16 @@ class DetailDestinationFragment : Fragment() {
             binding.tvPriceRange.text = it.priceRange
             binding.tvOverview.text= it.overview
         }
+
+        binding.topAppBar.setNavigationOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
+
+
 }
