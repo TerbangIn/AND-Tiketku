@@ -140,8 +140,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_rv_destination"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/cl_filter">
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@id/cl_filter"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_flight"
@@ -150,10 +152,10 @@
                 tools:listitem="@layout/item_result_ticket"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="5"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
