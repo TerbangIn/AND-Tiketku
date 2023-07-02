@@ -11,6 +11,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -31,11 +32,10 @@ import java.util.*
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private val homeViewModel: HomeViewModel by activityViewModels()
     private lateinit var destinationViewModel: DestinationViewModel
     private lateinit var destinationAdapter: DestinationAdapter
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var bottomSheetClassSeatViewModel: BottomSheetClassSeatViewModel
 
 
     override fun onCreateView(
@@ -50,8 +50,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.VISIBLE)
-        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        bottomSheetClassSeatViewModel = ViewModelProvider(this).get(BottomSheetClassSeatViewModel::class.java)
+
+        showChooseSeatClass()
+        updateChooseAirport()
+        updatePassengerCountTextView()
+
+
         binding.llFrom.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_homeSearchAirportFrom)
         }
@@ -70,11 +74,10 @@ class HomeFragment : Fragment() {
         destinationAdapter = DestinationAdapter { destination ->
             navigateToDetailDestination(destination)
         }
+
         setupRecyclerView()
         observeDestinations()
-        showChooseSeatClass()
-        updateChooseAirport()
-        updatePassengerCountTextView()
+
 
         binding.tvSeatClass.setOnClickListener {
             BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager, "BottomSheetClassSeatFragment")
@@ -213,7 +216,7 @@ class HomeFragment : Fragment() {
     }
 
     fun showChooseSeatClass(){
-        bottomSheetClassSeatViewModel.seatClass.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+        homeViewModel.seatClass.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             if (it!=null){
                 binding.tvSeatClass.text = it
             } else{
@@ -222,9 +225,10 @@ class HomeFragment : Fragment() {
         })
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updatePassengerCountTextView() {
         homeViewModel.totalPassenger.observe(this, { count ->
-            binding.tvPassenger.text = count.toString()
+            binding.tvPassenger.text = " " + count.toString() + " " + "Passengers"
         })
     }
 

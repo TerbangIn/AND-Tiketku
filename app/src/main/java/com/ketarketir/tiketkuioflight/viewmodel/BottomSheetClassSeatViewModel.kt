@@ -9,10 +9,4 @@ import javax.inject.Inject
 @HiltViewModel
 class BottomSheetClassSeatViewModel @Inject constructor() : ViewModel() {
 
-    private val _seatClass: MutableLiveData<String> = MutableLiveData()
-    val seatClass: LiveData<String> get() = _seatClass
-
-    fun setSeatClass(seat: String) {
-        _seatClass.value = seat
-    }
 }
