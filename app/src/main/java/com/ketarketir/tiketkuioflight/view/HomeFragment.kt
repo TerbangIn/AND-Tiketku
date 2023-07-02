@@ -62,6 +62,9 @@ class HomeFragment : Fragment() {
         binding.llTo.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_bottomSheetHomeSearchDestinationFragment)
         }
+        binding.btnSwitch.setOnClickListener {
+            swapAirport()
+        }
 
         binding.tvDepartureDate.setOnClickListener {
             showDateRangePickerDialog()
@@ -184,6 +187,24 @@ class HomeFragment : Fragment() {
             }
         }
 
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun swapAirport(){
+        homeViewModel.selectedAirportFrom.observe(viewLifecycleOwner){
+            if (it!= null){
+                binding.tvDestinationTo.text = it
+            } else{
+                binding.tvDestinationTo.text = "Seoul (ICN)"
+            }
+        }
+        homeViewModel.selectedAirportTo.observe(viewLifecycleOwner){
+            if (it!= null){
+                binding.tvDestinationFrom.text = it
+            } else{
+                binding.tvDestinationFrom.text = "Jakarta (JKT)"
+            }
+        }
     }
 
     private fun formatDate(date: Date): String {
