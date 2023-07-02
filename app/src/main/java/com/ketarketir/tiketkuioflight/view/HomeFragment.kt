@@ -89,7 +89,7 @@ class HomeFragment : Fragment() {
             BottomSheetSetPassengerFragment().show(requireActivity().supportFragmentManager, "BottomSheetSetPassengerFragment")
         }
         binding.btnSearch.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_resultSearchFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_loadingSearchFlightFragment)
         }
 
 
