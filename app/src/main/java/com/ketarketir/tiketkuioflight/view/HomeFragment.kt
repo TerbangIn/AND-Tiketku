@@ -74,6 +74,7 @@ class HomeFragment : Fragment() {
         observeDestinations()
         showChooseSeatClass()
         updateChooseAirport()
+        updatePassengerCountTextView()
 
         binding.tvSeatClass.setOnClickListener {
             BottomSheetClassSeatFragment().show(requireActivity().supportFragmentManager, "BottomSheetClassSeatFragment")
@@ -84,6 +85,7 @@ class HomeFragment : Fragment() {
         binding.btnSearch.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_resultSearchFragment)
         }
+
 
     }
 
@@ -219,6 +221,13 @@ class HomeFragment : Fragment() {
             }
         })
     }
+
+    private fun updatePassengerCountTextView() {
+        homeViewModel.totalPassenger.observe(this, { count ->
+            binding.tvPassenger.text = count.toString()
+        })
+    }
+
 
 
 
