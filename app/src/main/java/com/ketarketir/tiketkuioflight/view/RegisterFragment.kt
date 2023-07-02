@@ -45,6 +45,10 @@ class RegisterFragment : Fragment() {
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         sharedRegis = requireContext().getSharedPreferences("dataUser", Context.MODE_PRIVATE)
 
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
+
         binding.btnRegister.setOnClickListener {
             register()
         }

@@ -50,7 +50,7 @@
                 android:id="@+id/cl_sign_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="30dp"
+                android:layout_marginVertical="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
