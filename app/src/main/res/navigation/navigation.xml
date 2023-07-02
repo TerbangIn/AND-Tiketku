@@ -54,6 +54,9 @@
         <action
             android:id="@+id/action_homeFragment_to_homeSearchAirportFrom"
             app:destination="@id/homeSearchAirportFrom" />
+        <action
+            android:id="@+id/action_homeFragment_to_loadingSearchFlightFragment"
+            app:destination="@id/loadingSearchFlightFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -241,6 +244,9 @@
         <action
             android:id="@+id/action_resultSearchFragment_to_biodataBookingFragment"
             app:destination="@id/biodataBookingFragment" />
+        <action
+            android:id="@+id/action_resultSearchFragment_to_loadingSearchFlightFragment"
+            app:destination="@id/loadingSearchFlightFragment" />
     </fragment>
     <fragment
         android:id="@+id/inputEmailFragment"
@@ -329,5 +335,14 @@
         <action
             android:id="@+id/action_sendOTPResetPassword_to_newPasswordFragment"
             app:destination="@id/newPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loadingSearchFlightFragment"
+        android:name="com.ketarketir.tiketkuioflight.view.LoadingSearchFlightFragment"
+        android:label="fragment_loading_search_flight"
+        tools:layout="@layout/fragment_loading_search_flight" >
+        <action
+            android:id="@+id/action_loadingSearchFlightFragment_to_resultSearchFragment"
+            app:destination="@id/resultSearchFragment" />
     </fragment>
 </navigation>
