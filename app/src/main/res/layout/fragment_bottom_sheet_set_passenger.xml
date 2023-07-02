@@ -92,7 +92,7 @@
                     app:icon="@drawable/ic_minus_icon"
                     app:iconTint="@color/darkblue05"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/et_adult"
                     android:layout_width="60dp"
                     android:layout_height="40dp"
@@ -195,7 +195,7 @@
                     app:icon="@drawable/ic_minus_icon"
                     app:iconTint="@color/darkblue05"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/et_child"
                     android:layout_width="60dp"
                     android:layout_height="40dp"
@@ -298,7 +298,7 @@
                     app:icon="@drawable/ic_minus_icon"
                     app:iconTint="@color/darkblue05"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/et_baby"
                     android:layout_width="60dp"
                     android:layout_height="40dp"
