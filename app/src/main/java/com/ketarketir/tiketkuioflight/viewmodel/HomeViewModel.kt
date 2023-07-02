@@ -36,6 +36,12 @@ class HomeViewModel @Inject constructor(val apiService: ApiService) : ViewModel(
     private val _totalPassenger = MutableLiveData<Int>()
     val totalPassenger: LiveData<Int> get() = _totalPassenger
 
+    private val _seatClass: MutableLiveData<String> = MutableLiveData()
+    val seatClass: LiveData<String> get() = _seatClass
+
+    fun setSeatClass(seat: String) {
+        _seatClass.value = seat
+    }
 
     fun postSelectedStartDate(date: Date) {
         _selectedStartDate.postValue(date)

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -14,11 +15,12 @@ import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetClassSeatBinding
 import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetClassSeatViewModel
+import com.ketarketir.tiketkuioflight.viewmodel.HomeViewModel
 
 class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentBottomSheetClassSeatBinding
-    private lateinit var viewModel: BottomSheetClassSeatViewModel
+    private val homeViewModel: HomeViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -32,7 +34,6 @@ class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
-        viewModel = ViewModelProvider(this).get(BottomSheetClassSeatViewModel::class.java)
 
         binding.cvBusiness.setOnClickListener {
             saveSeat("Business")
@@ -62,7 +63,7 @@ class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
 
     }
     private fun saveSeat(seatClass: String){
-        viewModel.setSeatClass(seatClass)
+        homeViewModel.setSeatClass(seatClass)
     }
 
 
