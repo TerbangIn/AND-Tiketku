@@ -162,14 +162,12 @@ class HomeFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun updateChooseAirport(){
-        val arguments = arguments
-        val city = if (arguments != null) arguments.getString("city") else "Jakarta"
-        val code = if (arguments != null) arguments.getString("code") else "JKT"
-        val cityFrom = if (arguments != null) arguments.getString("city_from") else "Seoul"
-        val codeFrom = if (arguments != null) arguments.getString("code_from") else "ICN"
+//        val arguments = arguments
+//        val city = if (arguments != null) arguments.getString("city") else "Jakarta"
+//        val code = if (arguments != null) arguments.getString("code") else "JKT"
+//        val cityFrom = if (arguments != null) arguments.getString("city_from") else "Seoul"
+//        val codeFrom = if (arguments != null) arguments.getString("code_from") else "ICN"
 
-        homeViewModel.postSelectedAirportFrom(cityFrom)
-        homeViewModel.postSelectedAirportTo(city)
 
         homeViewModel.selectedAirportFrom.observe(viewLifecycleOwner){
             if (it!= null){

@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -31,7 +32,7 @@ class BottomSheetHomeSearchDestinationFragment : Fragment() {
     private lateinit var binding: FragmentBottomSheetHomeSearchDestinationBinding
     private lateinit var viewModel: BottomSheetHomeSearchDestinationViewModel
     private lateinit var userManager: UserManager
-    private val homeViewModel: HomeViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
