@@ -22,6 +22,7 @@ class LoadingSearchFlightFragment : Fragment() {
     private lateinit var binding:FragmentLoadingSearchFlightBinding
     private val homeViewModel:HomeViewModel by activityViewModels()
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

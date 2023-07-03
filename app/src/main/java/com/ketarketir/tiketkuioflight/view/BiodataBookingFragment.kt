@@ -23,7 +23,7 @@ class BiodataBookingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentBiodataBookingBinding.inflate(inflater, container, false)
+        _binding = FragmentBiodataBookingBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -37,12 +37,8 @@ class BiodataBookingFragment : Fragment() {
         val email = binding.tieNumberPhone.text.toString()
 
         binding.btnSave.setOnClickListener {
-            findNavController().navigate(R.id.action_biodataBookingFragment_to_biodataPassengerFragment)
+            findNavController().navigate(R.id.action_biodataBookingFragment_to_biodataPassengerFragment2)
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
 }

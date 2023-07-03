@@ -15,7 +15,9 @@ import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetSetPassengerBinding
 import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetSetPassengerViewModel
 import com.ketarketir.tiketkuioflight.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BottomSheetSetPassengerFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentBottomSheetSetPassengerBinding
