@@ -5,7 +5,7 @@ Motto: Now Everyone Can Fly
 
 Grup C8 [FSW-3 X AND-1]
 
-Powerpoint:
+Powerpoint: https://www.canva.com/design/DAFnkrbyhTE/Vmzm09Z5fNA48Vv7qzuIWw/edit?utm_content=DAFnkrbyhTE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 API:
 
 Website:
