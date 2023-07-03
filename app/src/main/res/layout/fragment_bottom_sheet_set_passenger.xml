@@ -6,350 +6,501 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.BottomSheetSetPassengerFragment">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/ic_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_up"
-        android:layout_centerHorizontal="true"
-        android:paddingVertical="6dp"
-        android:layout_marginHorizontal="10dp"/>
-
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@id/ic_close"/>
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/divider"
-        android:layout_margin="20dp">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_adult"
+        <RelativeLayout
+            android:id="@+id/rl_close"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="6dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ic_adult"
+                android:id="@+id/ic_close"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_adult"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:paddingVertical="15dp"
-                android:paddingHorizontal="23dp"/>
+                android:src="@drawable/ic_arrow_up"
+                android:layout_centerHorizontal="true"
+                android:paddingVertical="8dp"/>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_adult"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_close">
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_container_adult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_divider">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_icon_adult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_icon_adult"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_adult"
+                        android:tint="@color/darkblue05"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_description_adult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toEndOf="@id/ll_icon_adult"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_adult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_adult"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:textColor="@color/neutral05"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_adult_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_age_adult"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        android:textColor="@color/neutral05"
+                        android:fontFamily="@font/poppins_regular"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_count_adult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/ll_adult_count"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_minus_adult"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:textSize="18sp"
+                            app:strokeColor="@color/darkblue05"
+                            app:strokeWidth="1dp"
+                            android:gravity="center"
+                            app:icon="@drawable/ic_minus_icon"
+                            app:iconTint="@color/darkblue05"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/et_adult"
+                            android:layout_width="60dp"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:text="@string/tv_zero"
+                            android:textSize="16sp"
+                            android:enabled="false"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:background="@drawable/shape_count_passenger"
+                            android:fontFamily="@font/poppins_regular"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_plus_adult"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:textColor="@color/darkblue05"
+                            android:textSize="18sp"
+                            app:strokeColor="@color/darkblue05"
+                            app:strokeWidth="1dp"
+                            android:gravity="center"
+                            app:icon="@drawable/ic_plus_icon"
+                            app:iconTint="@color/darkblue05"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_divider_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_container_adult">
+
+            <View
                 android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/neutral03"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_container_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_divider_1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_icon_child"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_icon_child"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_kid"
+                        android:tint="@color/darkblue05"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_description_child"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toEndOf="@id/ll_icon_child"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_child"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_child"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:textColor="@color/neutral05"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_child_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_age_child"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        android:textColor="@color/neutral05"
+                        android:fontFamily="@font/poppins_regular"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_count_child"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/ll_child_count"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_minus_child"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:textSize="18sp"
+                            app:strokeColor="@color/darkblue05"
+                            app:strokeWidth="1dp"
+                            android:gravity="center"
+                            app:icon="@drawable/ic_minus_icon"
+                            app:iconTint="@color/darkblue05"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/et_child"
+                            android:layout_width="60dp"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:text="@string/tv_zero"
+                            android:textSize="16sp"
+                            android:enabled="false"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:background="@drawable/shape_count_passenger"
+                            android:fontFamily="@font/poppins_regular"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_plus_child"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:textColor="@color/darkblue05"
+                            android:textSize="18sp"
+                            app:strokeColor="@color/darkblue05"
+                            app:strokeWidth="1dp"
+                            android:gravity="center"
+                            app:icon="@drawable/ic_plus_icon"
+                            app:iconTint="@color/darkblue05"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_divider_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_container_child">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/neutral03"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_container_baby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_divider_2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_icon_baby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_icon_baby"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_baby"
+                        android:tint="@color/darkblue05"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_description_baby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toEndOf="@id/ll_icon_baby"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_baby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_baby"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:textColor="@color/neutral05"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_baby_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_age_baby"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        android:textColor="@color/neutral05"
+                        android:fontFamily="@font/poppins_regular"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_count_baby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/ll_baby_count"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_minus_baby"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:textSize="18sp"
+                            app:strokeColor="@color/darkblue05"
+                            app:strokeWidth="1dp"
+                            android:gravity="center"
+                            app:icon="@drawable/ic_minus_icon"
+                            app:iconTint="@color/darkblue05"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/et_baby"
+                            android:layout_width="60dp"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:text="@string/tv_zero"
+                            android:textSize="16sp"
+                            android:enabled="false"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:background="@drawable/shape_count_passenger"
+                            android:fontFamily="@font/poppins_regular"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_plus_baby"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:textColor="@color/darkblue05"
+                            android:textSize="18sp"
+                            app:strokeColor="@color/darkblue05"
+                            app:strokeWidth="1dp"
+                            android:gravity="center"
+                            app:icon="@drawable/ic_plus_icon"
+                            app:iconTint="@color/darkblue05"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_divider_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_container_baby">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/neutral03"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_btn_choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_divider_3">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_choose"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tv_adult"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="25dp"
+                android:paddingVertical="12dp"
+                android:backgroundTint="@color/darkblue04"
+                android:text="@string/btn_choose"
                 android:textSize="14sp"
                 android:textStyle="normal"
-                android:textColor="@color/neutral05"
-                android:fontFamily="@font/poppins_bold"
-                app:layout_constraintStart_toEndOf="@id/ic_adult"
-                app:layout_constraintTop_toTopOf="parent"/>
+                android:fontFamily="@font/poppins_medium"
+                app:cornerRadius="16dp" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_adult_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_age_adult"
-                android:textSize="12sp"
-                android:textStyle="normal"
-                android:textColor="@color/neutral05"
-                android:fontFamily="@font/poppins_regular"
-                app:layout_constraintStart_toEndOf="@id/ic_adult"
-                app:layout_constraintTop_toBottomOf="@id/tv_adult"/>
-
-            <LinearLayout
-                android:id="@+id/ll_adult_count"
-                android:layout_alignParentEnd="true"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_minus_adult"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textSize="18sp"
-                    app:strokeColor="@color/darkblue05"
-                    app:strokeWidth="1dp"
-                    android:gravity="center"
-                    app:icon="@drawable/ic_minus_icon"
-                    app:iconTint="@color/darkblue05"/>
-
-                <TextView
-                    android:id="@+id/et_adult"
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:text="@string/tv_zero"
-                    android:textSize="16sp"
-                    android:enabled="false"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:background="@drawable/shape_count_passenger"
-                    android:fontFamily="@font/poppins_regular"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_plus_adult"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textColor="@color/darkblue05"
-                    android:textSize="18sp"
-                    app:strokeColor="@color/darkblue05"
-                    app:strokeWidth="1dp"
-                    android:gravity="center"
-                    app:icon="@drawable/ic_plus_icon"
-                    app:iconTint="@color/darkblue05"/>
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/neutral03"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_adult"/>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_child"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="6dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_1">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ic_child"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_kid"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:paddingVertical="15dp"
-                android:paddingHorizontal="23dp"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_child"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_child"
-                android:textSize="14sp"
-                android:textStyle="normal"
-                android:textColor="@color/neutral05"
-                android:fontFamily="@font/poppins_bold"
-                app:layout_constraintStart_toEndOf="@id/ic_child"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_child_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_age_child"
-                android:textSize="12sp"
-                android:textStyle="normal"
-                android:textColor="@color/neutral05"
-                android:fontFamily="@font/poppins_regular"
-                app:layout_constraintStart_toEndOf="@id/ic_child"
-                app:layout_constraintTop_toBottomOf="@id/tv_child"/>
-
-            <LinearLayout
-                android:id="@+id/ll_child_count"
-                android:layout_alignParentEnd="true"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_minus_child"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textColor="@color/darkblue05"
-                    android:textSize="18sp"
-                    app:strokeColor="@color/darkblue05"
-                    app:strokeWidth="1dp"
-                    android:gravity="center"
-                    app:icon="@drawable/ic_minus_icon"
-                    app:iconTint="@color/darkblue05"/>
-
-                <TextView
-                    android:id="@+id/et_child"
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:text="@string/tv_zero"
-                    android:textSize="16sp"
-                    android:enabled="false"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:background="@drawable/shape_count_passenger"
-                    android:fontFamily="@font/poppins_regular"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_plus_child"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textColor="@color/darkblue05"
-                    android:textSize="18sp"
-                    app:strokeColor="@color/darkblue05"
-                    app:strokeWidth="1dp"
-                    android:gravity="center"
-                    app:icon="@drawable/ic_plus_icon"
-                    app:iconTint="@color/darkblue05"/>
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/neutral03"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_child"/>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_baby"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="6dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_2">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ic_baby"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baby"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:paddingVertical="15dp"
-                android:paddingHorizontal="23dp"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_baby"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_baby"
-                android:textSize="14sp"
-                android:textStyle="normal"
-                android:textColor="@color/neutral05"
-                android:fontFamily="@font/poppins_bold"
-                app:layout_constraintStart_toEndOf="@id/ic_baby"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_baby_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_age_baby"
-                android:textSize="12sp"
-                android:textStyle="normal"
-                android:textColor="@color/neutral05"
-                android:fontFamily="@font/poppins_regular"
-                app:layout_constraintStart_toEndOf="@id/ic_baby"
-                app:layout_constraintTop_toBottomOf="@id/tv_baby"/>
-
-            <LinearLayout
-                android:id="@+id/ll_baby_count"
-                android:layout_alignParentEnd="true"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_minus_baby"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textColor="@color/darkblue05"
-                    android:textSize="18sp"
-                    app:strokeColor="@color/darkblue05"
-                    app:strokeWidth="1dp"
-                    android:gravity="center"
-                    app:icon="@drawable/ic_minus_icon"
-                    app:iconTint="@color/darkblue05"/>
-
-                <TextView
-                    android:id="@+id/et_baby"
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:text="@string/tv_zero"
-                    android:textSize="16sp"
-                    android:enabled="false"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:background="@drawable/shape_count_passenger"
-                    android:fontFamily="@font/poppins_regular"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_plus_baby"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:textColor="@color/darkblue05"
-                    android:textSize="18sp"
-                    app:strokeColor="@color/darkblue05"
-                    app:strokeWidth="1dp"
-                    android:gravity="center"
-                    app:icon="@drawable/ic_plus_icon"
-                    app:iconTint="@color/darkblue05"/>
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/neutral03"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_baby"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_choose"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="50dp"
-            android:paddingVertical="12dp"
-            android:backgroundTint="@color/darkblue04"
-            android:text="@string/btn_choose"
-            android:textSize="14sp"
-            android:textStyle="normal"
-            android:fontFamily="@font/poppins_medium"
-            app:cornerRadius="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/divider_3" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
