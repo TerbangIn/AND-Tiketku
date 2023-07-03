@@ -16,7 +16,9 @@ import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentBottomSheetClassSeatBinding
 import com.ketarketir.tiketkuioflight.viewmodel.BottomSheetClassSeatViewModel
 import com.ketarketir.tiketkuioflight.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentBottomSheetClassSeatBinding
@@ -36,29 +38,21 @@ class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
 
         binding.cvBusiness.setOnClickListener {
             saveSeat("Business")
-            selectSeat("Business")
             dismiss()
         }
         binding.cvFirstClass.setOnClickListener {
             saveSeat("First Class")
-            selectSeat("First Class")
             dismiss()
         }
         binding.cvEconomy.setOnClickListener {
             saveSeat("Economy")
-            selectSeat("Economy")
             dismiss()
         }
         binding.cvPremiumEconomy.setOnClickListener {
             saveSeat("Premium Economy")
-            selectSeat("Premium Economy")
             dismiss()
         }
 
-
-    }
-    private fun selectSeat(seatClass: String) {
-        Toast.makeText(context, "Selected seat class: $seatClass", Toast.LENGTH_SHORT).show()
 
     }
     private fun saveSeat(seatClass: String){

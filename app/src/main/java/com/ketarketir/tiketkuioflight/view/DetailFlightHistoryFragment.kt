@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.MainActivity
+import com.ketarketir.tiketkuioflight.R
 import com.ketarketir.tiketkuioflight.databinding.FragmentDetailFlightHistoryBinding
 import com.ketarketir.tiketkuioflight.viewmodel.DetailFlightHistoryViewModel
 
@@ -27,6 +29,8 @@ class DetailFlightHistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
+
+        binding
     }
 
     override fun onDestroy() {

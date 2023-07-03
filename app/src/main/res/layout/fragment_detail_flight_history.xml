@@ -56,6 +56,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvStatusTiket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:cardBackgroundColor="@color/danger"
@@ -694,6 +695,7 @@
                             app:layout_constraintTop_toTopOf="parent"/>
 
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnContinuePayment"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginHorizontal="20dp"
@@ -701,6 +703,7 @@
                             android:paddingVertical="10dp"
                             android:text="@string/btn_continue_payment"
                             android:textSize="14sp"
+                            android:backgroundTint="@color/darkblue04"
                             android:textStyle="normal"
                             android:fontFamily="@font/poppins_medium"
                             app:cornerRadius="16dp"
