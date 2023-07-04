@@ -6,9 +6,9 @@ Merupakan sebuah platform pemesanan tiket secara online berbasis android
 
 ### Sneak peek Our App 
 <div align="center">
-<img src="image_1.jpeg" width="20%">
-  <img src="image_3.jpeg" width="20%">
-<img src="image_2.jpeg" width="20%">
+<img src="login.png" width="20%">
+  <img src="home.png" width="20%">
+<img src="account.png" width="20%">
 
 </div>
   
@@ -16,7 +16,7 @@ Merupakan sebuah platform pemesanan tiket secara online berbasis android
 # Link Deploy APK
 - https://github.com/TerbangIn/AND-Tiketku
 
-# Android 1(C7) nama anggota :
+# Android C8 [AND-1] nama anggota :
 1. Dheva Dayat Vito Indrajaka - Product Owner
 2. Sekar Risma Aisyah
 3. Rio Griya Putra
