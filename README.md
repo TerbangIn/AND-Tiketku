@@ -3,7 +3,7 @@
 <h3 align="center"><strong>Merupakan sebuah platform pemesanan tiket secara online berbasis android</strong></h3>
 
 <div align="center">
-   <img src="github/logo.png" width="90%">
+   <img src="github/logo.png" width="50%">
 </div>
 
 ### Sneak Peek Our App 
