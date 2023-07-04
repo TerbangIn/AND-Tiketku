@@ -30,7 +30,9 @@ class DetailFlightHistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
-        binding
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_detailFlightHistoryFragment_to_homeFragment)
+        }
     }
 
     override fun onDestroy() {

@@ -32,6 +32,10 @@ class InputEmailFragment : Fragment() {
         binding.btnNext.setOnClickListener {
             navigateToSendOTPFragment()
         }
+
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_inputEmailFragment_to_loginFragment)
+        }
     }
 
     override fun onDestroyView() {
