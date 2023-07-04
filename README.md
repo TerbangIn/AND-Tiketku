@@ -4,10 +4,10 @@
 
 Merupakan sebuah platform pemesanan tiket secara online berbasis android
 
-### Sneak peek Our App 
+### Sneak Peek Our App 
 <div align="center">
 <img src="login.png" width="20%">
-  <img src="home.png" width="20%">
+<img src="home.png" width="20%">
 <img src="account.png" width="20%">
 
 </div>
@@ -28,47 +28,39 @@ Merupakan sebuah platform pemesanan tiket secara online berbasis android
    - Register
    - Forgot Password
    - Verification OTP
-   - Log out
    - Update Profile
+   - Log out
+   
 2. Order
-
-   -Pencarian penerbangan ( Termasuk Filter pencarian penerbangan )
+   - Pencarian penerbangan ( Termasuk Filter pencarian penerbangan )
+   - Detail Penerbangan
+   - Pengisian biodata Pemesan dan Penumpang
+   - Check Out
+   - Payment
+   - Cetak tiket ( Cetak tiket mengirim ke email )
    
-   -Detail Penerbangan
-
-   -Pengisian biodata Pemesan dan Penumpang
-
-   -Check Out
-
-   -Payment
-
-   -Cetak tiket ( Cetak tiket mengirim ke email )
-   
-4. Riwayat
-   - History penerbangan
-   - Detail History Penerbangan
+3. Riwayat
+   - Riwayat Penerbangan
+   - Detail Riwayat Penerbangan
      
-5. Notification
+4. Notification
+   - Mark all read
 
-   -Mark All Read
-
-7. Akun
-
-   -Menampilkan profile
-
-   -Update Profile
+5. Akun
+   - Menampilkan Profil
+   - Update Profil
 
 # Tech Stack
 
-1. Firebase Crashlythic
-2. Bahasa pemrograman Kotlin
-3. Restful API Using Retrofit2, OkHttp, Gson
-4. Hilt Dagger
+1. Bahasa Pemrograman Kotlin
+2. IDEA Android Studio 
+3. UI code using XML 
+4. Android SDK 
 5. Data Store
-6. Nav Component
-7. IDEA Android Studio
-8. Android SDK
-9. Gradle
-10. UI code using XML
+6. Gradle 
+7. Firebase Crashlytics
+8. Restful API Using Retrofit2, OkHttp3, Gson
+9. Hilt Dagger
+10. Navigation Component
 
 
