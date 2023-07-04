@@ -6,7 +6,7 @@ Merupakan sebuah platform pemesanan tiket secara online berbasis android
 
 ### Sneak Peek Our App 
 <div align="center">
-<img src="login.png" width="20%">
+<img src="github/account.png" width="20%">
 <img src="home.png" width="20%">
 <img src="account.png" width="20%">
 
