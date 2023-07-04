@@ -334,6 +334,9 @@
         <action
             android:id="@+id/action_biodataPassengerFragment_to_detailFlightHistoryFragment"
             app:destination="@id/detailFlightHistoryFragment" />
+        <action
+            android:id="@+id/action_biodataPassengerFragment_to_biodataBookingFragment"
+            app:destination="@id/biodataBookingFragment" />
     </fragment>
     <fragment
         android:id="@+id/bottomSheetPaymentSuccessFragment"

@@ -38,6 +38,10 @@ class BiodataPassengerFragment : Fragment() {
             findNavController().navigate(R.id.action_biodataPassengerFragment_to_detailFlightHistoryFragment)
         }
 
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_biodataPassengerFragment_to_biodataBookingFragment)
+        }
+
     }
 
 }

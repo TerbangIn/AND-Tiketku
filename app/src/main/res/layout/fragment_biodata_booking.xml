@@ -279,7 +279,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:text="@string/btn_save"
-                app:backgroundTint="@color/darkblue01"
+                app:backgroundTint="@color/darkblue03"
                 app:cornerRadius="8dp"
                 app:iconGravity="textStart"
                 app:icon="@drawable/ic_check"
