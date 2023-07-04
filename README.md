@@ -2,6 +2,10 @@
 <h3 align="center"><strong>Aplikasi Pemesanan Tiket Pesawat</strong></h3>
 <h3 align="center"><strong>Merupakan sebuah platform pemesanan tiket secara online berbasis android</strong></h3>
 
+<div align="center">
+   <img src="github/logo.png" width="20%">
+</div>
+
 ### Sneak Peek Our App 
 <div align="center">
    <img src="github/login.png" width="20%">
