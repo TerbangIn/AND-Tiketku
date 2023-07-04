@@ -1,17 +1,19 @@
 <h1 align="center"><strong>TerbangIn</strong></h1>
 <h3 align="center"><strong>Aplikasi Pemesanan Tiket Pesawat</strong></h3>
-
-
-Merupakan sebuah platform pemesanan tiket secara online berbasis android
+<h3 align="center"><strong>Merupakan sebuah platform pemesanan tiket secara online berbasis android</strong></h3>
 
 ### Sneak Peek Our App 
 <div align="center">
-<img src="github/login.png" width="20%">
-<img src="github/home.png" width="20%">
-<img src="github/account.png" width="20%">
-
+   <img src="github/login.png" width="20%">
+   <img src="github/home.png" width="20%">
+   <img src="github/account.png" width="20%">
 </div>
-  
+
+# Link Presentasi
+- https://www.canva.com/design/DAFnkrbyhTE/MaifjX9sE0r6g62_rpwLfw/view?utm_content=DAFnkrbyhTE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
+# Link API Documentation
+- https://docs.google.com/document/d/16cJ9IPdzRls-rnBk0UIYBVhZLjO044r0Y4yurcBqb40/edit?usp=sharing
 
 # Link Deploy APK
 - https://github.com/TerbangIn/AND-Tiketku
