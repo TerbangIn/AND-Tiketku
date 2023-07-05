@@ -140,8 +140,8 @@
             android:id="@+id/action_biodataBookingFragment_to_biodataPassengerFragment"
             app:destination="@id/biodataPassengerFragment" />
         <action
-            android:id="@+id/action_biodataBookingFragment_to_biodataPassengerFragment2"
-            app:destination="@id/biodataPassengerFragment" />
+            android:id="@+id/action_biodataBookingFragment_to_resultSearchFragment"
+            app:destination="@id/resultSearchFragment" />
     </fragment>
     <fragment
         android:id="@+id/sendOTPFragment"
@@ -313,6 +313,9 @@
         <action
             android:id="@+id/action_detailFlightHistoryFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_detailFlightHistoryFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
@@ -322,6 +325,9 @@
         <action
             android:id="@+id/action_paymentFragment_to_bottomSheetPaymentSuccessFragment"
             app:destination="@id/bottomSheetPaymentSuccessFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/biodataPassengerFragment"
