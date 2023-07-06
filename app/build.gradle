@@ -75,6 +75,13 @@ dependencies {
     implementation "com.google.dagger:hilt-android:2.46"
     kapt "com.google.dagger:hilt-android-compiler:2.45"
 
+    //UnitTest
+    testImplementation "io.mockk:mockk:1.13.1"
+    testImplementation "org.mockito:mockito-core:5.3.1"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:3.2.0"
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0'
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
 
 
 
