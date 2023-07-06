@@ -39,9 +39,14 @@ class BiodataPassengerFragment : Fragment() {
         }
 
         binding.btnChooseNextSeat.setOnClickListener {
-            findNavController().navigate(R.id.action_biodataPassengerFragment_to_detailFlightHistoryFragment)
+            findNavController().navigate(R.id.action_biodataPassengerFragment_to_checkoutFragment)
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

@@ -185,7 +185,7 @@
     <string name="et_card_number" translatable="false">4480 0000 0000 0000</string>
     <string name="tv_card_holder_name">Card Holder Name</string>
     <string name="tv_cvv" translatable="false">CVV</string>
-    <string name="et_cvv" tools:ignore="MissingTranslation">000</string>
+    <string name="et_cvv" translatable="false">000</string>
     <string name="tv_expiry_date">Expiry Date</string>
     <string name="et_expiry_date" tools:ignore="MissingTranslation">07/24</string>
     <string name="tv_pay">Pay</string>
@@ -321,4 +321,6 @@
     <string name="btn_next" translatable="false">NEXT</string>
     <string name="tv_overview" tools:ignore="MissingTranslation">Overview</string>
     <string name="tv_enter_confirm_password">Enter Confirm Password</string>
+    <string name="tv_credit_card">Credit Card</string>
+    <string name="tv_4480_0000_0000_0000" translatable="false">4480 0000 0000 0000</string>
 </resources>
