@@ -52,13 +52,8 @@ class BottomSheetClassSeatFragment : BottomSheetDialogFragment() {
             saveSeat("Premium Economy")
             dismiss()
         }
-
-
     }
     private fun saveSeat(seatClass: String){
         homeViewModel.setSeatClass(seatClass)
     }
-
-
-
 }

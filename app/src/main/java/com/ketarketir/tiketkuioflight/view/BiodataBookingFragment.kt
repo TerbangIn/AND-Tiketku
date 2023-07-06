@@ -36,8 +36,12 @@ class BiodataBookingFragment : Fragment() {
         val phoneNumber = binding.tieNumberPhone.text.toString()
         val email = binding.tieNumberPhone.text.toString()
 
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_biodataBookingFragment_to_resultSearchFragment)
+        }
+
         binding.btnSave.setOnClickListener {
-            findNavController().navigate(R.id.action_biodataBookingFragment_to_biodataPassengerFragment2)
+            findNavController().navigate(R.id.action_biodataBookingFragment_to_biodataPassengerFragment)
         }
     }
 

@@ -31,6 +31,10 @@ class PaymentFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_paymentFragment_to_checkoutFragment)
+        }
+
         binding.btnOnlinePay.setOnClickListener {
             findNavController().navigate(R.id.action_paymentFragment_to_bottomSheetPaymentSuccessFragment)
         }

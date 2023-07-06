@@ -34,12 +34,12 @@ class BiodataPassengerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
-        binding.btnChooseNextSeat.setOnClickListener {
-            findNavController().navigate(R.id.action_biodataPassengerFragment_to_detailFlightHistoryFragment)
-        }
-
         binding.topAppBar.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_biodataPassengerFragment_to_biodataBookingFragment)
+        }
+
+        binding.btnChooseNextSeat.setOnClickListener {
+            findNavController().navigate(R.id.action_biodataPassengerFragment_to_detailFlightHistoryFragment)
         }
 
     }

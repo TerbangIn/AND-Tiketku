@@ -218,7 +218,7 @@
     <string name="tv_mlb" translatable="false">MLB</string>
     <string name="tv__11_00" translatable="false">11:00</string>
     <string name="tv_direct">Direct</string>
-    <string name="tv__4h_0m" translatable="false">4h 0m</string>
+    <string name="tv__4h_0m" translatable="false">(4h 0m)</string>
     <string name="tv_jkt" translatable="false">JKT</string>
     <string name="tv__07_00" translatable="false">07:00</string>
     <string name="tv_coming_soon">Coming Soon</string>
