@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.ketarketir.tiketkuioflight.MainActivity
 import com.ketarketir.tiketkuioflight.R
@@ -31,17 +32,29 @@ class BiodataBookingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
-        val fullname = binding.tieName.text.toString()
-        val familyName = binding.tieFamily.text.toString()
-        val phoneNumber = binding.tieNumberPhone.text.toString()
-        val email = binding.tieNumberPhone.text.toString()
 
         binding.topAppBar.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_biodataBookingFragment_to_resultSearchFragment)
         }
 
-        binding.btnSave.setOnClickListener {
-            findNavController().navigate(R.id.action_biodataBookingFragment_to_biodataPassengerFragment)
+        inputBooking()
+
+
+    }
+
+    private fun inputBooking(){
+        val fullname = binding.tieName.text.toString()
+        val familyName = binding.tieFamily.text.toString()
+        val phoneNumber = binding.tieNumberPhone.text.toString()
+        val email = binding.tieNumberPhone.text.toString()
+
+        if (fullname.isEmpty() || familyName.isEmpty() || phoneNumber.isEmpty() || email.isEmpty()){
+            Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
+
+        } else{
+            binding.btnSave.setOnClickListener {
+                findNavController().navigate(R.id.action_biodataBookingFragment_to_biodataPassengerFragment)
+            }
         }
     }
 
