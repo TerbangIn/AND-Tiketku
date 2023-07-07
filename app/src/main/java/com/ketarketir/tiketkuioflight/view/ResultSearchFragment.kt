@@ -1,5 +1,6 @@
 package com.ketarketir.tiketkuioflight.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -23,6 +24,8 @@ import com.ketarketir.tiketkuioflight.view.adapter.FlightAdapter
 import com.ketarketir.tiketkuioflight.viewmodel.HomeViewModel
 import com.ketarketir.tiketkuioflight.viewmodel.ResultSearchViewModel
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class ResultSearchFragment : Fragment() {
@@ -46,9 +49,16 @@ class ResultSearchFragment : Fragment() {
 
         listDay()
         showFlight()
+        binding.topAppBar.setOnClickListener {
+            findNavController().navigate(R.id.action_resultSearchFragment_to_homeFragment)
+        }
     }
 
+    @SuppressLint("NewApi")
     fun showFlight(){
+        val date = homeViewModel.selectedStartDate.value
+        val selectedDate = formatDate(date!!)
+
         resultSearchViewModel.getToken()
         resultSearchViewModel.token.observe(viewLifecycleOwner, Observer {
             val token = it
@@ -93,6 +103,8 @@ class ResultSearchFragment : Fragment() {
         binding.rvDay.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         adapter.onClick={
+//            val selectedDateDay = it.date
+//            homeViewModel.postSelectedStartDate(selectedDateDay)
             findNavController().navigate(R.id.action_resultSearchFragment_to_loadingSearchFlightFragment)
         }
 

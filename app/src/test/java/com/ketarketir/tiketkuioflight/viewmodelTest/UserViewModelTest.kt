@@ -26,7 +26,7 @@ class UserViewModelTest {
 
     @Mock
     private lateinit var apiService: ApiService
-    
+
     private lateinit var viewModel: UserViewModel
 
     // Coroutine testing variables

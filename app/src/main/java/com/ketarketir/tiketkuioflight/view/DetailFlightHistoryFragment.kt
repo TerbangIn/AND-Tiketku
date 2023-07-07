@@ -33,6 +33,9 @@ class DetailFlightHistoryFragment : Fragment() {
         binding.topAppBar.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_detailFlightHistoryFragment_to_homeFragment)
         }
+        binding.btnContinuePayment.setOnClickListener {
+            findNavController().navigate(R.id.action_detailFlightHistoryFragment_to_paymentFragment)
+        }
     }
 
     override fun onDestroy() {
