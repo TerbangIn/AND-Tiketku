@@ -211,6 +211,7 @@
     <string name="tv__6281212121212" translatable="false">+6281212121212</string>
     <string name="tv_1_march_2023">1 march 2023</string>
     <string name="tv_2_passengers">2 Passengers</string>
+    <string name="tv_0_passengers">0 Passengers</string>
     <string name="tv__20_maret_14_04" translatable="false">20 Maret, 14:04</string>
     <string name="tv_flight_class_name" translatable="false">Jet Air - Economy</string>
     <string name="tv_plane_name" translatable="false">JT - 203</string>

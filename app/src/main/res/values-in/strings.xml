@@ -144,6 +144,7 @@
     <string name="tv_tuesday">Selasa</string>
     <string name="tv_1_march_2023">1 Maret 2023</string>
     <string name="tv_2_passengers">2 Penumpang</string>
+    <string name="tv_0_passengers">0 Penumpang</string>
     <string name="tv_information">Informasi</string>
     <string name="tv_direct">Langsung</string>
     <string name="tv_coming_soon">Segera hadir</string>

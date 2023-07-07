@@ -337,7 +337,7 @@
                                         android:id="@+id/tv_passenger"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/tv_2_passengers"
+                                        android:text="@string/tv_0_passengers"
                                         android:fontFamily="@font/poppins_medium"
                                         android:textColor="@color/darkblue05"
                                         android:textSize="16sp"/>
