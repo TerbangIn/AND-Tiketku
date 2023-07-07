@@ -69,6 +69,15 @@ class ResultSearchFragment : Fragment() {
                     binding.rvFlight.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                     binding.rvFlight.adapter = adapter
                     adapter.onClick = {
+//                        val timeDepart = it.departureDate
+//                        val timeArrival = it.arrivalDate
+//                        val airline = it.airline
+//                        val price = it.economyClassPrice
+//                        val bundle = Bundle()
+//                        bundle.putString("timeDepart", timeDepart)
+//                        bundle.putString("timeArrival", timeArrival)
+//                        bundle.putString("airline", airline)
+//                        bundle.putInt("price", price)
                         findNavController().navigate(R.id.action_resultSearchFragment_to_biodataBookingFragment)
                     }
                 } else{
