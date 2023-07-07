@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ketarketir.tiketkuioflight.databinding.ItemResultTicketBinding
 import com.ketarketir.tiketkuioflight.model.airport.DataAirport
 import com.ketarketir.tiketkuioflight.model.flight.Data
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
 import java.time.Duration
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -48,12 +50,18 @@ class FlightAdapter(var listFlight: List<Data>) : RecyclerView.Adapter<FlightAda
 
         holder.binding.tvDeparture.text = formattedDepartureTime
         holder.binding.tvArrival.text = formattedArrivalTime
-        holder.binding.tvPrice.text = list.economyClassPrice.toString()
+        val price = "IDR ${convertIDR(list.economyClassPrice)}"
+        holder.binding.tvPrice.text = price
         holder.binding.tvEstimate.text = "$hours h" + " " + "$minutes m"
         holder.binding.tvAircraftType.text = list.airline
         holder.binding.cvFlight.setOnClickListener{
             onClick?.invoke(list)
         }
+
+    }
+    private fun convertIDR(price : Int) : String{
+        val currencyFormatIDR = DecimalFormat("#,###", DecimalFormatSymbols.getInstance(Locale("id", "ID")))
+        return currencyFormatIDR.format(price)
 
     }
 

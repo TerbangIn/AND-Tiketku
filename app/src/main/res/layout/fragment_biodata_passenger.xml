@@ -333,7 +333,7 @@
                                             android:id="@+id/tie_citizenship"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:inputType="date"
+                                            android:inputType="text"
                                             android:fontFamily="@font/poppins_medium"
                                             android:hint="@string/tv_city_or_country" />
 

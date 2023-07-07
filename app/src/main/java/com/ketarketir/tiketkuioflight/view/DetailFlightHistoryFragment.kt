@@ -30,12 +30,18 @@ class DetailFlightHistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as MainActivity).setBottomNavigationVisibility(View.GONE)
 
+        val name = arguments?.getString("name")
+        val idCard = arguments?.getString("idCard")
+
         binding.topAppBar.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_detailFlightHistoryFragment_to_homeFragment)
         }
         binding.btnContinuePayment.setOnClickListener {
             findNavController().navigate(R.id.action_detailFlightHistoryFragment_to_paymentFragment)
         }
+
+        binding.tvPassengerName.setText(name)
+        binding.tvPassengerCode.setText(idCard)
     }
 
     override fun onDestroy() {

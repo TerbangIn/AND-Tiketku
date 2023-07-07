@@ -75,11 +75,11 @@
     <string name="tv_starting_from">Starting From</string>
     <string name="tv_idr" translatable="false">IDR</string>
     <string name="tv_usd" translatable="false">USD</string>
-    <string name="tv_idr_950" translatable="false">IDR 950.000</string>
+    <string name="tv_idr_950" translatable="false">IDR 2.100.000</string>
     <string name="tv_discount_50_off" translatable="false">50% OFF</string>
     <string name="tv_sydney" translatable="false">Sydney</string>
     <string name="tv_5_25_march_2023">5 – 25 March 2023</string>
-    <string name="tv_idr_3650" translatable="false">IDR 3.650.000</string>
+    <string name="tv_idr_3650" translatable="false">IDR 2.400.000</string>
 
     <string name="tv_city_or_country">Enter City or Country</string>
     <string name="tv_recent_search">Recent Search</string>
@@ -109,7 +109,7 @@
     <string name="tv_first_class">First Class</string>
     <string name="tv_idr_first_class" translatable="false">IDR 87.620.000</string>
 
-    <string name="tv_jkt_mlb">JKT > MLB  - 2 Passengers - Economy</string>
+    <string name="tv_jkt_mlb">JKT > CGK  - 1 Passengers - Economy</string>
     <string name="tv_filter" translatable="false">Filter</string>
     <string name="tv_cheapest">Cheapest</string>
     <string name="tv_loading">Loading…</string>
@@ -127,7 +127,7 @@
     <string name="tv_flight_options">Flight Options</string>
     <string name="tv_departure_place" translatable="false">Soekarno Hatta</string>
     <string name="tv_departure_place_detail">Terminal 1A Domestic</string>
-    <string name="tv_melbourne_international_airport">Melbourne International Airport</string>
+    <string name="tv_melbourne_international_airport">Jakarta International Airport</string>
     <string name="tv_total">Total</string>
 
     <string name="tv_search_not_found">Sorry, your search was not found</string>
@@ -215,12 +215,12 @@
     <string name="tv_flight_class_name" translatable="false">Jet Air - Economy</string>
     <string name="tv_plane_name" translatable="false">JT - 203</string>
     <string name="tv_information">Information</string>
-    <string name="tv_mlb" translatable="false">MLB</string>
+    <string name="tv_mlb" translatable="false">CGK</string>
     <string name="tv__11_00" translatable="false">11:00</string>
     <string name="tv_direct">Direct</string>
     <string name="tv__4h_0m" translatable="false">(4h 0m)</string>
     <string name="tv_jkt" translatable="false">JKT</string>
-    <string name="tv__07_00" translatable="false">07:00</string>
+    <string name="tv__07_00" translatable="false">02:08</string>
     <string name="tv_coming_soon">Coming Soon</string>
     <string name="tv_baggage_20_kg">Baggage 20 kg</string>
     <string name="tv_cabin_baggage_7_kg">Cabin baggage 7 kg</string>
@@ -228,7 +228,7 @@
     <string name="tv_arrival">Arrival</string>
     <string name="tv_15871125258" translatable="false">15871125258</string>
     <string name="tv_march_2023">March 2023</string>
-    <string name="tv_2_adults">2 Adults</string>
+    <string name="tv_2_adults">1 Adults</string>
     <string name="tv_1_baby">1 Baby</string>
     <string name="tv_idr_0" translatable="false">IDR 0</string>
     <string name="tv_idr_300" translatable="false">IDR 300.000</string>

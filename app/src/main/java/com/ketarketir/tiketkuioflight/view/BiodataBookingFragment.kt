@@ -48,13 +48,17 @@ class BiodataBookingFragment : Fragment() {
         val phoneNumber = binding.tieNumberPhone.text.toString()
         val email = binding.tieNumberPhone.text.toString()
 
-        if (fullname.isEmpty() || familyName.isEmpty() || phoneNumber.isEmpty() || email.isEmpty()){
-            Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
-
-        } else{
-            binding.btnSave.setOnClickListener {
-                findNavController().navigate(R.id.action_biodataBookingFragment_to_biodataPassengerFragment)
+        binding.msFamily.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                binding.tieFamily.visibility = View.VISIBLE
+            } else {
+                binding.tieFamily.visibility = View.GONE
             }
+        }
+
+        binding.btnSave.setOnClickListener {
+            findNavController().navigate(R.id.action_biodataBookingFragment_to_biodataPassengerFragment)
+
         }
     }
 

@@ -43,6 +43,7 @@ class BiodataPassengerFragment : Fragment() {
         binding.topAppBar.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_biodataPassengerFragment_to_biodataBookingFragment)
         }
+        biodataPassenger()
 
 
 
@@ -68,33 +69,34 @@ class BiodataPassengerFragment : Fragment() {
         val builder = MaterialDatePicker.Builder.datePicker()
         val picker = builder.build()
 
-        picker.addOnPositiveButtonClickListener { selection ->
-            val dateMillis = selection ?: 0L
+        binding.tieBirthDate.setOnClickListener {
+            picker.addOnPositiveButtonClickListener { selection ->
+                val dateMillis = selection ?: 0L
 
-            if (dateMillis > 0) {
-                val calendar = Calendar.getInstance()
-                calendar.timeInMillis = dateMillis
-                val birthDate = calendar.time
-                val formatted = formatDate(birthDate)
+                if (dateMillis > 0) {
+                    val calendar = Calendar.getInstance()
+                    calendar.timeInMillis = dateMillis
+                    val birthDate = calendar.time
+                    val formatted = formatDate(birthDate)
 //                homeViewModel.postSelectedStartDate(startDate)
 //                homeViewModel.postSelectedEndDate(null)
 
-                binding.tieBirthDate.setText(formatted)
+                    binding.tieBirthDate.setText(formatted)
+                }
             }
-        }
 
-        picker.show(fragmentManager!!, picker.toString())
+            picker.show(fragmentManager!!, picker.toString())
+        }
 
         val citizenship = binding.tieCitizenship.text.toString()
         val passport = binding.tieCardPassport.text.toString()
         val country = binding.tiePublication.text.toString()
 
-        if (passport.isEmpty()){
-            Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
-        } else{
-            binding.btnChooseNextSeat.setOnClickListener {
-                findNavController().navigate(R.id.action_biodataPassengerFragment_to_checkoutFragment)
-            }
+        binding.btnChooseNextSeat.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("name", name)
+            bundle.putString("idCard", passport)
+            findNavController().navigate(R.id.action_biodataPassengerFragment_to_detailFlightHistoryFragment, bundle)
         }
     }
 
