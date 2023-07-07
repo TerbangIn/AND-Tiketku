@@ -89,7 +89,12 @@ class HomeFragment : Fragment() {
             BottomSheetSetPassengerFragment().show(requireActivity().supportFragmentManager, "BottomSheetSetPassengerFragment")
         }
         binding.btnSearch.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_loadingSearchFlightFragment)
+            if (homeViewModel.selectedStartDate.value!=null){
+                findNavController().navigate(R.id.action_homeFragment_to_loadingSearchFlightFragment)
+            } else{
+                Toast.makeText(context, "Silahkan Pilih Pencarian Penerbangan Terlebih Dahulu", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
 
