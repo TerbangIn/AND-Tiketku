@@ -142,6 +142,9 @@
         <action
             android:id="@+id/action_biodataBookingFragment_to_resultSearchFragment"
             app:destination="@id/resultSearchFragment" />
+        <action
+            android:id="@+id/action_biodataBookingFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
     </fragment>
     <fragment
         android:id="@+id/sendOTPFragment"
@@ -346,6 +349,9 @@
         <action
             android:id="@+id/action_biodataPassengerFragment_to_biodataBookingFragment"
             app:destination="@id/biodataBookingFragment" />
+        <action
+            android:id="@+id/action_biodataPassengerFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
     </fragment>
     <fragment
         android:id="@+id/bottomSheetPaymentSuccessFragment"

@@ -157,4 +157,5 @@
     <string name="tv_passenger_count">Penumpang 1:</string>
     <string name="tv_destination_detail">Rincian Destinasi</string>
     <string name="tv_enter_confirm_password">Masukkan Kembali Kata Sandi</string>
+    <string name="tv_credit_card">Kartu Kredit</string>
 </resources>

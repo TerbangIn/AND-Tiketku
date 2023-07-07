@@ -26,10 +26,11 @@
     
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/abl_container">
+        app:layout_constraintTop_toBottomOf="@id/abl_container"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -491,6 +492,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
+                android:paddingBottom="20dp"
                 app:cardCornerRadius="8dp"
                 app:strokeColor="@color/darkblue03"
                 app:strokeWidth="3dp"
@@ -500,6 +502,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingBottom="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -517,7 +520,7 @@
                             android:id="@+id/tv_count_biodata_bank_payment"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tv_gopay"
+                            android:text="@string/tv_credit_card"
                             android:textColor="@color/neutral01"
                             android:fontFamily="@font/poppins_medium"
                             android:textSize="16sp"
@@ -538,7 +541,7 @@
                             android:id="@+id/tv_sign_number_bank_payment"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tv_phone_number"
+                            android:text="@string/tv_credit_card"
                             android:textColor="@color/darkblue05"
                             android:textStyle="bold"
                             android:layout_marginHorizontal="26dp"
@@ -551,7 +554,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="number"
-                            android:hint="@string/tv_0813"
+                            android:hint="@string/tv_4480_0000_0000_0000"
                             android:layout_marginHorizontal="26dp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/tv_sign_number_bank_payment"/>
@@ -560,7 +563,7 @@
                             android:id="@+id/tv_sign_name_bank_payment"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tv_full_name"
+                            android:text="@string/tv_card_holder_name"
                             android:textColor="@color/darkblue05"
                             android:textStyle="bold"
                             android:layout_marginHorizontal="26dp"
@@ -578,23 +581,81 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/tv_sign_name_bank_payment"/>
 
+                        <LinearLayout
+                            android:id="@+id/ll_bank_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginHorizontal="26dp"
+                            android:layout_marginVertical="5dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tie_name_bank_payment">
+
+                            <LinearLayout
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tv_cvv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_cvv"
+                                    android:textColor="@color/darkblue05"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tv_cvv_code"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="number"
+                                    android:hint="@string/et_cvv"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginHorizontal="20dp">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tv_expiry_date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_expiry_date"
+                                    android:textColor="@color/darkblue05"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tv_expiry_date_code"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="text"
+                                    android:hint="@string/et_expiry_date"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/iv_bank_payment"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:src="@drawable/iv_gopay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/payment_option"
+                            android:layout_marginVertical="10dp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tie_name_bank_payment"/>
+                            app:layout_constraintTop_toBottomOf="@id/ll_bank_code"/>
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btn_pay_bank_payment"
+                            android:id="@+id/btn_bank_pay"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:cornerRadius="16dp"
                             android:backgroundTint="@color/darkblue04"
                             android:layout_marginHorizontal="24dp"
-                            android:layout_marginVertical="5dp"
+                            android:layout_marginVertical="10dp"
                             android:paddingVertical="12dp"
                             android:text="@string/tv_pay"
                             app:layout_constraintStart_toStartOf="parent"
@@ -609,13 +670,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/btn_bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
